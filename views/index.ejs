@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Asociación Privada de Patronato</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- AOS Animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header id="siteHeader" class="position-fixed top-0 start-0 w-100 z-3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 py-3">
+    <div class="container-fluid justify-content-between">
+      <a class="navbar-brand fw-bold fs-5 text-glow" href="#">Asociación Privada de Patronato</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav gap-4 text-center">
+          <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicios">Cursos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- CARRUSEL -->
+<section class="carousel-section p-0 m-0 position-relative">
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/fondobarber1.jpg" class="carousel-img d-block w-100" alt="Slide 1">
+        <div class="carousel-caption">
+          <h1 class="typing-text">Formando Profesionales del Estilo</h1>
+          <a href="#contacto" class="btn btn-gold mt-3">Contáctanos</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/fondoestilista2.jpg" class="carousel-img d-block w-100" alt="Slide 2">
+        <div class="carousel-caption">
+          <h1 class="typing-text">Excelencia y Creatividad</h1>
+          <a href="#contacto" class="btn btn-gold mt-3">Inscríbete Ahora</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/fondounas3.jpg" class="carousel-img d-block w-100" alt="Slide 3">
+        <div class="carousel-caption">
+          <h1 class="typing-text">Tu Talento, Nuestra Inspiración</h1>
+          <a href="#contacto" class="btn btn-gold mt-3">Explora Más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEPARADOR -->
+<section class="descubre-section">
+  <div class="descubre-overlay">
+    <div class="descubre-content">
+      <h2>✨ Descubre lo que tenemos para ti</h2>
+      <p>Capacítate con los mejores profesionales del rubro</p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section">
+  <video autoplay muted loop playsinline class="video-full">
+    <source src="/videos/baber.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay">
+    <h2 data-aos="zoom-in">Inspírate. Aprende. Crece con Nosotros.</h2>
+  </div>
+</section>
+
+<!-- CURSOS -->
+<section id="cursos" class="services-section text-center py-5">
+  <div class="container">
+    <h2 data-aos="fade-down">Nuestros Cursos con Descuento</h2>
+    <p data-aos="fade-down" data-aos-delay="100">Formamos expertos en belleza, barbería y estilo moderno</p>
+
+    <div class="row mt-4">
+      <div class="col-md-4 mb-4" data-aos="zoom-in">
+        <div class="service-card">
+          <img src="/images/fondobarber1.jpg" alt="Corte Profesional" class="service-img">
+          <div class="overlay">
+            <h4>Corte Profesional</h4>
+            <p>De <del>$79.99</del> a <strong>$49.99</strong></p>
+            <span class="badge bg-warning text-dark">OFERTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="150">
+        <div class="service-card">
+          <img src="/images/fondoestilista2.jpg" alt="Estilismo" class="service-img">
+          <div class="overlay">
+            <h4>Estilismo Moderno</h4>
+            <p>De <del>$69.99</del> a <strong>$49.99</strong></p>
+            <span class="badge bg-warning text-dark">OFERTA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="service-card">
+          <img src="/images/fondounas3.jpg" alt="Manicure" class="service-img">
+          <div class="overlay">
+            <h4>Manicure & Nails</h4>
+            <p>De <del>$59.99</del> a <strong>$49.99</strong></p>
+            <span class="badge bg-warning text-dark">OFERTA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="contact-section py-5 text-center text-light">
+  <div class="container">
+    <h2>Contáctanos</h2>
+    <p>Déjanos un mensaje y te ayudaremos a iniciar tu camino profesional.</p>
+    <a href="mailto:info@patronato.com" class="btn btn-light mt-3 px-4 py-2">Enviar correo</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer text-center py-4">
+  <p>&copy; 2025 Asociación Privada de Patronato</p>
+  <p><i class="bi bi-geo-alt"></i> Av. Alejandro Bertello Bollati, Callao</p>
+  <div class="social-icons mt-3">
+    <a href="#"><i class="bi bi-facebook"></i></a>
+    <a href="#"><i class="bi bi-instagram"></i></a>
+    <a href="#"><i class="bi bi-tiktok"></i></a>
+  </div>
+</footer>
+
+<!-- BOTÓN FLOTANTE MATRÍCULA -->
+<a href="#contacto" class="btn-flotante">
+  <i class="bi bi-pencil-square"></i> Matrículate
+</a>
+
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<a href="https://wa.me/51987654321?text=Hola,%20quiero%20más%20información%20sobre%20los%20cursos" class="whatsapp-float" target="_blank">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true, duration: 800 });
+
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.navbar');
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
+
+</body>
+</html>

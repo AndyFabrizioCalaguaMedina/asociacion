@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academia de Belleza — GEM Style</title>
+  <link rel="stylesheet" href="/styles/stylesservicio.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css" rel="stylesheet" />
+</head>
+<body>
+<div data-scroll-container>
+
+  <!-- HERO -->
+  <section class="hero" data-scroll-section>
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="videos/Video Portada.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1 data-scroll data-scroll-speed="2">Transforma tu Futuro con Estilo</h1>
+      <p data-scroll data-scroll-speed="1.5">Cursos gratuitos, certificaciones y una comunidad apasionada por la belleza.</p>
+      <a href="#servicios" class="btn" data-scroll data-scroll-speed="1">Comienza tu viaje</a>
+    </div>
+  </section>
+
+  <!-- CURSOS ACTIVOS -->
+  <section class="section servicios" id="servicios" data-scroll-section>
+    <canvas id="particles"></canvas>
+    <div class="container">
+      <h2 class="titulo" data-scroll data-scroll-speed="2">Cursos Activos</h2>
+      <div class="busqueda">
+        <input type="text" id="buscador" placeholder="Buscar curso..." />
+      </div>
+      <div class="grid" id="lista-cursos">
+        <!-- Los cursos activos se mostrarían dinámicamente aquí si se pasa un array desde el backend -->
+        <div class="card" data-scroll data-scroll-speed="1.5">
+          <img src="images/Barberia.jpg" alt="">
+          <div class="info">
+            <h3>Barbería Profesional</h3>
+            <p>Aprende técnicas modernas y clásicas con los mejores instructores.</p>
+            <button class="btn-card">Ver más</button>
+          </div>
+        </div>
+        <div class="card" data-scroll data-scroll-speed="1.5">
+          <img src="images/Maquillaje.jpg" alt="">
+          <div class="info">
+            <h3>Maquillaje</h3>
+            <p>Perfecciona el arte del maquillaje profesional con prácticas reales.</p>
+            <button class="btn-card">Ver más</button>
+          </div>
+        </div>
+        <div class="card" data-scroll data-scroll-speed="1.5">
+          <img src="images/Diseño de Uñas.jpg" alt="">
+          <div class="info">
+            <h3>Diseño de Uñas</h3>
+            <p>Domina las técnicas de decoración y diseño con certificación gratuita.</p>
+            <button class="btn-card">Ver más</button>
+          </div>
+        </div>
+        <div class="card" data-scroll data-scroll-speed="1.5">
+          <img src="images/Diseño de Cejas.webp" alt="">
+          <div class="info">
+            <h3>Cejas y Pestañas</h3>
+            <p>Aprende lifting, perfilado y extensiones con resultados profesionales.</p>
+            <button class="btn-card">Ver más</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOTIVACIONAL -->
+  <section class="motivacion" id="motivacion" data-scroll-section>
+    <img src="images/Cortes.jpg" class="img-left" alt="Belleza">
+    <div class="texto-motivacional" data-scroll data-scroll-speed="2">
+      <h2>“Cree en ti. Cada corte, cada trazo, cada mirada cuenta.”</h2>
+      <p>En nuestra academia formamos más que profesionales, formamos artistas de la belleza que transforman el mundo con pasión, técnica y confianza.</p>
+    </div>
+    <img src="images/Chica.jpg" class="img-right" alt="Arte">
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="section testimonios" data-scroll-section>
+    <div class="container">
+      <h2 data-scroll data-scroll-speed="2">Experiencia de Nuestros Alumnos</h2>
+      <div class="testimonios-grid">
+        <div class="testimonio" data-scroll data-scroll-speed="1">
+          <p>“Gracias a las clases gratuitas y certificación, abrí mi propio negocio.”</p>
+          <h4>— Laura G.</h4>
+        </div>
+        <div class="testimonio" data-scroll data-scroll-speed="1">
+          <p>“El curso de barbería cambió mi vida. Hoy tengo mi propia barbería.”</p>
+          <h4>— José M.</h4>
+        </div>
+        <div class="testimonio" data-scroll data-scroll-speed="1">
+          <p>“Aprendí maquillaje profesional y ahora trabajo en eventos de moda.”</p>
+          <h4>— Camila P.</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA PROFESIONAL -->
+  <section class="section gallery" data-scroll-section>
+    <div class="container">
+      <h2 data-scroll data-scroll-speed="2">Galería de Trabajos</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/Trabajo 1.webp" alt="Trabajo 1"></div>
+        <div class="gallery-item"><img src="images/Trabaja 2.jpg" alt="Trabajo 2"></div>
+        <div class="gallery-item"><img src="images/Trabajo 3.jpeg" alt="Trabajo 3"></div>
+        <div class="gallery-item"><img src="images/Trabajo 4.jpg" alt="Trabajo 4"></div>
+        <div class="gallery-item"><img src="images/Trabajo 5.jpg" alt="Trabajo 5"></div>
+        <div class="gallery-item"><img src="images/Trabajo 6.jpg" alt="Trabajo 6"></div>
+        <div class="gallery-item"><img src="images/Trabajo 7.jpg" alt="Trabajo 7"></div>
+        <div class="gallery-item"><img src="images/Trabajo 8.webp" alt="Trabajo 8"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section class="section reserva" data-scroll-section>
+    <div class="container">
+      <h2 data-scroll data-scroll-speed="2">Reserva tu Cupo</h2>
+      <form class="formulario" data-scroll data-scroll-speed="1">
+        <input type="text" placeholder="Nombre completo" required>
+        <input type="email" placeholder="Correo electrónico" required>
+        <select required>
+          <option value="">Selecciona un curso</option>
+          <option>Barbería</option>
+          <option>Maquillaje</option>
+          <option>Uñas</option>
+          <option>Cejas</option>
+        </select>
+        <button class="btn" type="submit">Reservar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer data-scroll-section>
+    <p>© 2025 Academia de Belleza — Todos los derechos reservados.</p>
+  </footer>
+
+</div>
+<script src="/js/script.js"></script>
+</body>
+</html>
+
+
