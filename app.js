@@ -21,6 +21,11 @@ app.get('/servicios', (req, res) => {
   res.render('servicios'); // Esto renderiza 'servicios.ejs'
 });
 
+// Ruta para contacto
+app.get('/contacto', (req, res) => {
+  res.render('contacto'); // Esto renderiza 'servicios.ejs'
+});
+
 // Iniciar el servidor en el puerto 3000
 app.listen(3000, () => {
   console.log('Servidor corriendo en http://localhost:3000');
