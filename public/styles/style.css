@@ -78,9 +78,9 @@ h3 {
 }
 
 .btn-gold {
-  background: #091F36;
+  background: #87CEEB;
   border: none;
-  color: #E9F1FA;
+  color: #010b17;
   font-weight: 600;
   padding: 10px 25px;
   border-radius: 30px;
@@ -88,32 +88,92 @@ h3 {
 }
 
 .btn-gold:hover {
-  background: #87CEEB;
+  background: #ffffff;
   color: #091F36;
   transform: scale(1.05);
 }
 
-/* ===================== SEPARADOR ENTRE CARRUSEL Y VIDEO ===================== */
-.descubre-section {
-  background: #091F36;
-  padding: 4rem 1rem;
-  color: #E9F1FA;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(135, 206, 235, 0.1);
+/* ===================== BANNER INSTITUCIONAL PATRONATO ===================== */
+.patronato-banner {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  min-height: 500px;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  overflow: hidden;
 }
 
-.descubre-section h2 {
-  font-size: 2.2rem;
+.patronato-texto {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+  max-width: 600px;
+}
+
+.patronato-texto h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
   color: #87CEEB;
-  text-shadow: 0 0 10px rgba(135, 206, 235, 0.4);
 }
 
-.descubre-section p {
-  color: #E9F1FA;
-  margin-top: 10px;
-  font-size: 1.1rem;
+.patronato-texto p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #cccccc;
 }
 
+.btn-vermas {
+  background-color: #87CEEB;
+  color: #0f0f0f;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-vermas:hover {
+  background-color: #f4f0ef;
+}
+
+/*DEGRADADO MÁS VISIBLE SOBRE LA IMAGEN */
+.patronato-imagen {
+  flex: 1 1 50%;
+  background-image: linear-gradient(to left, rgba(15,15,15,0.85), rgba(15,15,15,0.4)), url('/images/background-barba.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ===================== RESPONSIVO ===================== */
+@media (max-width: 768px) {
+  .patronato-banner {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .patronato-texto {
+    max-width: 100%;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .patronato-texto h1 {
+    font-size: 2rem;
+  }
+
+  .patronato-texto p {
+    font-size: 1rem;
+  }
+
+  .patronato-imagen {
+    height: 300px;
+  }
+}
 /* ===================== VIDEO ===================== */
 .video-section {
   position: relative;
@@ -155,7 +215,7 @@ h3 {
 
 /* ===================== SECCION INSTITUCIONAL CON CARRUSEL A LA DERECHA ===================== */
 .institucional-combinada {
-  background-color: #f8f7f7;
+  background-color: #000f14;
   font-family: 'Poppins', sans-serif;
   padding: 80px 0;
 }
@@ -175,7 +235,7 @@ h3 {
 .institucional-combinada p {
   font-size: 1.1rem;
   font-weight: 300;
-  color: #032449;
+  color: #ecf0f3;
   line-height: 1.6;
   text-shadow: 0 0 6px rgba(135, 206, 235, 0.1);
   margin-bottom: 15px;
