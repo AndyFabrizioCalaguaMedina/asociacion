@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto | Asociación Privada de Patronato</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Librería de animaciones AOS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
   <!-- Iconos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -19,24 +23,24 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <header id="siteHeader" class="position-fixed top-0 start-0 w-100 z-3">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 py-3">
-    <div class="container-fluid justify-content-between">
-      <a class="navbar-brand fw-bold fs-5 text-glow" href="#">Asociación Privada de Patronato</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav gap-4 text-center">
-          <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="servicios">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto">Contacto</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
+   <!-- NAVBAR -->
+    <header id="siteHeader" class="position-fixed top-0 start-0 w-100 z-3">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 py-3">
+            <div class="container-fluid justify-content-between">
+                <a class="navbar-brand fw-bold fs-5 text-glow" href="#">Asociación Privada de Patronato</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav gap-4 text-center">
+                        <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicios">Cursos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
   <!-- HERO -->
   <section class="hero d-flex align-items-end text-white">
@@ -54,53 +58,57 @@
     </div>
   </section>
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="py-5">
-    <div class="container">
-      <div class="row g-4 justify-content-center">
-        <!-- Formulario -->
-        <div class="col-md-5" data-aos="fade-right">
-          <div class="card bg-dark-blue text-light shadow-glow">
-            <div class="card-body">
-              <h3 class="fw-bold text-celeste mb-4">Envíanos un mensaje</h3>
-              <form>
-                <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Tu nombre">
-                </div>
-                <div class="mb-3">
-                  <input type="email" class="form-control" placeholder="Tu correo">
-                </div>
-                <div class="mb-3">
-                  <textarea class="form-control" rows="4" placeholder="Tu mensaje"></textarea>
-                </div>
-                <button type="submit" class="btn btn-celeste w-100 btn-glow">Enviar</button>
-              </form>
-            </div>
-          </div>
-        </div>
+  <!-- UBICACIÓN + CONTACTO -->
+  <section id="ubicacion" class="position-relative">
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.429681318954!2d-77.1069538249394!3d-12.013912188220308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cdf5e7298f69%3A0xf2dedcfe3ccade02!2sASOCIACI%C3%93N%20PRIVADA%20DE%20PATRONATO!5e0!3m2!1ses!2spe!4v1760907364462!5m2!1ses!2spe"
+        allowfullscreen="" loading="lazy"></iframe>
+    </div>
 
-        <!-- Información -->
-        <div class="col-md-5" data-aos="fade-left">
-          <div class="card bg-dark-blue text-light shadow-glow p-4">
-            <h3 class="fw-bold text-celeste mb-4">Información de contacto</h3>
-            <p><i class="bi bi-geo-alt-fill text-celeste me-2"></i> Av. Alejandro Bertello Bollati, Callao 07036</p>
-            <p><i class="bi bi-telephone-fill text-celeste me-2"></i> +51 987 654 321</p>
-            <p><i class="bi bi-envelope-fill text-celeste me-2"></i> contacto@patronato.org.pe</p>
-            <p><i class="bi bi-clock-fill text-celeste me-2"></i> Lunes a Viernes: 9am - 5pm</p>
+    <!-- CARD FLOTANTE DE CONTACTO -->
+    <div class="contact-overlay container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="card contact-card bg-dark-blue text-light shadow-glow p-4 p-md-5" data-aos="zoom-in">
+            <div class="row g-4 align-items-start">
+              <!-- Formulario -->
+              <div class="col-md-6">
+                <h3 class="fw-bold text-celeste mb-4">Envíanos un mensaje</h3>
+                <form>
+                  <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Tu nombre">
+                  </div>
+                  <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Tu correo">
+                  </div>
+                  <div class="mb-3">
+                    <textarea class="form-control" rows="4" placeholder="Tu mensaje"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-celeste w-100 btn-glow">Enviar</button>
+                </form>
+              </div>
+
+              <!-- Información -->
+              <div class="col-md-6">
+                <h3 class="fw-bold text-celeste mb-4">Información de contacto</h3>
+                <p><i class="bi bi-geo-alt-fill text-celeste me-2"></i> Av. Alejandro Bertello Bollati, Callao 07036</p>
+                <p><i class="bi bi-telephone-fill text-celeste me-2"></i> +51 987 654 321</p>
+                <p><i class="bi bi-envelope-fill text-celeste me-2"></i> contacto@patronato.org.pe</p>
+                <p><i class="bi bi-clock-fill text-celeste me-2"></i> Lunes a Viernes: 9am - 5pm</p>
+                <div class="mt-4">
+                  <a href="#" class="text-celeste mx-2"><i class="bi bi-facebook fs-4"></i></a>
+                  <a href="#" class="text-celeste mx-2"><i class="bi bi-instagram fs-4"></i></a>
+                  <a href="#" class="text-celeste mx-2"><i class="bi bi-twitter fs-4"></i></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- UBICACIÓN -->
-  <section id="ubicacion" class="py-4 bg-celeste text-center text-dark" data-aos="fade-up">
-    <h2 class="fw-bold mb-4">Ubícanos</h2>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.429681318954!2d-77.1069538249394!3d-12.013912188220308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cdf5e7298f69%3A0xf2dedcfe3ccade02!2sASOCIACI%C3%93N%20PRIVADA%20DE%20PATRONATO!5e0!3m2!1ses!2spe!4v1760907364462!5m2!1ses!2spe"
-        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-  </section>
+
 
   <!-- FOOTER -->
   <footer class="text-center py-4 text-light">
@@ -119,11 +127,8 @@
   </div>
 
   <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
-  <script src="/js/contacto.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="/js/contacto.js"></script>
 </body>
 </html>

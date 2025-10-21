@@ -1,110 +1,114 @@
-body {
-  background-color: #000000;
-  color: #F8F9FA;
-  font-family: 'Poppins', sans-serif;
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-/* ==== NAVBAR ==== */
-#siteHeader {
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+body {
+  background: #000;
+  color: #E9F1FA;
+  overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  transition: all 0.4s ease;
+  background: transparent;
+}
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 3px 15px rgba(134, 205, 234, 0.2);
+}
+.navbar-brand {
+  color: #86CDEA !important;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(134, 205, 234, 0.6);
+}
+.nav-link {
+  color: #E9F1FA !important;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.nav-link:hover {
+  color: #86CDEA !important;
+  transform: scale(1.1);
 }
 
 .navbar {
   backdrop-filter: blur(6px);
 }
 
-.text-glow {
-  color: #86cdea;
-  text-shadow: 0 0 10px rgba(0, 150, 255, 0.7);
-}
 
-.navbar-nav .nav-link {
-  color: #e9e9e9 !important;
-  font-weight: 500;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #00bfff !important;
-  transform: scale(1.05);
-}
-
-/* Cuando el usuario baja el scroll */
-.navbar.scrolled {
-  background-color: rgba(0, 50, 120, 0.9);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-
-
-
-/* HERO */
+/* ===== HERO ===== */
 .hero {
-background: linear-gradient(rgba(9, 31, 54, 0.7), rgb(134, 205, 234)),
-    url("/images/central-service-no-copy.jpg")
-      center/cover;
-  min-height: 600px;
+  background: linear-gradient(rgba(9, 31, 54, 0.8), rgba(0, 0, 0, 0.8)),
+    url("/images/central-service-no-copy.jpg") center/cover;
+  min-height: 650px;
   padding-bottom: 60px;
 }
-
 .text-glow {
   color: #ffffff;
   text-shadow: 0 0 10px #86CDEA;
 }
-
 .text-shadow {
   text-shadow: 0 0 5px rgba(134, 205, 234, 0.6);
 }
 
-/* BOTONES */
+/* ===== BOTONES ===== */
 .btn-celeste {
   background-color: #86CDEA;
   color: #000;
   border: none;
 }
-
 .btn-celeste:hover {
   background-color: #5dbde0;
 }
-
 .btn-glow {
   box-shadow: 0 0 10px #86CDEA;
 }
 
-/* TARJETAS */
-.bg-dark-blue {
-  background-color: #0a1528;
-  border: 1px solid rgba(134, 205, 234, 0.3);
+/* ===== MAPA ===== */
+.map-container iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  filter: invert(90%) hue-rotate(180deg) brightness(80%) contrast(95%);
+  /* 👆 Esto oscurece el mapa y conserva detalles */
 }
 
-.shadow-glow {
- 
+/* ===== CARD FLOTANTE ===== */
+.contact-overlay {
+  position: relative;
+  margin-top: -80px; /* Suaviza el solapamiento */
+  z-index: 2;
+  padding-bottom: 120px;
+}
+
+.contact-card {
+  border-radius: 18px;
+  background-color: #0a1528d9;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 35px rgba(134, 205, 234, 0.5);
 }
 
 .text-celeste {
   color: #86CDEA;
 }
 
-/* MAPA */
-.bg-celeste {
-  background-color: #86CDEA;
-  color: #000;
+.bg-dark-blue {
+  background-color: #0a1528;
 }
 
-.map-container iframe {
-  width: 100%;
-  height: 350px;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(134, 205, 234, 0.6);
-}
-
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer {
   background-color: #091F36;
   box-shadow: 0 -2px 20px rgba(134, 205, 234, 0.4);
+  padding-top: 80px;
 }
 
-/* CHATBOT */
+/* ===== CHATBOT ===== */
 .chatbot-icon {
   position: fixed;
   bottom: 30px;
@@ -118,7 +122,7 @@ footer {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-
 .chatbot-icon:hover {
   transform: scale(1.1);
 }
+
