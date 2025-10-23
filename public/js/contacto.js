@@ -15,13 +15,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Simulación simple de envío de formulario
-  const form = document.querySelector("form");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("✅ Gracias por contactarnos. Te responderemos pronto.");
-      form.reset();
-    });
-  }
+
 });
