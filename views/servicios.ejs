@@ -1,153 +1,320 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Academia de Belleza — GEM Style</title>
-  <link rel="stylesheet" href="/styles/stylesservicio.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Asociación Privada de Patronato</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="/styles/stylesservicio.css"/>
+  <link rel="stylesheet" href="/styles/style.css"/>
+
+  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css" rel="stylesheet" />
 </head>
-<body>
-<div data-scroll-container>
 
-  <!-- HERO -->
-  <section class="hero" data-scroll-section>
-    <video autoplay muted loop playsinline class="hero-video">
+<body>
+
+  <!-- NAVBAR -->
+  <header id="siteHeader" class="position-fixed top-0 start-0 w-100 z-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 py-3">
+      <div class="container-fluid justify-content-between">
+        <a class="navbar-brand fw-bold fs-5 text-glow" href="#">Asociación Privada de Patronato</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav gap-4 text-center">
+            <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" href="servicios">Cursos</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO Bootstrap -->
+  <header id="inicio" class="hero position-relative">
+    <video autoplay muted loop playsinline class="hero-video w-100 h-100 position-absolute top-0 start-0">
       <source src="videos/Video Portada.mp4" type="video/mp4">
     </video>
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1 data-scroll data-scroll-speed="2">Transforma tu Futuro con Estilo</h1>
-      <p data-scroll data-scroll-speed="1.5">Cursos gratuitos, certificaciones y una comunidad apasionada por la belleza.</p>
-      <a href="#servicios" class="btn" data-scroll data-scroll-speed="1">Comienza tu viaje</a>
+    <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+    <div class="hero-content position-relative container d-flex flex-column justify-content-center align-items-start">
+      <h1 class="hero-title display-1 fw-bold mb-4">
+        Transforma tu Pasión en Arte
+      </h1>
+      <p class="hero-sub lead fs-4">
+        Aprende con los mejores estilistas, maquilladores y barberos.<br>
+        Cursos especializados para todos los niveles, desde principiantes hasta profesionales.
+      </p>
     </div>
-  </section>
+  </header>
 
-  <!-- CURSOS ACTIVOS -->
-  <section class="section servicios" id="servicios" data-scroll-section>
-    <canvas id="particles"></canvas>
+  <!-- SERVICIOS Bootstrap -->
+  <section id="servicios" class="servicios py-5">
     <div class="container">
-      <h2 class="titulo" data-scroll data-scroll-speed="2">Cursos Activos</h2>
-      <div class="busqueda">
-        <input type="text" id="buscador" placeholder="Buscar curso..." />
-      </div>
-      <div class="grid" id="lista-cursos">
-        <!-- Los cursos activos se mostrarían dinámicamente aquí si se pasa un array desde el backend -->
-        <div class="card" data-scroll data-scroll-speed="1.5">
-          <img src="images/Barberia.jpg" alt="">
-          <div class="info">
-            <h3>Barbería Profesional</h3>
-            <p>Aprende técnicas modernas y clásicas con los mejores instructores.</p>
-            <button class="btn-card">Ver más</button>
-          </div>
+      <h2 class="section-title text-center mb-5">Servicios Profesionales</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-anim>
+          <article class="servicio card h-100 border-0 shadow">
+            <img src="images/Barberia.jpg" alt="Maquillaje profesional" class="card-img-top">
+            <div class="card-body">
+              <h3 class="card-title">Barberia</h3>
+              <p class="card-text">“Aprende el arte de la barbería y transforma tu futuro.”</p>
+            </div>
+          </article>
         </div>
-        <div class="card" data-scroll data-scroll-speed="1.5">
-          <img src="images/Maquillaje.jpg" alt="">
-          <div class="info">
-            <h3>Maquillaje</h3>
-            <p>Perfecciona el arte del maquillaje profesional con prácticas reales.</p>
-            <button class="btn-card">Ver más</button>
-          </div>
+        <div class="col-md-4" data-anim>
+          <article class="servicio card h-100 border-0 shadow">
+            <img src="images/Maquillaje.jpg" alt="Maquillaje profesional" class="card-img-top">
+            <div class="card-body">
+              <h3 class="card-title">Maquillaje</h3>
+              <p class="card-text">“Resalta tu belleza aprendiendo el arte del maquillaje.”</p>
+            </div>
+          </article>
         </div>
-        <div class="card" data-scroll data-scroll-speed="1.5">
-          <img src="images/Diseño de Uñas.jpg" alt="">
-          <div class="info">
-            <h3>Diseño de Uñas</h3>
-            <p>Domina las técnicas de decoración y diseño con certificación gratuita.</p>
-            <button class="btn-card">Ver más</button>
-          </div>
-        </div>
-        <div class="card" data-scroll data-scroll-speed="1.5">
-          <img src="images/Diseño de Cejas.webp" alt="">
-          <div class="info">
-            <h3>Cejas y Pestañas</h3>
-            <p>Aprende lifting, perfilado y extensiones con resultados profesionales.</p>
-            <button class="btn-card">Ver más</button>
-          </div>
+        <div class="col-md-4" data-anim>
+          <article class="servicio card h-100 border-0 shadow">
+            <img src="images/Diseño de Cejas.webp" alt="Peinado creativo" class="card-img-top">
+            <div class="card-body">
+              <h3 class="card-title">Diseño de cejas</h3>
+              <p class="card-text">“Perfecciona tu técnica y domina el diseño de cejas.”</p>
+            </div>
+          </article>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MOTIVACIONAL -->
-  <section class="motivacion" id="motivacion" data-scroll-section>
-    <img src="images/Cortes.jpg" class="img-left" alt="Belleza">
-    <div class="texto-motivacional" data-scroll data-scroll-speed="2">
-      <h2>“Cree en ti. Cada corte, cada trazo, cada mirada cuenta.”</h2>
-      <p>En nuestra academia formamos más que profesionales, formamos artistas de la belleza que transforman el mundo con pasión, técnica y confianza.</p>
+  <!-- MOTIVACIÓN Bootstrap -->
+  <section id="motivacion" class="motivacion position-relative">
+    <div class="motivacion-overlay">
+      <img src="images/Motivacion.jpeg" alt="Motivacional" class="fondo-motivacion w-100">
+      <div class="motivacion-texto position-absolute top-50 start-50 translate-middle text-center" data-anim>
+        <h2 class="display-4 fw-bold mb-4">“Cree en ti. Cada corte, cada trazo, cada mirada cuenta.”</h2>
+        <p class="fs-5">Formamos artistas que dominan el arte de la belleza con pasión, técnica y propósito.</p>
+      </div>
     </div>
-    <img src="images/Chica.jpg" class="img-right" alt="Arte">
   </section>
 
-  <!-- TESTIMONIOS -->
-  <section class="section testimonios" data-scroll-section>
+  <!-- CURSOS Bootstrap -->
+  <section id="cursos" class="cursos py-5">
     <div class="container">
-      <h2 data-scroll data-scroll-speed="2">Experiencia de Nuestros Alumnos</h2>
-      <div class="testimonios-grid">
-        <div class="testimonio" data-scroll data-scroll-speed="1">
-          <p>“Gracias a las clases gratuitas y certificación, abrí mi propio negocio.”</p>
-          <h4>— Laura G.</h4>
+      <h2 class="section-title text-center mb-5">Cursos Activos</h2>
+
+      <!-- Filtros -->
+      <div class="filtros d-flex justify-content-center flex-wrap mb-5">
+        <button class="filtro-btn btn btn-outline-primary mx-2 mb-2 active" data-categoria="todos">Todos</button>
+        <button class="filtro-btn btn btn-outline-primary mx-2 mb-2" data-categoria="barberia">Barbería</button>
+        <button class="filtro-btn btn btn-outline-primary mx-2 mb-2" data-categoria="maquillaje">Maquillaje</button>
+        <button class="filtro-btn btn btn-outline-primary mx-2 mb-2" data-categoria="peinado">Diseño de Uñas</button>
+        <button class="filtro-btn btn btn-outline-primary mx-2 mb-2" data-categoria="uñas">Diseño de cejas</button>
+      </div>
+
+      <div class="row g-4" id="cursosGrid">
+        <div class="col-lg-6" data-categoria="barberia" data-anim>
+          <article class="curso card h-100 border-0 shadow">
+            <video src="videos/Barberia.mp4" autoplay muted loop playsinline class="card-img-top"></video>
+            <div class="card-body">
+              <h3 class="card-title">Barbería Avanzada</h3>
+              <p class="card-text">Domina cortes modernos, degradados y perfilados con técnicas de alto nivel.</p>
+            </div>
+          </article>
         </div>
-        <div class="testimonio" data-scroll data-scroll-speed="1">
-          <p>“El curso de barbería cambió mi vida. Hoy tengo mi propia barbería.”</p>
-          <h4>— José M.</h4>
+
+        <div class="col-lg-6" data-categoria="maquillaje" data-anim>
+          <article class="curso card h-100 border-0 shadow">
+            <video src="videos/Maquillaje.mp4" autoplay muted loop playsinline class="card-img-top"></video>
+            <div class="card-body">
+              <h3 class="card-title">Maquillaje Profesional</h3>
+              <p class="card-text">Aprende maquillaje artístico, social y editorial con expertos en moda.</p>
+            </div>
+          </article>
         </div>
-        <div class="testimonio" data-scroll data-scroll-speed="1">
-          <p>“Aprendí maquillaje profesional y ahora trabajo en eventos de moda.”</p>
-          <h4>— Camila P.</h4>
+
+        <div class="col-lg-6" data-categoria="peinado" data-anim>
+          <article class="curso card h-100 border-0 shadow">
+            <video src="videos/Diseño de cejas y pestañas.mp4" autoplay muted loop playsinline
+              class="card-img-top"></video>
+            <div class="card-body">
+              <h3 class="card-title">Diseño de Cejas</h3>
+              <p class="card-text">Descubre técnicas modernas de peinado, alisado y diseño de imagen.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-lg-6" data-categoria="uñas" data-anim>
+          <article class="curso card h-100 border-0 shadow">
+            <video src="videos/Diseño de uñas.mp4" autoplay muted loop playsinline class="card-img-top"></video>
+            <div class="card-body">
+              <h3 class="card-title">Diseño de Uñas</h3>
+              <p class="card-text">Domina decoraciones artísticas y técnicas de manicure profesional.</p>
+            </div>
+          </article>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALERÍA PROFESIONAL -->
-  <section class="section gallery" data-scroll-section>
+<!-- GALERÍA DE TRABAJOS - Carrusel Múltiple -->
+<section id="galeria" class="galeria py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Galería de Trabajos</h2>
+    
+    <!-- Carrusel Bootstrap Múltiple -->
+    <div id="galeriaCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+      
+      <!-- Indicadores -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#galeriaCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#galeriaCarousel" data-bs-slide-to="1"></button>
+      </div>
+      
+      <!-- Slides -->
+      <div class="carousel-inner rounded-4">
+        <!-- Slide 1 - Primeras 5 imágenes -->
+        <div class="carousel-item active">
+          <div class="row g-3">
+            <div class="col">
+              <img src="images/Trabajo 1.webp" class="d-block w-100 rounded-3" alt="Trabajo 1">
+            </div>
+            <div class="col">
+              <img src="images/Trabaja 2.jpg" class="d-block w-100 rounded-3" alt="Trabajo 2">
+            </div>
+            <div class="col">
+              <img src="images/trabajo 3.jpeg" class="d-block w-100 rounded-3" alt="Trabajo 3">
+            </div>
+            <div class="col">
+              <img src="images/Trabajo 4.jpg" class="d-block w-100 rounded-3" alt="Trabajo 4">
+            </div>
+            <div class="col">
+              <img src="images/Trabajo 5.jpg" class="d-block w-100 rounded-3" alt="Trabajo 5">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 2 - Siguientes 5 imágenes -->
+        <div class="carousel-item">
+          <div class="row g-3">
+            <div class="col">
+              <img src="images/Trabajo 6.jpg" class="d-block w-100 rounded-3" alt="Trabajo 6">
+            </div>
+            <div class="col">
+              <img src="images/Trabajo 7.jpg" class="d-block w-100 rounded-3" alt="Trabajo 7">
+            </div>
+            <div class="col">
+              <img src="images/Trabajo 8.webp" class="d-block w-100 rounded-3" alt="Trabajo 8">
+            </div>
+            <div class="col">
+              <img src="images/Trabajo 9.jpg" class="d-block w-100 rounded-3" alt="Trabajo 9">
+            </div>
+            <div class="col">
+              <img src="images/Trabajo 10.png" class="d-block w-100 rounded-3" alt="Trabajo 10">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Controles -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#galeriaCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#galeriaCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+  <!-- RESEÑAS Bootstrap -->
+  <section id="reseñas" class="reseñas py-5">
     <div class="container">
-      <h2 data-scroll data-scroll-speed="2">Galería de Trabajos</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item"><img src="images/Trabajo 1.webp" alt="Trabajo 1"></div>
-        <div class="gallery-item"><img src="images/Trabaja 2.jpg" alt="Trabajo 2"></div>
-        <div class="gallery-item"><img src="images/Trabajo 3.jpeg" alt="Trabajo 3"></div>
-        <div class="gallery-item"><img src="images/Trabajo 4.jpg" alt="Trabajo 4"></div>
-        <div class="gallery-item"><img src="images/Trabajo 5.jpg" alt="Trabajo 5"></div>
-        <div class="gallery-item"><img src="images/Trabajo 6.jpg" alt="Trabajo 6"></div>
-        <div class="gallery-item"><img src="images/Trabajo 7.jpg" alt="Trabajo 7"></div>
-        <div class="gallery-item"><img src="images/Trabajo 8.webp" alt="Trabajo 8"></div>
+      <h2 class="section-title text-center mb-5">Reseñas</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-anim>
+          <div class="reseña card h-100 border-0 shadow">
+            <div class="card-body">
+              <p class="card-text">“Gracias a la academia abrí mi barbería. ¡Profesores increíbles!”</p>
+              <h4 class="card-title mt-3">— Luis Gómez</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-anim>
+          <div class="reseña card h-100 border-0 shadow">
+            <div class="card-body">
+              <p class="card-text">“Aprendí maquillaje profesional y trabajo en eventos de moda.”</p>
+              <h4 class="card-title mt-3">— Ana Torres</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-anim>
+          <div class="reseña card h-100 border-0 shadow">
+            <div class="card-body">
+              <p class="card-text">“Gran ambiente, clases dinámicas y resultados reales.”</p>
+              <h4 class="card-title mt-3">— Camila Ruiz</h4>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FORMULARIO -->
-  <section class="section reserva" data-scroll-section>
-    <div class="container">
-      <h2 data-scroll data-scroll-speed="2">Reserva tu Cupo</h2>
-      <form class="formulario" data-scroll data-scroll-speed="1">
-        <input type="text" placeholder="Nombre completo" required>
-        <input type="email" placeholder="Correo electrónico" required>
-        <select required>
-          <option value="">Selecciona un curso</option>
-          <option>Barbería</option>
-          <option>Maquillaje</option>
-          <option>Uñas</option>
-          <option>Cejas</option>
-        </select>
-        <button class="btn" type="submit">Reservar</button>
-      </form>
-    </div>
-  </section>
+  <!-- FOOTER CON PARALLAX Y CONTENIDO ORGANIZADO -->
+  <footer class="footer-parallax text-center py-5">
+    <div class="footer-overlay container">
+      <h2 data-aos="zoom-in">Somos los que enseñamos el estilo de lima norte</h2>
+      <div class="row text-start">
+        <!-- Contacto -->
+        <div class="col-md-4 mb-4">
+          <h5>Contacto</h5>
+          <p><i class="bi bi-geo-alt"></i> Av. Alejandro Bertello Bollati, Callao
+          <p><i class="bi bi-telephone"></i> +51 987 654 321</p>
+          <p><i class="bi bi-envelope"></i> (colocar el correo )</p>
+          <div class="social-icons mt-2">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-tiktok"></i></a>
+          </div>
+        </div>
 
-  <!-- FOOTER -->
-  <footer data-scroll-section>
-    <p>© 2025 Academia de Belleza — Todos los derechos reservados.</p>
+        <!-- Horario -->
+        <div class="col-md-4 mb-4">
+          <h5>Horario de Atención</h5>
+          <p>Lunes......................... 8:00 – 16:00</p>
+          <p>Martes...................... 8:00 – 16:00</p>
+          <p>Miercoles................ 8:00 – 16:00</p>
+          <p>Jueves...................... 8:00 – 16:00</p>
+          <p>Viernes..................... 8:00 – 16:00</p>
+          <p>Sabado.................... 8:00 – 16:00</p>
+        </div>
+
+        <!-- Promociones -->
+        <div class="col-md-4 mb-4">
+          <h5>Promociones</h5>
+          <p> Se de los primeros en inscribirse y ten un vale de descuento</p>
+        </div>
+      </div>
+
+      <hr class="mt-4" style="border-color: rgba(135, 206, 235, 0.2);">
+      <p class="mt-3">&copy; 2025 Asociación Privada de Patronato. Diseñado por Radar.com</p>
+    </div>
   </footer>
 
-</div>
-<script src="/js/script.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/servicios.js"></script>
 </body>
+
 </html>
-
-
