@@ -427,13 +427,39 @@ h3 {
 
 /* ===================== SECCION INSTITUCIONAL CON CARRUSEL A LA DERECHA ===================== */
 .institucional-combinada {
-  background-color: #000f14;
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(135, 206, 235, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(9, 31, 54, 0.12) 0%, transparent 60%),
+    linear-gradient(165deg, #0a0a0a 0%, #111111 40%, #0d0d0d 100%);
   font-family: 'Poppins', sans-serif;
   padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(135, 206, 235, 0.1);
+}
+
+/* Patrón sutil de líneas diagonales */
+.institucional-combinada::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(45deg, rgba(135, 206, 235, 0.03) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(135, 206, 235, 0.03) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(135, 206, 235, 0.03) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(135, 206, 235, 0.03) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  opacity: 0.4;
+  pointer-events: none;
 }
 
 .institucional-combinada .container {
   position: relative;
+  z-index: 2;
 }
 
 .institucional-combinada h2 {
@@ -447,47 +473,46 @@ h3 {
 .institucional-combinada p {
   font-size: 1.1rem;
   font-weight: 300;
-  color: #ecf0f3;
+  color: #E9F1FA;
   line-height: 1.6;
   text-shadow: 0 0 6px rgba(135, 206, 235, 0.1);
   margin-bottom: 15px;
 }
 
-/* ===================== CARRUSEL HORIZONTAL ALINEADO CON TEXTO ===================== */
+/* CARRUSEL HORIZONTAL INFINITO A LA DERECHA */
 .carousel-nosotros {
   overflow: hidden;
   width: 100%;
   position: relative;
-  height: 380px;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
+  height: 400px;
+  border-radius: 12px;
+  margin-left: 30px;
 }
 
 .carousel-imgnosotros {
   display: flex;
-  width: calc(260px * 12);
+  width: calc(200px * 12); /* Duplicado para efecto infinito */
   animation: scroll-horizontal 35s linear infinite;
   height: 100%;
   align-items: center;
 }
 
 .carousel-imgno {
-  width: 260px;
-  height: 340px;
+  width: 200px;
+  height: 250px;
   background-size: cover;
   background-position: center;
   margin-right: 20px;
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(135, 206, 235, 0.3);
-  border: 2px solid rgba(135, 206, 235, 0.3);
+  border: 2px solid rgba(135, 206, 235, 0.2);
   flex-shrink: 0;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .carousel-imgno:hover {
   transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(135, 206, 235, 0.5);
+  box-shadow: 0 12px 30px rgba(135, 206, 235, 0.4);
 }
 
 /* Animación infinita */
@@ -496,47 +521,37 @@ h3 {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-260px * 6));
+    transform: translateX(calc(-200px * 6)); /* Mueve la mitad */
   }
 }
 
-/* ALINEACIÓN PERFECTA */
-.institucional-combinada .row.align-items-center {
-  min-height: 450px;
-  align-items: center !important;
-}
-
-.institucional-combinada .col-md-6:first-child {
-  padding-right: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-}
-
-.institucional-combinada .col-md-6:last-child {
-  padding-left: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-nosotros {
+    margin-left: 0;
+    margin-top: 30px;
+    height: 300px;
+  }
+  
+  .carousel-imgno {
+    width: 160px;
+    height: 200px;
+  }
 }
 /* ===================== CURSOS ===================== */
 .flip-card {
   width: 100%;
-  height: 300px;
-  perspective: 2000px;
-  border-radius: 15px;
+  height: 320px;
+  perspective: 1800px;
 }
 
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s ease;
+  transition: transform 0.6s ease-in-out;
   transform-style: preserve-3d;
-  box-shadow: 0 10px 30px rgba(135, 206, 235, 0.3);
-  border-radius: 15px;
+  ;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -549,40 +564,113 @@ h3 {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 15px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 30px;
   text-align: center;
 }
 
 .flip-card-front {
-  background-size: cover;
-  background-position: center;
+  background: 
+    linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+    var(--bg-image) center/cover;
 }
 
 .flip-card-back {
-  background-color: #091F36;
-  color: #E9F1FA;
+  background: #0a0a0a;
+  color: #ffffff;
   transform: rotateY(180deg);
-  flex-direction: column;
-  text-shadow: 0 0 10px rgba(135, 206, 235, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .flip-card-back h4 {
   color: #87CEEB;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
 }
 
 .flip-card-back p {
   font-size: 1.1rem;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+}
+
+.flip-card-back p del {
+  color: #8a8a8a;
+}
+
+.flip-card-back p strong {
+  color: #87CEEB;
+  font-weight: 700;
+}
+
+.flip-card-back .badge {
+  background: #87CEEB;
+  color: #000000;
+  padding: 6px 14px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin: 10px 0;
+}
+
+.flip-card-back .btn-gold {
+  background: #87CEEB;
+  color: #000000;
+  padding: 10px 22px;
+  border: none;
+  font-weight: 600;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+.flip-card-back .btn-gold:hover {
+  background: #fffefe;
+  transform: translateY(-1px);
 }
 
 .contact-section {
-  background: linear-gradient(180deg, #000000, #0b233d  90%);
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(135, 206, 235, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(9, 31, 54, 0.12) 0%, transparent 60%),
+    linear-gradient(165deg, #0a0a0a 0%, #111111 40%, #0d0d0d 100%);
+  font-family: 'Poppins', sans-serif;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(135, 206, 235, 0.1);
+}
+
+/* Patrón sutil de líneas diagonales */
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(45deg, rgba(135, 206, 235, 0.03) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(135, 206, 235, 0.03) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(135, 206, 235, 0.03) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(135, 206, 235, 0.03) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+a.btn-light[href^="mailto:"] {
+  background-color: #87CEEB; 
+  color: #000;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+a.btn-light[href^="mailto:"]:hover {
+  background-color: #fcfcfc; /* tono más oscuro al pasar el mouse */
+  color:#000;
 }
 
 /* ===================== FOOTER ===================== */
