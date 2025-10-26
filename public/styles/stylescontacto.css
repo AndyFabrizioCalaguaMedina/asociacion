@@ -61,7 +61,7 @@ h3 {
 /* ===== HERO ===== */
 .hero {
   background: linear-gradient(rgb(9, 31, 54, 0.8), rgba(0, 0, 0, 0.8)),
-    url("/images/central-service-no-copy.jpg") center/cover;
+    url("/images/central-service-no-copy.webp") center/cover;
   min-height: 650px;
   padding-bottom: 60px;
 }
