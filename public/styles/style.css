@@ -93,23 +93,17 @@ h3 {
   transform: scale(1.05);
 }
 
-/* ===================== BANNER INSTITUCIONAL ELEGANTE ===================== */
+/* ===================== BANNER DIAGONAL COMO REFERENCIA ===================== */
 .patronato-banner {
   display: flex;
-  flex-wrap: wrap;
   height: 80vh;
   min-height: 600px;
-  background: 
-    radial-gradient(ellipse at 20% 50%, rgba(135, 206, 235, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(9, 31, 54, 0.12) 0%, transparent 60%),
-    linear-gradient(165deg, #0a0a0a 0%, #111111 40%, #0d0d0d 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #0d0d0d 100%);
   color: #ffffff;
   overflow: hidden;
   position: relative;
-  border-bottom: 1px solid rgba(135, 206, 235, 0.1);
 }
 
-/* Patrón sutil de líneas diagonales */
 .patronato-banner::before {
   content: '';
   position: absolute;
@@ -117,7 +111,7 @@ h3 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
+  background-image:
     linear-gradient(45deg, rgba(135, 206, 235, 0.03) 25%, transparent 25%),
     linear-gradient(-45deg, rgba(135, 206, 235, 0.03) 25%, transparent 25%),
     linear-gradient(45deg, transparent 75%, rgba(135, 206, 235, 0.03) 75%),
@@ -129,193 +123,31 @@ h3 {
 }
 
 .patronato-texto {
-  flex: 1 1 50%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem 3rem;
-  max-width: 580px;
+  padding: 4rem 3rem 4rem 5rem;
+  max-width: 50%;
   position: relative;
+  z-index: 3;
+}
+
+/* IMAGEN DIAGONAL COMO REFERENCIA */
+.patronato-imagen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background:
+    linear-gradient(45deg, rgba(10, 10, 10, 0.3) 0%, transparent 50%),
+    url('/images/background-barba.webp') center center/cover no-repeat;
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
   z-index: 2;
 }
 
-/* Badge elegante */
-.badge-elegante {
-  background: linear-gradient(135deg, rgba(135, 206, 235, 0.15), rgba(9, 31, 54, 0.2));
-  color: #87CEEB;
-  padding: 0.5rem 1.2rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  border: 1px solid rgba(135, 206, 235, 0.3);
-  backdrop-filter: blur(10px);
-  display: inline-block;
-  margin-bottom: 2rem;
-}
-
-.patronato-texto h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #87CEEB, #a8d8f0, #87CEEB);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
-  line-height: 1.2;
-  position: relative;
-}
-
-.patronato-texto h1::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #87CEEB, transparent);
-  border-radius: 2px;
-}
-
-/* Lista de ventajas elegante */
-.lista-ventajas {
-  list-style: none;
-  padding: 0;
-  margin: 2.5rem 0;
-}
-
-.lista-ventajas li {
-  font-size: 1.05rem;
-  margin-bottom: 1.2rem;
-  padding: 0.8rem 0 0.8rem 3rem;
-  position: relative;
-  color: #E9F1FA;
-  border-bottom: 1px solid rgba(135, 206, 235, 0.1);
-  transition: all 0.3s ease;
-}
-
-.lista-ventajas li:hover {
-  color: #87CEEB;
-  transform: translateX(5px);
-}
-
-.lista-ventajas li::before {
-  content: '✦';
-  position: absolute;
-  left: 1rem;
-  color: #87CEEB;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-shadow: 0 0 15px rgba(135, 206, 235, 0.6);
-  transition: transform 0.3s ease;
-}
-
-.lista-ventajas li:hover::before {
-  transform: scale(1.2) rotate(15deg);
-}
-
-/* Botón elegante */
-.btn-vermas {
-  background: linear-gradient(135deg, rgba(135, 206, 235, 0.9), rgba(105, 180, 225, 0.8));
-  color: #0a1929;
-  padding: 1.1rem 2.5rem;
-  border: none;
-  border-radius: 35px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8rem;
-  max-width: 220px;
-  box-shadow: 
-    0 6px 20px rgba(135, 206, 235, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  position: relative;
-  overflow: hidden;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-}
-
-.btn-vermas::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  transition: left 0.6s;
-}
-
-.btn-vermas:hover {
-  
-  transform: translateY(-3px);
-  box-shadow: 
-    0 12px 30px rgba(135, 206, 235, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  background: #fff;
-}
-
-.btn-vermas:hover::before {
-  left: 100%;
-}
-
-.btn-vermas i {
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-}
-
-.btn-vermas:hover i {
-  transform: translateX(3px);
-}
-
-/* IMAGEN ELEGANTE Y REFINADA */
-.patronato-imagen {
-  flex: 1 1 45%;
-  background: 
-    linear-gradient(135deg, 
-      rgba(15,15,15,0.95) 0%, 
-      rgba(15,15,15,0.7) 40%, 
-      rgba(15,15,15,0.4) 80%, 
-      transparent 100%),
-    url('/images/background-barba.webp');
-  background-size: 140%;
-  background-position: 60% center;
-  background-repeat: no-repeat;
-  position: relative;
-  overflow: hidden;
-  margin: 2rem;
-  border-radius: 20px;
-  box-shadow: 
-    inset 0 0 0 1px rgba(135, 206, 235, 0.1),
-    0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  transform: scale(0.95);
-  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.patronato-imagen:hover {
-  transform: scale(0.97);
-  box-shadow: 
-    inset 0 0 0 1px rgba(135, 206, 235, 0.2),
-    0 30px 60px -12px rgba(0, 0, 0, 0.6);
-}
-
-/* Marco interno sutil */
-.patronato-imagen::after {
-  content: '';
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-  border: 1px solid rgba(135, 206, 235, 0.15);
-  border-radius: 12px;
-  pointer-events: none;
-}
-
-/* Efecto de brillo sutil */
+/* Efecto de brillo en la imagen */
 .patronato-imagen::before {
   content: '';
   position: absolute;
@@ -323,69 +155,115 @@ h3 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    radial-gradient(circle at 30% 40%, rgba(135,206,235,0.08) 0%, transparent 70%),
-    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.05) 0%, transparent 70%);
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
+  background: linear-gradient(45deg,
+      rgba(135, 206, 235, 0.1) 0%,
+      transparent 30%,
+      transparent 70%,
+      rgba(10, 10, 10, 0.4) 100%);
   z-index: 1;
 }
 
-/* Responsive */
+/* Línea diagonal decorativa */
+.patronato-imagen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom,
+      transparent,
+      #87CEEB,
+      transparent);
+  z-index: 3;
+}
+
+.patronato-texto h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #87CEEB, #ffffff, #87CEEB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.patronato-texto p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  color: #E9F1FA;
+  max-width: 500px;
+  font-weight: 300;
+}
+
+.btn-vermas {
+  background: transparent;
+  color: #87CEEB;
+  padding: 1.2rem 2.5rem;
+  border: 2px solid #87CEEB;
+  border-radius: 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  max-width: 200px;
+}
+
+.btn-vermas:hover {
+  background: #87CEEB;
+  color: #0a0a0a;
+  transform: translateX(10px);
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .patronato-banner {
     flex-direction: column;
     height: auto;
     min-height: auto;
   }
-  
-  .patronato-texto,
-  .patronato-imagen {
-    flex: 1 1 100%;
-    min-height: 400px;
-    margin: 1rem;
-  }
-  
-  .patronato-texto {
-    padding: 2rem 1.5rem;
-  }
-  
-  .patronato-texto h1 {
-    font-size: 2rem;
-  }
-  
-  .patronato-imagen {
-    background-size: cover;
-    background-position: center;
-    transform: scale(1);
-    margin: 1rem;
-  }
-}
-/* ===================== RESPONSIVO ===================== */
-@media (max-width: 768px) {
-  .patronato-banner {
-    flex-direction: column;
-    height: auto;
-  }
 
   .patronato-texto {
     max-width: 100%;
+    padding: 3rem 2rem;
     text-align: center;
-    padding: 2rem;
   }
 
   .patronato-texto h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
-  .patronato-texto p {
-    font-size: 1rem;
+  .patronato-imagen {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .patronato-texto {
+    padding: 2rem 1.5rem;
+  }
+
+  .patronato-texto h1 {
+    font-size: 1.8rem;
   }
 
   .patronato-imagen {
     height: 300px;
   }
 }
+
 /* ===================== VIDEO ===================== */
 .video-section {
   position: relative;
@@ -397,9 +275,13 @@ h3 {
 }
 
 .video-full {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: translate(-50%, -50%);
   filter: brightness(65%);
   transition: filter 0.5s ease;
 }
@@ -427,7 +309,7 @@ h3 {
 
 /* ===================== SECCION INSTITUCIONAL CON CARRUSEL A LA DERECHA ===================== */
 .institucional-combinada {
-  background: 
+  background:
     radial-gradient(ellipse at 20% 50%, rgba(135, 206, 235, 0.08) 0%, transparent 60%),
     radial-gradient(ellipse at 80% 20%, rgba(9, 31, 54, 0.12) 0%, transparent 60%),
     linear-gradient(165deg, #0a0a0a 0%, #111111 40%, #0d0d0d 100%);
@@ -446,7 +328,7 @@ h3 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
+  background-image:
     linear-gradient(45deg, rgba(135, 206, 235, 0.03) 25%, transparent 25%),
     linear-gradient(-45deg, rgba(135, 206, 235, 0.03) 25%, transparent 25%),
     linear-gradient(45deg, transparent 75%, rgba(135, 206, 235, 0.03) 75%),
@@ -491,7 +373,8 @@ h3 {
 
 .carousel-imgnosotros {
   display: flex;
-  width: calc(200px * 12); /* Duplicado para efecto infinito */
+  width: calc(200px * 12);
+  /* Duplicado para efecto infinito */
   animation: scroll-horizontal 35s linear infinite;
   height: 100%;
   align-items: center;
@@ -520,8 +403,10 @@ h3 {
   0% {
     transform: translateX(0);
   }
+
   100% {
-    transform: translateX(calc(-200px * 6)); /* Mueve la mitad */
+    transform: translateX(calc(-200px * 6));
+    /* Mueve la mitad */
   }
 }
 
@@ -532,12 +417,13 @@ h3 {
     margin-top: 30px;
     height: 300px;
   }
-  
+
   .carousel-imgno {
     width: 160px;
     height: 200px;
   }
 }
+
 /* ===================== CURSOS ===================== */
 .flip-card {
   width: 100%;
@@ -573,7 +459,7 @@ h3 {
 }
 
 .flip-card-front {
-  background: 
+  background:
     linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
     var(--bg-image) center/cover;
 }
@@ -632,7 +518,7 @@ h3 {
 }
 
 .contact-section {
-  background: 
+  background:
     radial-gradient(ellipse at 20% 50%, rgba(135, 206, 235, 0.08) 0%, transparent 60%),
     radial-gradient(ellipse at 80% 20%, rgba(9, 31, 54, 0.12) 0%, transparent 60%),
     linear-gradient(165deg, #0a0a0a 0%, #111111 40%, #0d0d0d 100%);
@@ -651,7 +537,7 @@ h3 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
+  background-image:
     linear-gradient(45deg, rgba(135, 206, 235, 0.03) 25%, transparent 25%),
     linear-gradient(-45deg, rgba(135, 206, 235, 0.03) 25%, transparent 25%),
     linear-gradient(45deg, transparent 75%, rgba(135, 206, 235, 0.03) 75%),
@@ -661,44 +547,45 @@ h3 {
   opacity: 0.4;
   pointer-events: none;
 }
+
 a.btn-light[href^="mailto:"] {
-  background-color: #87CEEB; 
+  background-color: #87CEEB;
   color: #000;
   border: none;
   transition: background-color 0.3s ease;
 }
 
 a.btn-light[href^="mailto:"]:hover {
-  background-color: #fcfcfc; /* tono más oscuro al pasar el mouse */
-  color:#000;
+  background-color: #fcfcfc;
+  /* tono más oscuro al pasar el mouse */
+  color: #000;
 }
 
 /* ===================== FOOTER ===================== */
 .footer-parallax {
   position: relative;
+  /* background-image: url('/images/footer3.webp'); */
+  /* ← Esto debe estar desactivado */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: #E9F1FA;
   min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #E9F1FA;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.6);
   overflow: hidden;
-}
-
-.footer-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-  filter: brightness(0.5);
 }
 
 .footer-parallax::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(135deg, #0a1929, #1a3658);
   z-index: -1;
 }
@@ -711,6 +598,19 @@ a.btn-light[href^="mailto:"]:hover {
   width: 100%;
   box-shadow: 0 0 30px rgba(135, 206, 235, 0.2);
 }
+
+.footer-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  z-index: -1;
+  transform: translateY(0);
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
 
 .footer-parallax h2 {
   font-size: 2rem;
@@ -830,7 +730,7 @@ a.btn-light[href^="mailto:"]:hover {
 /* ===================== SECCIÓN DESCUBRE ===================== */
 .descubre-section {
   position: relative;
-  background: linear-gradient(180deg, #000000, #0b233d  90%);
+  background: linear-gradient(180deg, #000000, #0b233d 90%);
   color: #E9F1FA;
   padding: 60px 0;
   text-align: center;
