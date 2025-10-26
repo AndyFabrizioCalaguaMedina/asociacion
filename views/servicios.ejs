@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Asociación Privada de Patronato</title>
 
+  <!-- Preconexiones para mejorar rendimiento -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -34,7 +40,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav gap-4 text-center">
-            <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
             <li class="nav-item"><a class="nav-link active" href="servicios">Cursos</a></li>
             <li class="nav-item"><a class="nav-link" href="contacto">Contacto</a></li>
           </ul>
@@ -45,7 +51,7 @@
 
   <!-- HERO Bootstrap -->
   <header id="inicio" class="hero position-relative">
-    <video autoplay muted loop playsinline class="hero-video w-100 h-100 position-absolute top-0 start-0">
+    <video autoplay muted loop playsinline class="hero-video w-100 h-100 position-absolute top-0 start-0" loading="lazy">
       <source src="videos/Video Portada.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
@@ -67,28 +73,28 @@
       <div class="row g-4">
         <div class="col-md-4" data-anim>
           <article class="servicio card h-100 border-0 shadow">
-            <img src="images/Barberia.jpg" alt="Maquillaje profesional" class="card-img-top">
+            <img src="images/Barberia.webp" alt="Maquillaje profesional" class="card-img-top" loading="lazy">
             <div class="card-body">
               <h3 class="card-title">Barberia</h3>
-              <p class="card-text">“Aprende el arte de la barbería y transforma tu futuro.”</p>
+              <p class="card-text">"Aprende el arte de la barbería y transforma tu futuro."</p>
             </div>
           </article>
         </div>
         <div class="col-md-4" data-anim>
           <article class="servicio card h-100 border-0 shadow">
-            <img src="images/Maquillaje.jpg" alt="Maquillaje profesional" class="card-img-top">
+            <img src="images/Maquillaje.webp" alt="Maquillaje profesional" class="card-img-top" loading="lazy">
             <div class="card-body">
               <h3 class="card-title">Maquillaje</h3>
-              <p class="card-text">“Resalta tu belleza aprendiendo el arte del maquillaje.”</p>
+              <p class="card-text">"Resalta tu belleza aprendiendo el arte del maquillaje."</p>
             </div>
           </article>
         </div>
         <div class="col-md-4" data-anim>
           <article class="servicio card h-100 border-0 shadow">
-            <img src="images/Diseño de Cejas.webp" alt="Peinado creativo" class="card-img-top">
+            <img src="images/Diseño de Cejas.webp" alt="Peinado creativo" class="card-img-top" loading="lazy">
             <div class="card-body">
               <h3 class="card-title">Diseño de cejas</h3>
-              <p class="card-text">“Perfecciona tu técnica y domina el diseño de cejas.”</p>
+              <p class="card-text">"Perfecciona tu técnica y domina el diseño de cejas."</p>
             </div>
           </article>
         </div>
@@ -99,9 +105,9 @@
   <!-- MOTIVACIÓN Bootstrap -->
   <section id="motivacion" class="motivacion position-relative">
     <div class="motivacion-overlay">
-      <img src="images/Motivacion.jpeg" alt="Motivacional" class="fondo-motivacion w-100">
+      <img src="images/Motivacion.webp" alt="Motivacional" class="fondo-motivacion w-100" loading="lazy">
       <div class="motivacion-texto position-absolute top-50 start-50 translate-middle text-center" data-anim>
-        <h2 class="display-4 fw-bold mb-4">“Cree en ti. Cada corte, cada trazo, cada mirada cuenta.”</h2>
+        <h2 class="display-4 fw-bold mb-4">"Cree en ti. Cada corte, cada trazo, cada mirada cuenta."</h2>
         <p class="fs-5">Formamos artistas que dominan el arte de la belleza con pasión, técnica y propósito.</p>
       </div>
     </div>
@@ -124,7 +130,7 @@
       <div class="row g-4" id="cursosGrid">
         <div class="col-lg-6" data-categoria="barberia" data-anim>
           <article class="curso card h-100 border-0 shadow">
-            <video src="videos/Barberia.mp4" autoplay muted loop playsinline class="card-img-top"></video>
+            <video src="videos/Barberia.mp4" autoplay muted loop playsinline class="card-img-top" loading="lazy"></video>
             <div class="card-body">
               <h3 class="card-title">Barbería Avanzada</h3>
               <p class="card-text">Domina cortes modernos, degradados y perfilados con técnicas de alto nivel.</p>
@@ -134,7 +140,7 @@
 
         <div class="col-lg-6" data-categoria="maquillaje" data-anim>
           <article class="curso card h-100 border-0 shadow">
-            <video src="videos/Maquillaje.mp4" autoplay muted loop playsinline class="card-img-top"></video>
+            <video src="videos/Maquillaje.mp4" autoplay muted loop playsinline class="card-img-top" loading="lazy"></video>
             <div class="card-body">
               <h3 class="card-title">Maquillaje Profesional</h3>
               <p class="card-text">Aprende maquillaje artístico, social y editorial con expertos en moda.</p>
@@ -145,7 +151,7 @@
         <div class="col-lg-6" data-categoria="peinado" data-anim>
           <article class="curso card h-100 border-0 shadow">
             <video src="videos/Diseño de cejas y pestañas.mp4" autoplay muted loop playsinline
-              class="card-img-top"></video>
+              class="card-img-top" loading="lazy"></video>
             <div class="card-body">
               <h3 class="card-title">Diseño de Cejas</h3>
               <p class="card-text">Descubre técnicas modernas de peinado, alisado y diseño de imagen.</p>
@@ -155,7 +161,7 @@
 
         <div class="col-lg-6" data-categoria="uñas" data-anim>
           <article class="curso card h-100 border-0 shadow">
-            <video src="videos/Diseño de uñas.mp4" autoplay muted loop playsinline class="card-img-top"></video>
+            <video src="videos/Diseño de uñas.mp4" autoplay muted loop playsinline class="card-img-top" loading="lazy"></video>
             <div class="card-body">
               <h3 class="card-title">Diseño de Uñas</h3>
               <p class="card-text">Domina decoraciones artísticas y técnicas de manicure profesional.</p>
@@ -166,75 +172,59 @@
     </div>
   </section>
 
-<!-- GALERÍA DE TRABAJOS - Carrusel Múltiple -->
+<!-- GALERÍA DE TRABAJOS - Carrusel Avance Individual -->
 <section id="galeria" class="galeria py-5">
   <div class="container">
-    <h2 class="section-title text-center mb-5">Galería de Trabajos</h2>
-    
-    <!-- Carrusel Bootstrap Múltiple -->
-    <div id="galeriaCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+      <h2 class="section-title text-center mb-5">Galería de Trabajos</h2>
       
-      <!-- Indicadores -->
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#galeriaCarousel" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#galeriaCarousel" data-bs-slide-to="1"></button>
-      </div>
-      
-      <!-- Slides -->
-      <div class="carousel-inner rounded-4">
-        <!-- Slide 1 - Primeras 5 imágenes -->
-        <div class="carousel-item active">
-          <div class="row g-3">
-            <div class="col">
-              <img src="images/Trabajo 1.webp" class="d-block w-100 rounded-3" alt="Trabajo 1">
-            </div>
-            <div class="col">
-              <img src="images/Trabaja 2.jpg" class="d-block w-100 rounded-3" alt="Trabajo 2">
-            </div>
-            <div class="col">
-              <img src="images/trabajo 3.jpeg" class="d-block w-100 rounded-3" alt="Trabajo 3">
-            </div>
-            <div class="col">
-              <img src="images/Trabajo 4.jpg" class="d-block w-100 rounded-3" alt="Trabajo 4">
-            </div>
-            <div class="col">
-              <img src="images/Trabajo 5.jpg" class="d-block w-100 rounded-3" alt="Trabajo 5">
-            </div>
+      <!-- Carrusel con scroll individual -->
+      <div class="position-relative">
+          <div id="galeriaContainer" class="overflow-hidden">
+              <div class="d-flex galeria-track" style="transition: transform 0.5s ease;">
+                  <!-- Todas las imágenes en una sola fila -->
+                  <div class="galeria-item flex-shrink-0 me-3">
+                      <img src="images/Trabajo 1.webp" class="d-block w-100 rounded-3" alt="Trabajo 1" loading="lazy">
+                  </div>
+                  <div class="galeria-item flex-shrink-0 me-3">
+                      <img src="images/Trabaja 2.webp" class="d-block w-100 rounded-3" alt="Trabajo 2" loading="lazy">
+                  </div>
+                  <div class="galeria-item flex-shrink-0 me-3">
+                      <img src="images/trabajo 3.webp" class="d-block w-100 rounded-3" alt="Trabajo 3" loading="lazy">
+                  </div>
+                  <div class="galeria-item flex-shrink-0 me-3">
+                      <img src="images/Trabajo 4.webp" class="d-block w-100 rounded-3" alt="Trabajo 4" loading="lazy">
+                  </div>
+                  <div class="galeria-item flex-shrink-0 me-3">
+                      <img src="images/Trabajo 5.webp" class="d-block w-100 rounded-3" alt="Trabajo 5" loading="lazy">
+                  </div>
+                  <div class="galeria-item flex-shrink-0 me-3">
+                      <img src="images/Trabajo 6.webp" class="d-block w-100 rounded-3" alt="Trabajo 6" loading="lazy">
+                  </div>
+                  <div class="galeria-item flex-shrink-0 me-3">
+                      <img src="images/Trabajo 7.webp" class="d-block w-100 rounded-3" alt="Trabajo 7" loading="lazy">
+                  </div>
+                  <div class="galeria-item flex-shrink-0 me-3">
+                      <img src="images/Trabajo 8.webp" class="d-block w-100 rounded-3" alt="Trabajo 8" loading="lazy">
+                  </div>
+                  <div class="galeria-item flex-shrink-0 me-3">
+                      <img src="images/Trabajo 9.webp" class="d-block w-100 rounded-3" alt="Trabajo 9" loading="lazy">
+                  </div>
+                  <div class="galeria-item flex-shrink-0 me-3">
+                      <img src="images/Trabajo 10.webp" class="d-block w-100 rounded-3" alt="Trabajo 10" loading="lazy">
+                  </div>
+              </div>
           </div>
-        </div>
-        
-        <!-- Slide 2 - Siguientes 5 imágenes -->
-        <div class="carousel-item">
-          <div class="row g-3">
-            <div class="col">
-              <img src="images/Trabajo 6.jpg" class="d-block w-100 rounded-3" alt="Trabajo 6">
-            </div>
-            <div class="col">
-              <img src="images/Trabajo 7.jpg" class="d-block w-100 rounded-3" alt="Trabajo 7">
-            </div>
-            <div class="col">
-              <img src="images/Trabajo 8.webp" class="d-block w-100 rounded-3" alt="Trabajo 8">
-            </div>
-            <div class="col">
-              <img src="images/Trabajo 9.jpg" class="d-block w-100 rounded-3" alt="Trabajo 9">
-            </div>
-            <div class="col">
-              <img src="images/Trabajo 10.png" class="d-block w-100 rounded-3" alt="Trabajo 10">
-            </div>
-          </div>
-        </div>
+          
+          <!-- Controles personalizados -->
+          <button class="carousel-control-prev position-absolute top-50 start-0 translate-middle-y" type="button" id="prevBtn">
+              <span class="carousel-control-prev-icon bg-dark rounded-circle p-2"></span>
+              <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next position-absolute top-50 end-0 translate-middle-y" type="button" id="nextBtn">
+              <span class="carousel-control-next-icon bg-dark rounded-circle p-2"></span>
+              <span class="visually-hidden">Siguiente</span>
+          </button>
       </div>
-      
-      <!-- Controles -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#galeriaCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-        <span class="visually-hidden">Anterior</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#galeriaCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-        <span class="visually-hidden">Siguiente</span>
-      </button>
-    </div>
   </div>
 </section>
 
@@ -246,7 +236,7 @@
         <div class="col-md-4" data-anim>
           <div class="reseña card h-100 border-0 shadow">
             <div class="card-body">
-              <p class="card-text">“Gracias a la academia abrí mi barbería. ¡Profesores increíbles!”</p>
+              <p class="card-text">"Gracias a la academia abrí mi barbería. ¡Profesores increíbles!"</p>
               <h4 class="card-title mt-3">— Luis Gómez</h4>
             </div>
           </div>
@@ -254,7 +244,7 @@
         <div class="col-md-4" data-anim>
           <div class="reseña card h-100 border-0 shadow">
             <div class="card-body">
-              <p class="card-text">“Aprendí maquillaje profesional y trabajo en eventos de moda.”</p>
+              <p class="card-text">"Aprendí maquillaje profesional y trabajo en eventos de moda."</p>
               <h4 class="card-title mt-3">— Ana Torres</h4>
             </div>
           </div>
@@ -262,7 +252,7 @@
         <div class="col-md-4" data-anim>
           <div class="reseña card h-100 border-0 shadow">
             <div class="card-body">
-              <p class="card-text">“Gran ambiente, clases dinámicas y resultados reales.”</p>
+              <p class="card-text">"Gran ambiente, clases dinámicas y resultados reales."</p>
               <h4 class="card-title mt-3">— Camila Ruiz</h4>
             </div>
           </div>

@@ -169,3 +169,56 @@ servicios.forEach(serv => {
   serv.style.transition = 'all 0.8s ease';
   observer.observe(serv);
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.querySelector('.galeria-track');
+  const items = document.querySelectorAll('.galeria-item');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  
+  let currentIndex = 0;
+  const totalItems = items.length;
+  
+  function updateCarousel() {
+      const itemWidth = items[0].offsetWidth + 12;
+      const translateX = -currentIndex * itemWidth;
+      track.style.transform = `translateX(${translateX}px)`;
+  }
+  
+  function getVisibleItems() {
+      const width = window.innerWidth;
+      if (width >= 1200) return 5;
+      if (width >= 992) return 4;
+      if (width >= 768) return 3;
+      if (width >= 576) return 2;
+      return 1;
+  }
+  
+  nextBtn.addEventListener('click', function() {
+      if (currentIndex < totalItems - getVisibleItems()) {
+          currentIndex++;
+      } else {
+          // Vuelve al inicio con transición
+          currentIndex = 0;
+      }
+      updateCarousel();
+  });
+  
+  prevBtn.addEventListener('click', function() {
+      if (currentIndex > 0) {
+          currentIndex--;
+      } else {
+          // Va al final
+          currentIndex = totalItems - getVisibleItems();
+      }
+      updateCarousel();
+  });
+  
+  window.addEventListener('resize', function() {
+      updateCarousel();
+  });
+  
+  updateCarousel();
+});
