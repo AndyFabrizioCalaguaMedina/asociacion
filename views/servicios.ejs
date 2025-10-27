@@ -47,20 +47,19 @@
     </nav>
   </header>
 
-<!-- HERO Bootstrap - IMAGEN MÓVIL + VIDEO PC -->
+<!-- HERO Bootstrap - VIDEO CONTROLADO -->
 <header id="inicio" class="hero position-relative">
-  <!-- VIDEO solo para escritorio -->
-  <video autoplay muted loop playsinline 
+  <!-- VIDEO con controles para móvil -->
+  <video id="heroVideo" muted loop playsinline 
          class="hero-video w-100 h-100 position-absolute top-0 start-0 d-none d-lg-block" 
-         loading="lazy" 
-         poster="videos/poster-hero.webp"
-         preload="metadata">
+         poster="images/hero-poster.webp"
+         preload="none">
     <source src="videos/Video Portada.mp4" type="video/mp4">
   </video>
   
-  <!-- IMAGEN solo para móvil/tablet -->
-  <img src="videos/poster-hero.webp" 
-       alt="Academia de belleza y barbería - Cursos profesionales" 
+  <!-- IMAGEN para móvil/tablet -->
+  <img src="images/hero-mobile.webp" 
+       alt="Academia de belleza y barbería" 
        class="hero-image w-100 h-100 position-absolute top-0 start-0 object-fit-cover d-lg-none"
        loading="eager"
        width="768" 
@@ -313,6 +312,45 @@
       <p class="mt-3">&copy; 2025 Asociación Privada de Patronato. Diseñado por Radar.com</p>
     </div>
   </footer>
+
+<script>
+// CONTROL DE VIDEO PARA ELIMINAR LAG
+document.addEventListener('DOMContentLoaded', function() {
+  const heroVideo = document.getElementById('heroVideo');
+  const mediaQuery = window.matchMedia('(min-width: 992px)');
+
+  function handleScreenChange(e) {
+    if (e.matches) {
+      // Pantalla LG+ (PC) - REPRODUCIR video
+      heroVideo.play().catch(e => console.log('Auto-play bloqueado:', e));
+      heroVideo.setAttribute('preload', 'auto');
+    } else {
+      // Pantalla móvil/tablet - PAUSAR y resetear video
+      heroVideo.pause();
+      heroVideo.currentTime = 0;
+      heroVideo.removeAttribute('autoplay');
+      heroVideo.setAttribute('preload', 'none');
+    }
+  }
+
+  // Ejecutar al cargar y cuando cambie el tamaño
+  handleScreenChange(mediaQuery);
+  mediaQuery.addListener(handleScreenChange);
+
+  // También pausar cuando el video no es visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting && !mediaQuery.matches) {
+        heroVideo.pause();
+        heroVideo.currentTime = 0;
+      }
+    });
+  }, { threshold: 0.1 });
+
+  observer.observe(heroVideo);
+});
+</script>
+
 
     <!-- SCRIPTS CORREGIDOS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
