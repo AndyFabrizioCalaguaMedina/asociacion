@@ -47,27 +47,17 @@
     </nav>
   </header>
 
-<!-- HERO - VERSIÓN AGRESIVA CONTRA LAG -->
-<header id="inicio" class="hero position-relative">
-  <!-- VIDEO cargado dinámicamente SOLO en PC -->
-  <div id="videoContainer" class="d-none d-lg-block w-100 h-100 position-absolute top-0 start-0"></div>
-  
-  <!-- IMAGEN para móvil/tablet - RUTA CORREGIDA -->
-  <img src="videos/poster-hero.webp" 
-       alt="Academia de belleza y barbería" 
-       class="hero-image w-100 h-100 position-absolute top-0 start-0 object-fit-cover d-lg-none"
-       loading="eager"
-       width="768" 
-       height="1024">
-  
-  <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
-  <div class="hero-content position-relative container d-flex flex-column justify-content-center align-items-start text-center">
-    <h1 class="hero-title display-1 fw-bold mb-4">
+<!-- HERO SIMPLE - IMAGEN EN HTML -->
+<header id="inicio" class="hero-simple position-relative">
+  <img src="/videos/poster-hero.webp" alt="Academia de belleza y barbería - Cursos profesionales" class="hero-simple-img w-100 h-100 position-absolute top-0 start-0" loading="lazy">
+  <div class="hero-simple-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+  <div class="hero-simple-content position-relative container d-flex flex-column justify-content-center align-items-center text-center">
+    <h1 class="hero-simple-title fw-bold mb-3">
       Transforma tu Pasión en Arte
     </h1>
-    <p class="hero-sub lead fs-4">
+    <p class="hero-simple-sub">
       Aprende con los mejores estilistas, maquilladores y barberos.<br>
-      Cursos especializados para todos los niveles, desde principiantes hasta profesionales.
+      Cursos especializados para todos los niveles.
     </p>
   </div>
 </header>
@@ -308,53 +298,6 @@
     </div>
   </footer>
 
-<script>
-// VERSIÓN AGRESIVA: El video NO EXISTE en móvil
-document.addEventListener('DOMContentLoaded', function() {
-  const videoContainer = document.getElementById('videoContainer');
-  
-  // SOLO cargar video si es PC (≥992px)
-  if (window.innerWidth >= 992) {
-    console.log('📺 Cargando video para PC...');
-    videoContainer.innerHTML = `
-      <video autoplay muted loop playsinline 
-             class="hero-video w-100 h-100" 
-             poster="/videos/poster-hero.webp"
-             preload="auto">
-        <source src="/videos/Video Portada.mp4" type="video/mp4">
-      </video>
-    `;
-  } else {
-    console.log('📱 Móvil detectado - VIDEO NO CARGADO');
-    // En móvil, el contenedor de video está VACÍO
-    videoContainer.innerHTML = '';
-  }
-
-  // También manejar cambios de tamaño de ventana
-  window.addEventListener('resize', function() {
-    if (window.innerWidth >= 992 && videoContainer.innerHTML === '') {
-      // Cambió a PC y no hay video - CARGAR
-      console.log('🔄 Cambio a PC - Cargando video...');
-      videoContainer.innerHTML = `
-        <video autoplay muted loop playsinline 
-               class="hero-video w-100 h-100" 
-               poster="/videos/poster-hero.webp"
-               preload="auto">
-          <source src="/videos/Video Portada.mp4" type="video/mp4">
-        </video>
-      `;
-    } else if (window.innerWidth < 992 && videoContainer.innerHTML !== '') {
-      // Cambió a móvil y hay video - ELIMINAR
-      console.log('🔄 Cambio a móvil - Eliminando video...');
-      videoContainer.innerHTML = '';
-    }
-  });
-});
-</script>
-
-<style>
-.hero { display: none !important; }
-</style>
 
 
     <!-- SCRIPTS CORREGIDOS -->
