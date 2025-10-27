@@ -47,18 +47,13 @@
     </nav>
   </header>
 
-<!-- HERO Bootstrap - VIDEO CONTROLADO -->
+<!-- HERO - VERSIÓN AGRESIVA CONTRA LAG -->
 <header id="inicio" class="hero position-relative">
-  <!-- VIDEO con controles para móvil -->
-  <video id="heroVideo" muted loop playsinline 
-         class="hero-video w-100 h-100 position-absolute top-0 start-0 d-none d-lg-block" 
-         poster="images/hero-poster.webp"
-         preload="none">
-    <source src="videos/Video Portada.mp4" type="video/mp4">
-  </video>
+  <!-- VIDEO cargado dinámicamente SOLO en PC -->
+  <div id="videoContainer" class="d-none d-lg-block w-100 h-100 position-absolute top-0 start-0"></div>
   
-  <!-- IMAGEN para móvil/tablet -->
-  <img src="images/hero-mobile.webp" 
+  <!-- IMAGEN para móvil/tablet - RUTA CORREGIDA -->
+  <img src="videos/poster-hero.webp" 
        alt="Academia de belleza y barbería" 
        class="hero-image w-100 h-100 position-absolute top-0 start-0 object-fit-cover d-lg-none"
        loading="eager"
@@ -314,40 +309,46 @@
   </footer>
 
 <script>
-// CONTROL DE VIDEO PARA ELIMINAR LAG
+// VERSIÓN AGRESIVA: El video NO EXISTE en móvil
 document.addEventListener('DOMContentLoaded', function() {
-  const heroVideo = document.getElementById('heroVideo');
-  const mediaQuery = window.matchMedia('(min-width: 992px)');
-
-  function handleScreenChange(e) {
-    if (e.matches) {
-      // Pantalla LG+ (PC) - REPRODUCIR video
-      heroVideo.play().catch(e => console.log('Auto-play bloqueado:', e));
-      heroVideo.setAttribute('preload', 'auto');
-    } else {
-      // Pantalla móvil/tablet - PAUSAR y resetear video
-      heroVideo.pause();
-      heroVideo.currentTime = 0;
-      heroVideo.removeAttribute('autoplay');
-      heroVideo.setAttribute('preload', 'none');
-    }
+  const videoContainer = document.getElementById('videoContainer');
+  
+  // SOLO cargar video si es PC (≥992px)
+  if (window.innerWidth >= 992) {
+    console.log('📺 Cargando video para PC...');
+    videoContainer.innerHTML = `
+      <video autoplay muted loop playsinline 
+             class="hero-video w-100 h-100" 
+             poster="/videos/poster-hero.webp"
+             preload="auto">
+        <source src="/videos/Video Portada.mp4" type="video/mp4">
+      </video>
+    `;
+  } else {
+    console.log('📱 Móvil detectado - VIDEO NO CARGADO');
+    // En móvil, el contenedor de video está VACÍO
+    videoContainer.innerHTML = '';
   }
 
-  // Ejecutar al cargar y cuando cambie el tamaño
-  handleScreenChange(mediaQuery);
-  mediaQuery.addListener(handleScreenChange);
-
-  // También pausar cuando el video no es visible
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting && !mediaQuery.matches) {
-        heroVideo.pause();
-        heroVideo.currentTime = 0;
-      }
-    });
-  }, { threshold: 0.1 });
-
-  observer.observe(heroVideo);
+  // También manejar cambios de tamaño de ventana
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 992 && videoContainer.innerHTML === '') {
+      // Cambió a PC y no hay video - CARGAR
+      console.log('🔄 Cambio a PC - Cargando video...');
+      videoContainer.innerHTML = `
+        <video autoplay muted loop playsinline 
+               class="hero-video w-100 h-100" 
+               poster="/videos/poster-hero.webp"
+               preload="auto">
+          <source src="/videos/Video Portada.mp4" type="video/mp4">
+        </video>
+      `;
+    } else if (window.innerWidth < 992 && videoContainer.innerHTML !== '') {
+      // Cambió a móvil y hay video - ELIMINAR
+      console.log('🔄 Cambio a móvil - Eliminando video...');
+      videoContainer.innerHTML = '';
+    }
+  });
 });
 </script>
 
