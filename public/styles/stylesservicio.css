@@ -54,7 +54,7 @@ h3 {
 }
 
 
-/* ===================== HERO CON GIF ===================== */
+/* ===================== HERO MIXTO ===================== */
 .hero {
   position: relative;
   width: 100%;
@@ -62,21 +62,18 @@ h3 {
   overflow: hidden;
 }
 
-/* REEMPLAZAR .hero-video por .hero-gif */
-.hero-gif {
+/* VIDEO - Solo escritorio */
+.hero-video {
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: brightness(50%);
   transition: filter 0.5s ease;
-  /* Optimizaciones específicas para GIF */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
 }
 
-/* Mantener esta clase por si alguien tiene .hero-video en el HTML */
-.hero-video {
+/* IMAGEN - Solo móvil */
+.hero-image {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -127,6 +124,37 @@ h3 {
   }
   to {
     text-shadow: 0 0 20px #00BFFF, 0 0 30px #1E90FF, 0 0 50px #87CEEB;
+  }
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .hero-title { 
+    font-size: 2.5rem; 
+    margin-bottom: 15px;
+  }
+  .hero-sub { 
+    font-size: 1.1rem; 
+    line-height: 1.5;
+  }
+  .hero {
+    height: 80vh;
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title { 
+    font-size: 2rem; 
+    margin-bottom: 10px;
+  }
+  .hero-sub { 
+    font-size: 1rem; 
+    line-height: 1.4;
+  }
+  .hero {
+    height: 70vh;
+    min-height: 450px;
   }
 }
 

@@ -47,11 +47,27 @@
     </nav>
   </header>
 
-<!-- HERO Bootstrap CON GIF OPTIMIZADO -->
+<!-- HERO Bootstrap - IMAGEN MÓVIL + VIDEO PC -->
 <header id="inicio" class="hero position-relative">
-  <img src="videos/Video Portada.gif" alt="Academia de belleza y barbería - Cursos profesionales" class="hero-gif w-100 h-100 position-absolute top-0 start-0 object-fit-cover" loading="lazy" width="1200" height="800">
+  <!-- VIDEO solo para escritorio -->
+  <video autoplay muted loop playsinline 
+         class="hero-video w-100 h-100 position-absolute top-0 start-0 d-none d-lg-block" 
+         loading="lazy" 
+         poster="videos/poster-hero.webp"
+         preload="metadata">
+    <source src="videos/Video Portada.mp4" type="video/mp4">
+  </video>
+  
+  <!-- IMAGEN solo para móvil/tablet -->
+  <img src="videos/poster-hero.webp" 
+       alt="Academia de belleza y barbería - Cursos profesionales" 
+       class="hero-image w-100 h-100 position-absolute top-0 start-0 object-fit-cover d-lg-none"
+       loading="eager"
+       width="768" 
+       height="1024">
+  
   <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
-  <div class="hero-content position-relative container d-flex flex-column justify-content-center align-items-start">
+  <div class="hero-content position-relative container d-flex flex-column justify-content-center align-items-start text-center">
     <h1 class="hero-title display-1 fw-bold mb-4">
       Transforma tu Pasión en Arte
     </h1>
