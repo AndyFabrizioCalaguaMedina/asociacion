@@ -61,6 +61,14 @@ html {
   overflow: hidden;
 }
 
+.text-glow {
+  color: #86CDEA;
+  text-shadow: 0 0 10px #86CDEA;
+}
+.text-shadow {
+  text-shadow: 0 0 5px rgba(134, 205, 234, 0.6);
+}
+
 .hero-contacto::before {
   content: '';
   position: absolute;
