@@ -6,22 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto | Asociación Privada de Patronato</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Preconexiones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Librería de animaciones AOS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- AOS - Solo si es necesario, carga diferida -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
 
   <!-- Iconos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-  <!-- Tu hoja de estilos -->
-  <link rel="stylesheet" href="/styles/stylescontacto.css">
-  <link rel="stylesheet" href="/styles/style.css">
+  <!-- Fuente con preload -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </noscript>
+
+  <!-- CSS combinado -->
+  <link rel="preload" href="/styles/stylescontacto.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="/styles/stylescontacto.css">
+  </noscript>
 </head>
 
 <body>
@@ -36,40 +45,62 @@
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav gap-4 text-center">
-            <li class="nav-item"><a class="nav-link active" href="/">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
             <li class="nav-item"><a class="nav-link" href="servicios">Cursos</a></li>
-            <li class="nav-item"><a class="nav-link" href="contacto">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contacto">Contacto</a></li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero d-flex align-items-end text-white">
-    <div class="container py-5">
-      <div class="row justify-content-between align-items-end">
-        <div class="col-md-6" data-aos="fade-right">
-          <h1 class="fw-bold display-4 text-glow">Contáctanos</h1>
-          <p class="lead text-shadow">Estamos aquí para ayudarte. Envíanos un mensaje o visítanos.</p>
+ <!-- HERO FULL RESPONSIVE -->
+  <section class="hero-contacto position-relative d-flex align-items-end text-white">
+
+    <!-- Espacio para el navbar fixed -->
+  <div class="navbar-spacer"></div>
+  
+    <div class="container py-4 py-md-5">
+      <div class="row justify-content-between align-items-end gy-4">
+        <!-- Texto del Hero -->
+        <div class="col-12 col-md-7 col-lg-6" data-aos="fade-right">
+          <h1 class="fw-bold display-5 display-md-4 display-lg-3 text-glow mb-3 mb-md-4">
+            Contáctanos
+          </h1>
+          <p class="hero-subtitle lead fs-6 fs-md-5 fs-lg-4 text-shadow mb-4 mb-md-0">
+            Estamos aquí para ayudarte. Envíanos un mensaje o visítanos.
+          </p>
         </div>
-        <div class="col-md-4 text-md-end" data-aos="fade-left">
-          <a href="#contacto" class="btn btn-primary btn-glow me-2">Escríbenos</a>
-          <a href="#ubicacion" class="btn btn-outline-light btn-glow">Ubícanos</a>
+        
+        <!-- Botones del Hero -->
+        <div class="col-12 col-md-5 col-lg-4" data-aos="fade-left">
+          <div class="d-flex flex-column flex-sm-row flex-md-column flex-lg-row gap-3 justify-content-md-end">
+            <a href="#contacto" class="btn btn-primary btn-glow btn-responsive flex-fill text-nowrap">
+              <i class="bi bi-chat-left-text me-2"></i>Escríbenos
+            </a>
+            <a href="#ubicacion" class="btn btn-outline-light btn-glow btn-responsive flex-fill text-nowrap">
+              <i class="bi bi-geo-alt me-2"></i>Ubícanos
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- UBICACIÓN + CONTACTO -->
+  
+  <!-- UBICACIÓN + CONTACTO OPTIMIZADO -->
   <section id="ubicacion" class="position-relative">
+    <!-- Mapa con lazy loading -->
     <div class="map-container">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.429681318954!2d-77.1069538249394!3d-12.013912188220308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cdf5e7298f69%3A0xf2dedcfe3ccade02!2sASOCIACI%C3%93N%20PRIVADA%20DE%20PATRONATO!5e0!3m2!1ses!2spe!4v1760907364462!5m2!1ses!2spe"
-        allowfullscreen="" loading="lazy"></iframe>
+        allowfullscreen="" 
+        loading="lazy"
+        title="Ubicación de Asociación Privada de Patronato"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
 
-    <!-- CARD FLOTANTE DE CONTACTO -->
+    <!-- CARD FLOTANTE OPTIMIZADA -->
     <div id="contacto" class="contact-overlay container">
       <div class="row justify-content-center">
         <div class="col-lg-10">
@@ -78,11 +109,15 @@
               <!-- Formulario -->
               <div class="col-md-6">
                 <h3 class="fw-bold text-celeste mb-4">Envíanos un mensaje</h3>
-                <!-- API FORMSUBMIT-->
                 <form action="https://formsubmit.co/julio06jrmu@gmail.com" method="POST">
                   <!-- Protecciones recomendadas -->
-                  <input type="hidden" name="_captcha" value="false">
-                  <input type="hidden" name="_next" value="http://localhost:2000/contacto"> 
+                   <!-- Configuraciones esenciales -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="Nuevo mensaje desde la web - Asociación Patronato">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://asociacion-woad.vercel.app/contacto">
+  <input type="text" name="_honey" style="display:none">
+  <input type="hidden" name="_autoresponse" value="Gracias por contactarnos. Te responderemos pronto.">
                   
 
                   <div class="mb-3">
@@ -99,20 +134,19 @@
                   </div>
                   <button type="submit" class="btn btn-celeste w-100 btn-glow">Enviar</button>
                 </form>
-                
               </div>
 
               <!-- Información -->
               <div class="col-md-6">
                 <h3 class="fw-bold text-celeste mb-4">Información de contacto</h3>
-                <p><i class="bi bi-geo-alt-fill text-celeste me-2"></i> Av. Alejandro Bertello Bollati, Callao 07036</p>
-                <p><i class="bi bi-telephone-fill text-celeste me-2"></i> +51 987 654 321</p>
-                <p><i class="bi bi-envelope-fill text-celeste me-2"></i> contacto@patronato.org.pe</p>
-                <p><i class="bi bi-clock-fill text-celeste me-2"></i> Lunes a Viernes: 9am - 5pm</p>
+                <p><i class="bi bi-geo-alt-fill text-celeste me-2" aria-hidden="true"></i> Av. Alejandro Bertello Bollati, Callao 07036</p>
+                <p><i class="bi bi-telephone-fill text-celeste me-2" aria-hidden="true"></i> +51 987 654 321</p>
+                <p><i class="bi bi-envelope-fill text-celeste me-2" aria-hidden="true"></i> contacto@patronato.org.pe</p>
+                <p><i class="bi bi-clock-fill text-celeste me-2" aria-hidden="true"></i> Lunes a Viernes: 9am - 5pm</p>
                 <div class="mt-4">
-                  <a href="#" class="text-celeste mx-2"><i class="bi bi-facebook fs-4"></i></a>
-                  <a href="#" class="text-celeste mx-2"><i class="bi bi-instagram fs-4"></i></a>
-                  <a href="#" class="text-celeste mx-2"><i class="bi bi-twitter fs-4"></i></a>
+                  <a href="#" class="text-celeste mx-2" aria-label="Facebook"><i class="bi bi-facebook fs-4" aria-hidden="true"></i></a>
+                  <a href="#" class="text-celeste mx-2" aria-label="Instagram"><i class="bi bi-instagram fs-4" aria-hidden="true"></i></a>
+                  <a href="#" class="text-celeste mx-2" aria-label="Twitter"><i class="bi bi-twitter fs-4" aria-hidden="true"></i></a>
                 </div>
               </div>
             </div>
@@ -123,57 +157,55 @@
   </section>
 
   <!-- FOOTER CON PARALLAX Y CONTENIDO ORGANIZADO -->
-  <footer class="footer-parallax text-center py-5">
-    <div class="footer-overlay container">
-      <h2 data-aos="zoom-in">Somos los que enseñamos el estilo de lima norte</h2>
-      <div class="row text-start">
-        <!-- Contacto -->
-        <div class="col-md-4 mb-4">
-          <h5>Contacto</h5>
-          <p><i class="bi bi-geo-alt"></i> Av. Alejandro Bertello Bollati, Callao
-          <p><i class="bi bi-telephone"></i> +51 987 654 321</p>
-          <p><i class="bi bi-envelope"></i> (colocar el correo )</p>
-          <div class="social-icons mt-2">
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-tiktok"></i></a>
-          </div>
+    <footer class="footer-parallax text-center py-5">
+        <div class="footer-overlay container" data-aos="fade-up" data-aos-delay="100">
+            <h2 data-aos="zoom-in" data-aos-delay="200">Somos los que enseñamos el estilo de lima norte</h2>
+            <div class="row text-start" data-aos="fade-up" data-aos-delay="300">
+                <!-- Contacto -->
+                <div class="col-md-4 mb-4">
+                    <h5>Contacto</h5>
+                    <p><i class="bi bi-geo-alt"></i> Av. Alejandro Bertello Bollati, Callao</p>
+                    <p><i class="bi bi-telephone"></i> +51 987 654 321</p>
+                    <p><i class="bi bi-envelope"></i> (colocar el correo)</p>
+                    <div class="social-icons mt-2">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Horario -->
+                <div class="col-md-4 mb-4">
+                    <h5>Horario de Atención</h5>
+                    <p>Lunes......................... 8:00 – 16:00</p>
+                    <p>Martes...................... 8:00 – 16:00</p>
+                    <p>Miércoles................ 8:00 – 16:00</p>
+                    <p>Jueves...................... 8:00 – 16:00</p>
+                    <p>Viernes..................... 8:00 – 16:00</p>
+                    <p>Sábado.................... 8:00 – 16:00</p>
+                </div>
+
+                <!-- Promociones -->
+                <div class="col-md-4 mb-4">
+                    <h5>Promociones</h5>
+                    <p>Se de los primeros en inscribirse y ten un vale de descuento</p>
+                </div>
+            </div>
+
+            <hr class="mt-4" style="border-color: rgba(135, 206, 235, 0.2);" data-aos="fade-in" data-aos-delay="400">
+            <p class="mt-3" data-aos="fade-in" data-aos-delay="500">&copy; 2025 Asociación Privada de Patronato.</p>
         </div>
+    </footer>
 
-        <!-- Horario -->
-        <div class="col-md-4 mb-4">
-          <h5>Horario de Atención</h5>
-          <p>Lunes......................... 8:00 – 16:00</p>
-          <p>Martes...................... 8:00 – 16:00</p>
-          <p>Miercoles................ 8:00 – 16:00</p>
-          <p>Jueves...................... 8:00 – 16:00</p>
-          <p>Viernes..................... 8:00 – 16:00</p>
-          <p>Sabado.................... 8:00 – 16:00</p>
-        </div>
-
-        <!-- Promociones -->
-        <div class="col-md-4 mb-4">
-          <h5>Promociones</h5>
-          <p> Se de los primeros en inscribirse y ten un vale de descuento</p>
-        </div>
-      </div>
-
-      <hr class="mt-4" style="border-color: rgba(135, 206, 235, 0.2);">
-      <p class="mt-3">&copy; 2025 Asociación Privada de Patronato. Diseñado por Radar.com</p>
-    </div>
-  </footer>
-
-
-  <!-- ELEMENTO FLOTANTE -->
-  <div class="chatbot-icon">
-    <i class="bi bi-chat-dots-fill"></i>
-    <!-- Aquí irá el chatbot -->
+  <!-- CHATBOT OPTIMIZADO -->
+  <div class="chatbot-icon" aria-label="Abrir chat" role="button" tabindex="0">
+    <i class="bi bi-chat-dots-fill" aria-hidden="true"></i>
   </div>
 
-  <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="/js/contacto.js"></script>
+  <!-- SCRIPTS OPTIMIZADOS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="/js/contacto.js" defer></script>
 </body>
 
 </html>
