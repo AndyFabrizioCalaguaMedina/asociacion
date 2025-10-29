@@ -453,6 +453,23 @@ h3 {
   font-weight: 500;
 }
 
+/* ===================== FOOTER OPTIMIZADO ===================== */
+.footer-contacto {
+  background-color: #091F36;
+  box-shadow: 0 -2px 20px rgba(134, 205, 234, 0.3);
+  padding-top: 60px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-2px);
+}
+
 /* ===================== FOOTER ===================== */
 .footer-parallax {
   position: relative;
