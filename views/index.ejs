@@ -8,11 +8,14 @@
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
     <!-- AOS Animations -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
@@ -21,67 +24,105 @@
 </head>
 
 <body>
+    <!-- 🔹 NAVBAR -->
+    <header id="mainHeader">
+        <nav class="navbar">
+            <div class="logo" id="logoToggle">
+                <i class="fa-solid fa-scissors"></i> PATRONATO
+            </div>
 
-    <!-- NAVBAR -->
-    <header id="siteHeader" class="position-fixed top-0 start-0 w-100 z-3">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 py-3">
-            <div class="container-fluid justify-content-between">
-                <a class="navbar-brand fw-bold fs-5 text-glow" href="#">Asociación Privada de Patronato</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav gap-4 text-center">
-                        <li class="nav-item"><a class="nav-link active" href="/">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="servicios">Cursos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contacto">Contacto</a></li>
-                    </ul>
-                </div>
+            <div class="nav-links" id="navMenu">
+                <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="servicios">Cursos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Matricula</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacto">Contacto</a></li>
             </div>
         </nav>
     </header>
-
-    <!-- CARRUSEL -->
-    <section class="carousel-section p-0 m-0 position-relative">
-        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <!--HERO CARRUSEL-->
+    <section class="hero">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img loading="lazy" src="images/fondobarber1.webp" class="carousel-img d-block w-100" alt="Slide 1">
-                    <div class="carousel-caption">
-                        <h1 class="typing-text">Formando Profesionales del Estilo</h1>
-                        <a href="#contacto" class="btn btn-gold mt-3">Contáctanos</a>
-                    </div>
+                    <img loading="lazy" src="images/BannerPrincipal.jpg" class="d-block w-100" alt="Slide 1">
                 </div>
                 <div class="carousel-item">
-                    <img loading="lazy" src="images/fondoestilista2.webp" class="carousel-img d-block w-100"
-                        alt="Slide 2">
-                    <div class="carousel-caption">
-                        <h1 class="typing-text">Excelencia y Creatividad</h1>
-                        <a href="#contacto" class="btn btn-gold mt-3">Inscríbete Ahora</a>
-                    </div>
+                    <img loading="lazy" src="images/BannerPrincipal2.jpg" class="d-block w-100" alt="Slide 2">
                 </div>
                 <div class="carousel-item">
-                    <iimg loading="lazy" src="images/fondounas3.webp" class="carousel-img d-block w-100" alt="Slide 3">
-                        <div class="carousel-caption">
-                            <h1 class="typing-text">Tu Talento, Nuestra Inspiración</h1>
-                            <a href="#contacto" class="btn btn-gold mt-3">Explora Más</a>
-                        </div>
+                    <img loading="lazy" src="images/BannerPrincipal3.jpg" class="d-block w-100" alt="Slide 3">
                 </div>
+            </div>
+
+            <!-- Controles del carrusel (opcional) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+
+            <!-- Indicadores (opcional) -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
         </div>
     </section>
+    <!-- Sección Context Patro -->
+    <section id="patronato-formacion" class="py-5">
+        <div class="container py-lg-5">
+            <div class="row align-items-center">
 
-    <!--franja-banner-->
-    <section class="patronato-banner">
-        <div class="patronato-texto">
-            <h1>ASOCIACIÓN DE PATRONATO</h1>
-            <p>Un espacio creado para el bienestar y el desarrollo personal. Con servicios integrales de Peluquería,
-                barbería y Spa.</p>
-            <button class="btn-vermas">VER MÁS</button>
+                <div class="col-lg-6 px-4 mb-4 mb-lg-0">
+
+                    <p class="text-accent-color">
+                        CERTIFICACIÓN PROFESIONAL
+                    </p>
+
+                    <h2 class="mb-4">
+                        Patronato Formación Técnica
+                    </h2>
+
+                    <p class="lead text-secondary-custom">
+                        Impulsamos la excelencia en el sector de la belleza peruana. Nuestro centro ofrece una formación
+                        práctica y vanguardista para todas las disciplinas clave: desde corte y estilismo hasta técnicas
+                        avanzadas para uñas.
+                    </p>
+
+                    <p class="text-secondary-custom mb-4">
+                        Nuestros programas están diseñados por expertos del Patronato para garantizar que cada egresado
+                        adquiera el conocimiento y la certificación necesaria para destacar inmediatamente en el mercado
+                        laboral.
+                    </p>
+
+                    <p class="list-title mb-2">Nuestros cursos incluyen:</p>
+
+                    <ul class="list-check">
+                        <li>Cursos de corte y peinado avanzado.</li>
+                        <li>Barbería clásica y moderna profesional.</li>
+                        <li>Manicura, pedicura y uñas acrílicas.</li>
+                        <li>Caritas pintadas.</li>
+                        <li>¡Y mucho más para tu certificación!</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-6 d-flex justify-content-center justify-content-lg-start">
+                    <div class="image-stack">
+                        <img src="images/aprobado1.webp" alt="Estudiante en curso de barbería"
+                            class="img-fluid custom-shadow-1">
+                        <img src="images/aprobado2.webp" alt="Clase práctica de estilismo"
+                            class="img-fluid custom-shadow-2">
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="patronato-imagen"></div>
     </section>
-
     <!-- VIDEO -->
     <section class="video-section">
         <video autoplay muted loop playsinline preload="none" class="video-full">
@@ -93,155 +134,198 @@
         </div>
     </section>
 
-    <!-- SECCIÓN INSTITUCIONAL CON CARRUSEL -->
-    <section id="institucional" class="institucional-combinada py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <!-- Texto institucional -->
-                <div class="col-md-6 text-light text-start px-4">
-                    <span class="badge bg-secondary mb-2">INCLUSIÓN Y REINSERCIÓN</span>
-                    <h2 class="mb-4">Creemos en las segundas oportunidades</h2>
-                    <p class="mb-3">
-                        La Asociación Privada de Patronato apoya la reinserción social de personas privadas de su
-                        libertad, ofreciendo educación, capacitación y acompañamiento para su integración en la sociedad
-                        y el trabajo.
-                    </p>
-                    <p class="mb-4">
-                        Promovemos inclusión, respeto e igualdad, a través de la formación profesional y el trabajo
-                        digno como medios para transformar vidas y fortalecer la comunidad.
-                    </p>
-                    <a href="servicios" class="btn-gold"><i class="bi bi-arrow-right-circle"></i> Ver Cursos</a>
-                </div>
+    <!-- SECCIÓN INSTITUCION -->
+    <section class="valores-section">
+        <h2>Nuestros <span class="resaltado">Valores</span></h2>
 
-                <!-- Carrusel horizontal infinito -->
-                <div class="col-md-6">
-                    <div class="carousel-nosotros">
-                        <div class="carousel-imgnosotros">
-                            <div class="carousel-imgno" data-bg="/images/aprobado1.webp"></div>
-                            <div class="carousel-imgno" data-bg="/images/aprobado2.webp"></div>
-                            <div class="carousel-imgno" data-bg="/images/aprobado3.webp"></div>
-                            <div class="carousel-imgno" data-bg="/images/aprobado4.webp"></div>
-                            <div class="carousel-imgno" data-bg="/images/aprobado5.webp"></div>
-                            <div class="carousel-imgno" data-bg="/images/aprobado6.webp"></div>
-                        </div>
-                    </div>
+        <div class="valores">
+            <!-- EMPATÍA -->
+            <div class="valor">
+                <div class="icono-contenedor">
+                    <i class="fas fa-hands-helping"></i>
                 </div>
+                <h3>EMPATÍA</h3>
+                <p>Comprendemos las circunstancias de cada persona y creamos un ambiente de apoyo mutuo donde todos se
+                    sienten valorados y respetados.</p>
+            </div>
+
+            <!-- SEGUNDA OPORTUNIDAD -->
+            <div class="valor">
+                <div class="icono-contenedor">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h3>SEGUNDA OPORTUNIDAD</h3>
+                <p>Creemos firmemente en la capacidad de transformación personal y ofrecemos herramientas para construir
+                    un nuevo proyecto de vida.</p>
+            </div>
+
+            <!-- INCLUSIÓN -->
+            <div class="valor">
+                <div class="icono-contenedor">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>INCLUSIÓN</h3>
+                <p>Fomentamos un espacio donde todas las personas, sin importar su pasado, encuentran aceptación y
+                    oportunidades para desarrollarse.</p>
+            </div>
+
+            <!-- DIGNIDAD -->
+            <div class="valor">
+                <div class="icono-contenedor">
+                    <i class="fas fa-user-check"></i>
+                </div>
+                <h3>DIGNIDAD</h3>
+                <p>Reconocemos el valor inherente de cada ser humano y trabajamos para restaurar la autoestima y
+                    confianza en sí mismos.</p>
             </div>
         </div>
     </section>
     <!-- CURSOS -->
-    <section id="cursos" class="services-section text-center py-5">
+    <section id="cursos" class="services-section text-center py-5" style="background-color: #f4f4f4;">
         <div class="container">
             <h2 data-aos="fade-down">Nuestros Cursos con Descuento</h2>
             <p data-aos="fade-down" data-aos-delay="100">Formamos expertos en belleza, barbería y estilo moderno</p>
 
             <div class="row mt-4 justify-content-center">
-                <!-- Card 1 -->
+
+                <!-- Curso 1 -->
                 <div class="col-md-4 mb-4" data-aos="zoom-in">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front" style="background-image: url('/images/fondobarber1.webp');">
-                            </div>
-                            <div class="flip-card-back">
-                                <h4>Corte Profesional</h4>
+                    <div class="course-card" tabindex="0">
+                        <img src="/images/fondobarber1.webp" alt="Curso de Corte Profesional">
+                        <div class="card-overlay"></div>
+
+                        <div class="card-content">
+                            <i class="fa-solid fa-scissors card-icon"></i>
+                            <h3>Corte Profesional</h3>
+
+                            <div class="card-content-hover">
                                 <p>De <del>$79.99</del> a <strong>$49.99</strong></p>
                                 <span class="badge bg-warning text-dark">OFERTA</span>
-                                <br>
-                                <button class="btn-gold mt-3">Reservar Cita</button>
+                                <a href="#" class="btn-ver-mas">Reservar Cita</a>
+                            </div>
+
+                            <div class="highlight-wrap">
+                                <span class="highlight-line"></span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Curso 2 -->
                 <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="150">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front" img loading="lazy"
-                                style="background-image: url('/images/fondoestilista2.webp');">
-                            </div>
-                            <div class="flip-card-back">
-                                <h4>Estilismo Moderno</h4>
+                    <div class="course-card" tabindex="0">
+                        <img src="/images/fondoestilista2.webp" alt="Curso de Estilismo Moderno">
+                        <div class="card-overlay"></div>
+
+                        <div class="card-content">
+                            <i class="fa-solid fa-wand-magic-sparkles card-icon"></i>
+                            <h3>Estilismo Moderno</h3>
+
+                            <div class="card-content-hover">
                                 <p>De <del>$69.99</del> a <strong>$49.99</strong></p>
                                 <span class="badge bg-warning text-dark">OFERTA</span>
-                                <br>
-                                <button class="btn-gold mt-3">Reservar Cita</button>
+                                <a href="#" class="btn-ver-mas">Reservar Cita</a>
+                            </div>
+
+                            <div class="highlight-wrap">
+                                <span class="highlight-line"></span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Curso 3 -->
                 <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front" img loading="lazy"
-                                style="background-image: url('/images/fondounas3.webp');">
-                            </div>
-                            <div class="flip-card-back">
-                                <h4>Manicure & Nails</h4>
+                    <div class="course-card" tabindex="0">
+                        <img src="/images/fondounas3.webp" alt="Curso de Manicure & Nails">
+                        <div class="card-overlay"></div>
+
+                        <div class="card-content">
+                            <i class="fa-solid fa-hand-sparkles card-icon"></i>
+                            <h3>Manicure & Nails</h3>
+
+                            <div class="card-content-hover">
                                 <p>De <del>$59.99</del> a <strong>$49.99</strong></p>
                                 <span class="badge bg-warning text-dark">OFERTA</span>
-                                <br>
-                                <button class="btn-gold mt-3">Reservar Cita</button>
+                                <a href="#" class="btn-ver-mas">Reservar Cita</a>
+                            </div>
+
+                            <div class="highlight-wrap">
+                                <span class="highlight-line"></span>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
-
-    <!-- CONTACTO -->
-    <section id="contacto" class="contact-section py-5 text-center text-light">
-        <div class="container">
-            <h2>Contáctanos</h2>
-            <p>Déjanos un mensaje y te ayudaremos a iniciar tu camino profesional.</p>
-            <a href="contacto" class="btn btn-light mt-3 px-4 py-2">Enviar correo</a>
-        </div>
-    </section>
-
-    <!-- FOOTER CON PARALLAX Y CONTENIDO ORGANIZADO -->
-    <footer class="footer-parallax text-center py-5">
-        <div class="footer-overlay container" data-aos="fade-up" data-aos-delay="100">
-            <h2 data-aos="zoom-in" data-aos-delay="200">Somos los que enseñamos el estilo de lima norte</h2>
-            <div class="row text-start" data-aos="fade-up" data-aos-delay="300">
+    <!-- FOOTER  -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
                 <!-- Contacto -->
-                <div class="col-md-4 mb-4">
-                    <h5>Contacto</h5>
-                    <p><i class="bi bi-geo-alt"></i> Av. Alejandro Bertello Bollati, Callao</p>
-                    <p><i class="bi bi-telephone"></i> +51 987 654 321</p>
-                    <p><i class="bi bi-envelope"></i> (colocar el correo)</p>
-                    <div class="social-icons mt-2">
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-tiktok"></i></a>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Alejandro Bertello, Collao</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+51 987 654 321</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@patronato.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Horarios -->
+                <div class="footer-section">
+                    <h3>Horarios</h3>
+                    <ul class="hours-list">
+                        <li>Lunes a Viernes</li>
+                        <li>8:00 - 16:00</li>
+                        <li style="margin-top: 12px;">Sábados</li>
+                        <li>8:00 - 14:00</li>
+                    </ul>
+                </div>
+
+                <!-- Cursos -->
+                <div class="footer-section">
+                    <h3>Cursos</h3>
+                    <ul>
+                        <li><a href="#">Estilismo Profesional</a></li>
+                        <li><a href="#">Cosmetología Avanzada</a></li>
+                        <li><a href="#">Manicura y Pedicura</a></li>
+                    </ul>
+                </div>
+
+                <!-- Promoción -->
+                <div class="footer-section">
+                    <h3>Promoción Especial</h3>
+                    <div class="promo-box">
+                        <p>Inscríbete ahora y obtén un descuento exclusivo en todos nuestros cursos.</p>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #a0a0a0;">Válido por tiempo limitado</p>
+
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-
-                <!-- Horario -->
-                <div class="col-md-4 mb-4">
-                    <h5>Horario de Atención</h5>
-                    <p>Lunes......................... 8:00 – 16:00</p>
-                    <p>Martes...................... 8:00 – 16:00</p>
-                    <p>Miércoles................ 8:00 – 16:00</p>
-                    <p>Jueves...................... 8:00 – 16:00</p>
-                    <p>Viernes..................... 8:00 – 16:00</p>
-                    <p>Sábado.................... 8:00 – 16:00</p>
-                </div>
-
-                <!-- Promociones -->
-                <div class="col-md-4 mb-4">
-                    <h5>Promociones</h5>
-                    <p>Se de los primeros en inscribirse y ten un vale de descuento</p>
-                </div>
             </div>
 
-            <hr class="mt-4" style="border-color: rgba(135, 206, 235, 0.2);" data-aos="fade-in" data-aos-delay="400">
-            <p class="mt-3" data-aos="fade-in" data-aos-delay="500">&copy; 2025 Asociación Privada de Patronato.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Asociación Privada de Patronato. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
-
     <!-- BOTÓN FLOTANTE MATRÍCULA -->
     <a href="#contacto" class="btn-flotante">
         <i class="bi bi-pencil-square"></i> Matrículate
@@ -252,57 +336,59 @@
         class="whatsapp-float" target="_blank">
         <i class="bi bi-whatsapp"></i>
     </a>
-
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
+        // AOS Animations
         AOS.init({
             once: true,
             duration: 800,
             easing: 'ease-out-cubic',
             offset: 100
         });
+
+        // Scroll header effect
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('.navbar');
             nav.classList.toggle('scrolled', window.scrollY > 50);
         });
-        // Lazy loading del fondo
-        document.addEventListener("DOMContentLoaded", () => {
-            const footer = document.querySelector(".footer-parallax");
-            const observer = new IntersectionObserver(([entry]) => {
-                if (entry.isIntersecting) {
-                    footer.style.backgroundImage = "url('/images/footer3.webp')";
-                    observer.disconnect();
-                }
-            }, { threshold: 0.1 });
 
-            if (footer) observer.observe(footer);
-        });
-    </script>
-    <script>
+        // Menú hamburguesa
         document.addEventListener("DOMContentLoaded", () => {
-            const items = document.querySelectorAll(".carousel-imgno");
+            const logoToggle = document.getElementById("logoToggle");
+            const navMenu = document.getElementById("navMenu");
 
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const el = entry.target;
-                        const bg = el.getAttribute("data-bg");
-                        if (bg) {
-                            el.style.backgroundImage = `url('${bg}')`;
-                            el.removeAttribute("data-bg");
-                            obs.unobserve(el);
-                        }
+            if (logoToggle && navMenu) {
+                logoToggle.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    logoToggle.classList.toggle("active");
+                    navMenu.classList.toggle("active");
+                });
+
+                // Cerrar menú al hacer clic en enlaces
+                document.querySelectorAll(".nav-links a").forEach(link => {
+                    link.addEventListener("click", () => {
+                        navMenu.classList.remove("active");
+                        logoToggle.classList.remove("active");
+                    });
+                });
+
+                // Cerrar menú al hacer clic fuera
+                document.addEventListener("click", (e) => {
+                    if (!e.target.closest(".navbar") && navMenu.classList.contains("active")) {
+                        navMenu.classList.remove("active");
+                        logoToggle.classList.remove("active");
                     }
                 });
-            }, { threshold: 0.1 });
 
-            items.forEach(item => observer.observe(item));
+                // Prevenir cierre al hacer clic dentro del menú
+                navMenu.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                });
+            }
         });
-
     </script>
-
 </body>
 
 </html>
