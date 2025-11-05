@@ -28,13 +28,14 @@
     <header id="mainHeader">
         <nav class="navbar">
             <div class="logo" id="logoToggle">
-                <i class="fa-solid fa-scissors"></i> PATRONATO
+                <i class="fa-solid fa-scissors"></i>
+                <a href="/" class="logo-text">PATRONATO</a>
             </div>
 
             <div class="nav-links" id="navMenu">
-                <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="nosotros">Nosotros</a></li>
                 <li class="nav-item"><a class="nav-link" href="servicios">Cursos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Matricula</a></li>
+                <li class="nav-item"><a class="nav-link" href="matricula">Matricula</a></li>
                 <li class="nav-item"><a class="nav-link" href="contacto">Contacto</a></li>
             </div>
         </nav>
@@ -270,7 +271,7 @@
                     <ul class="contact-info">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Av. Alejandro Bertello, Collao</span>
+                            <span>Av. Alejandro Bertello, Callao</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
@@ -354,39 +355,92 @@
             nav.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Menú hamburguesa
-        document.addEventListener("DOMContentLoaded", () => {
-            const logoToggle = document.getElementById("logoToggle");
-            const navMenu = document.getElementById("navMenu");
+        // JavaScript para el funcionamiento del menú móvil
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoIcon = document.querySelector('.logo i');
+            const logoText = document.querySelector('.logo');
+            const navMenu = document.getElementById('navMenu');
+            const menuOverlay = document.createElement('div');
+            menuOverlay.className = 'menu-overlay';
+            document.body.appendChild(menuOverlay);
 
-            if (logoToggle && navMenu) {
-                logoToggle.addEventListener("click", (e) => {
+            let isMenuOpen = false;
+
+            // Función para abrir/cerrar el menú
+            function toggleMenu() {
+                isMenuOpen = !isMenuOpen;
+                navMenu.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+
+                // Animación del icono
+                if (isMenuOpen) {
+                    logoIcon.style.transform = 'rotate(90deg)';
+                    logoIcon.style.color = 'var(--celeste-suave)';
+                } else {
+                    logoIcon.style.transform = 'rotate(0deg)';
+                    logoIcon.style.color = 'var(--celeste)';
+                }
+            }
+
+            // Evento para el icono de tijeras (hamburguesa) - SOLO en móvil
+            function handleIconClick(e) {
+                // Verificar si estamos en modo móvil (ancho <= 992px)
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
                     e.stopPropagation();
-                    logoToggle.classList.toggle("active");
-                    navMenu.classList.toggle("active");
-                });
+                    toggleMenu();
+                }
+            }
 
-                // Cerrar menú al hacer clic en enlaces
-                document.querySelectorAll(".nav-links a").forEach(link => {
-                    link.addEventListener("click", () => {
-                        navMenu.classList.remove("active");
-                        logoToggle.classList.remove("active");
-                    });
-                });
+            // Evento para el texto del logo - SIEMPRE redirige al index
+            function handleLogoClick(e) {
+                // Si estamos en móvil y el clic fue en el icono, no hacer nada
+                if (window.innerWidth <= 992 && e.target.tagName === 'I') {
+                    return;
+                }
+                // Redirigir al index
+                window.location.href = '/';
+            }
 
-                // Cerrar menú al hacer clic fuera
-                document.addEventListener("click", (e) => {
-                    if (!e.target.closest(".navbar") && navMenu.classList.contains("active")) {
-                        navMenu.classList.remove("active");
-                        logoToggle.classList.remove("active");
+            // Agregar event listeners
+            logoIcon.addEventListener('click', handleIconClick);
+            logoText.addEventListener('click', handleLogoClick);
+
+            // Cerrar menú al hacer clic en el overlay
+            menuOverlay.addEventListener('click', function () {
+                if (window.innerWidth <= 992 && isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+
+            // Cerrar menú al hacer clic en un enlace (solo en móvil)
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth <= 992 && isMenuOpen) {
+                        toggleMenu();
                     }
                 });
+            });
 
-                // Prevenir cierre al hacer clic dentro del menú
-                navMenu.addEventListener("click", (e) => {
-                    e.stopPropagation();
-                });
-            }
+            // Cerrar menú con la tecla ESC (solo en móvil)
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && window.innerWidth <= 992 && isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+
+            // Cerrar menú al redimensionar la ventana a desktop
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 992 && isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+
+            // Restaurar estado del icono al cargar la página
+            logoIcon.style.transform = 'rotate(0deg)';
+            logoIcon.style.color = 'var(--celeste)';
         });
     </script>
 </body>

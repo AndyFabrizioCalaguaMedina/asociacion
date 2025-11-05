@@ -36,21 +36,22 @@
 
 <body>
 
-   <!-- 🔹 NAVBAR -->
-    <header id="mainHeader">
-        <nav class="navbar">
-            <div class="logo" id="logoToggle">
-                <i class="fa-solid fa-scissors"></i> PATRONATO
-            </div>
+ <!-- 🔹 NAVBAR -->
+<header id="mainHeader">
+    <nav class="navbar">
+        <div class="logo" id="logoToggle">
+            <i class="fa-solid fa-scissors"></i>
+            <a href="/" class="logo-text">PATRONATO</a>
+        </div>
 
-            <div class="nav-links" id="navMenu">
-                <li class="nav-item"><a class="nav-link" href="nosotros">Nosotros</a></li>
-                <li class="nav-item"><a class="nav-link" href="servicios">Cursos</a></li>
-                <li class="nav-item"><a class="nav-link" href="matricula">Matricula</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacto">Contacto</a></li>
-            </div>
-        </nav>
-    </header>
+        <div class="nav-links" id="navMenu">
+            <li class="nav-item"><a class="nav-link" href="nosotros">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="servicios">Cursos</a></li>
+            <li class="nav-item"><a class="nav-link" href="matricula">Matricula</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto">Contacto</a></li>
+        </div>
+    </nav>
+</header>
 
   <!-- HERO NOSOTROS -->
   <section class="hero-nosotros">
@@ -271,7 +272,7 @@
                     <ul class="contact-info">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Av. Alejandro Bertello, Collao</span>
+                            <span>Av. Alejandro Bertello, Callao</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
@@ -328,7 +329,111 @@
         </div>
     </footer>
 
-  <!-- SCRIPTS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // AOS Animations
+        AOS.init({
+            once: true,
+            duration: 800,
+            easing: 'ease-out-cubic',
+            offset: 100
+        });
+
+        // Scroll header effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+// JavaScript para el funcionamiento del menú móvil
+document.addEventListener('DOMContentLoaded', function() {
+    const logoIcon = document.querySelector('.logo i');
+    const logoText = document.querySelector('.logo');
+    const navMenu = document.getElementById('navMenu');
+    const menuOverlay = document.createElement('div');
+    menuOverlay.className = 'menu-overlay';
+    document.body.appendChild(menuOverlay);
+
+    let isMenuOpen = false;
+
+    // Función para abrir/cerrar el menú
+    function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        navMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+        
+        // Animación del icono
+        if (isMenuOpen) {
+            logoIcon.style.transform = 'rotate(90deg)';
+            logoIcon.style.color = 'var(--celeste-suave)';
+        } else {
+            logoIcon.style.transform = 'rotate(0deg)';
+            logoIcon.style.color = 'var(--celeste)';
+        }
+    }
+
+    // Evento para el icono de tijeras (hamburguesa) - SOLO en móvil
+    function handleIconClick(e) {
+        // Verificar si estamos en modo móvil (ancho <= 992px)
+        if (window.innerWidth <= 992) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMenu();
+        }
+    }
+
+    // Evento para el texto del logo - SIEMPRE redirige al index
+    function handleLogoClick(e) {
+        // Si estamos en móvil y el clic fue en el icono, no hacer nada
+        if (window.innerWidth <= 992 && e.target.tagName === 'I') {
+            return;
+        }
+        // Redirigir al index
+        window.location.href = '/';
+    }
+
+    // Agregar event listeners
+    logoIcon.addEventListener('click', handleIconClick);
+    logoText.addEventListener('click', handleLogoClick);
+
+    // Cerrar menú al hacer clic en el overlay
+    menuOverlay.addEventListener('click', function() {
+        if (window.innerWidth <= 992 && isMenuOpen) {
+            toggleMenu();
+        }
+    });
+
+    // Cerrar menú al hacer clic en un enlace (solo en móvil)
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 992 && isMenuOpen) {
+                toggleMenu();
+            }
+        });
+    });
+
+    // Cerrar menú con la tecla ESC (solo en móvil)
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && window.innerWidth <= 992 && isMenuOpen) {
+            toggleMenu();
+        }
+    });
+
+    // Cerrar menú al redimensionar la ventana a desktop
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 992 && isMenuOpen) {
+            toggleMenu();
+        }
+    });
+
+    // Restaurar estado del icono al cargar la página
+    logoIcon.style.transform = 'rotate(0deg)';
+    logoIcon.style.color = 'var(--celeste)';
+});
+    </script>
 </body>
 </html>
