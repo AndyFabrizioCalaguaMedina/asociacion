@@ -888,9 +888,7 @@ body.menu-open {
 }
 
 @media (max-width: 576px) {
-  .hero-nosotros {
-    min-height: 45vh;
-  }
+
   
   .hero-nosotros h1 {
     font-size: 3.5rem;

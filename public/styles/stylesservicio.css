@@ -933,9 +933,7 @@ body.menu-open {
 }
 
 @media (max-width: 576px) {
-  .hero-cursos {
-    min-height: 45vh;
-  }
+
   
   .hero-cursos h1 {
     font-size: 3.5rem;
