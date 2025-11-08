@@ -365,7 +365,7 @@ body.menu-open {
 }
 
 .hero-contacto h1 {
-  font-family: 'Impact', sans-serif;
+  font-family: 'Impact', sans-serif !important;
   font-size: 4rem;
   font-weight: 400;
   letter-spacing: 3px;
