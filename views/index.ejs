@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Asociación Privada de Patronato</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- AOS Animations -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+    <!-- 🔹 NAVBAR -->
+    <header id="mainHeader">
+        <nav class="navbar">
+            <div class="logo" id="logoToggle">
+                <i class="fa-solid fa-scissors"></i>
+                <a href="/" class="logo-text">PATRONATO</a>
+            </div>
+
+            <div class="nav-links" id="navMenu">
+                <li class="nav-item"><a class="nav-link" href="nosotros">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="servicios">Cursos</a></li>
+                <li class="nav-item"><a class="nav-link" href="matricula">Matricula</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacto">Contacto</a></li>
+            </div>
+        </nav>
+    </header>
+    <!--HERO CARRUSEL-->
+    <section class="hero">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img loading="lazy" src="images/BannerPrincipal.jpg" class="d-block w-100" alt="Slide 1">
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" src="images/BannerPrincipal2.jpg" class="d-block w-100" alt="Slide 2">
+                </div>
+                <div class="carousel-item">
+                    <img loading="lazy" src="images/BannerPrincipal3.jpg" class="d-block w-100" alt="Slide 3">
+                </div>
+            </div>
+
+            <!-- Controles del carrusel (opcional) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+
+            <!-- Indicadores (opcional) -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+        </div>
+    </section>
+    <!-- Sección Context Patro -->
+    <section id="patronato-formacion" class="py-5">
+        <div class="container py-lg-5">
+            <div class="row align-items-center">
+
+                <div class="col-lg-6 px-4 mb-4 mb-lg-0">
+
+                    <p class="text-accent-color">
+                        CERTIFICACIÓN PROFESIONAL
+                    </p>
+
+                    <h2 class="mb-4">
+                        Patronato Formación Técnica
+                    </h2>
+
+                    <p class="lead text-secondary-custom">
+                        Impulsamos la excelencia en el sector de la belleza peruana. Nuestro centro ofrece una formación
+                        práctica y vanguardista para todas las disciplinas clave: desde corte y estilismo hasta técnicas
+                        avanzadas para uñas.
+                    </p>
+
+                    <p class="text-secondary-custom mb-4">
+                        Nuestros programas están diseñados por expertos del Patronato para garantizar que cada egresado
+                        adquiera el conocimiento y la certificación necesaria para destacar inmediatamente en el mercado
+                        laboral.
+                    </p>
+
+                    <p class="list-title mb-2">Nuestros cursos incluyen:</p>
+
+                    <ul class="list-check">
+                        <li>Cursos de corte y peinado avanzado.</li>
+                        <li>Barbería clásica y moderna profesional.</li>
+                        <li>Manicura, pedicura y uñas acrílicas.</li>
+                        <li>Caritas pintadas.</li>
+                        <li>¡Y mucho más para tu certificación!</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-6 d-flex justify-content-center justify-content-lg-start">
+                    <div class="image-stack">
+                        <img src="images/aprobado1.webp" alt="Estudiante en curso de barbería"
+                            class="img-fluid custom-shadow-1">
+                        <img src="images/aprobado2.webp" alt="Clase práctica de estilismo"
+                            class="img-fluid custom-shadow-2">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- VIDEO -->
+    <section class="video-section">
+        <video autoplay muted loop playsinline preload="none" class="video-full">
+            <source src="/videos/baber.mp4" type="video/mp4">
+            Tu navegador no soporta el video HTML5.
+        </video>
+        <div class="video-overlay">
+            <h2 data-aos="zoom-in">Inspírate. Aprende. Crece con Nosotros.</h2>
+        </div>
+    </section>
+
+    <!-- SECCIÓN INSTITUCION -->
+    <section class="valores-section">
+        <h2>Nuestros <span class="resaltado">Valores</span></h2>
+
+        <div class="valores">
+            <!-- EMPATÍA -->
+            <div class="valor">
+                <div class="icono-contenedor">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3>EMPATÍA</h3>
+                <p>Comprendemos las circunstancias de cada persona y creamos un ambiente de apoyo mutuo donde todos se
+                    sienten valorados y respetados.</p>
+            </div>
+
+            <!-- SEGUNDA OPORTUNIDAD -->
+            <div class="valor">
+                <div class="icono-contenedor">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h3>SEGUNDA OPORTUNIDAD</h3>
+                <p>Creemos firmemente en la capacidad de transformación personal y ofrecemos herramientas para construir
+                    un nuevo proyecto de vida.</p>
+            </div>
+
+            <!-- INCLUSIÓN -->
+            <div class="valor">
+                <div class="icono-contenedor">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>INCLUSIÓN</h3>
+                <p>Fomentamos un espacio donde todas las personas, sin importar su pasado, encuentran aceptación y
+                    oportunidades para desarrollarse.</p>
+            </div>
+
+            <!-- DIGNIDAD -->
+            <div class="valor">
+                <div class="icono-contenedor">
+                    <i class="fas fa-user-check"></i>
+                </div>
+                <h3>DIGNIDAD</h3>
+                <p>Reconocemos el valor inherente de cada ser humano y trabajamos para restaurar la autoestima y
+                    confianza en sí mismos.</p>
+            </div>
+        </div>
+    </section>
+    <!-- CURSOS -->
+    <section id="cursos" class="services-section text-center py-5" style="background-color: #f4f4f4;">
+        <div class="container">
+            <h2 data-aos="fade-down">Nuestros Cursos con Descuento</h2>
+            <p data-aos="fade-down" data-aos-delay="100">Formamos expertos en belleza, barbería y estilo moderno</p>
+
+            <div class="row mt-4 justify-content-center">
+
+                <!-- Curso 1 -->
+                <div class="col-md-4 mb-4" data-aos="zoom-in">
+                    <div class="course-card" tabindex="0">
+                        <img src="/images/fondobarber1.webp" alt="Curso de Corte Profesional">
+                        <div class="card-overlay"></div>
+
+                        <div class="card-content">
+                            <i class="fa-solid fa-scissors card-icon"></i>
+                            <h3>Corte Profesional</h3>
+
+                            <div class="card-content-hover">
+                                <p>De <del>$79.99</del> a <strong>$49.99</strong></p>
+                                <span class="badge bg-warning text-dark">OFERTA</span>
+                                <a href="#" class="btn-ver-mas">Reservar Cita</a>
+                            </div>
+
+                            <div class="highlight-wrap">
+                                <span class="highlight-line"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curso 2 -->
+                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="course-card" tabindex="0">
+                        <img src="/images/fondoestilista2.webp" alt="Curso de Estilismo Moderno">
+                        <div class="card-overlay"></div>
+
+                        <div class="card-content">
+                            <i class="fa-solid fa-wand-magic-sparkles card-icon"></i>
+                            <h3>Estilismo Moderno</h3>
+
+                            <div class="card-content-hover">
+                                <p>De <del>$69.99</del> a <strong>$49.99</strong></p>
+                                <span class="badge bg-warning text-dark">OFERTA</span>
+                                <a href="#" class="btn-ver-mas">Reservar Cita</a>
+                            </div>
+
+                            <div class="highlight-wrap">
+                                <span class="highlight-line"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curso 3 -->
+                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="course-card" tabindex="0">
+                        <img src="/images/fondounas3.webp" alt="Curso de Manicure & Nails">
+                        <div class="card-overlay"></div>
+
+                        <div class="card-content">
+                            <i class="fa-solid fa-hand-sparkles card-icon"></i>
+                            <h3>Manicure & Nails</h3>
+
+                            <div class="card-content-hover">
+                                <p>De <del>$59.99</del> a <strong>$49.99</strong></p>
+                                <span class="badge bg-warning text-dark">OFERTA</span>
+                                <a href="#" class="btn-ver-mas">Reservar Cita</a>
+                            </div>
+
+                            <div class="highlight-wrap">
+                                <span class="highlight-line"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER  -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Contacto -->
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Alejandro Bertello, Callao</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+51 987 654 321</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@patronato.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Horarios -->
+                <div class="footer-section">
+                    <h3>Horarios</h3>
+                    <ul class="hours-list">
+                        <li>Lunes a Viernes</li>
+                        <li>8:00 - 16:00</li>
+                        <li style="margin-top: 12px;">Sábados</li>
+                        <li>8:00 - 14:00</li>
+                    </ul>
+                </div>
+
+                <!-- Cursos -->
+                <div class="footer-section">
+                    <h3>Cursos</h3>
+                    <ul>
+                        <li><a href="#">Estilismo Profesional</a></li>
+                        <li><a href="#">Cosmetología Avanzada</a></li>
+                        <li><a href="#">Manicura y Pedicura</a></li>
+                    </ul>
+                </div>
+
+                <!-- Promoción -->
+                <div class="footer-section">
+                    <h3>Promoción Especial</h3>
+                    <div class="promo-box">
+                        <p>Inscríbete ahora y obtén un descuento exclusivo en todos nuestros cursos.</p>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #a0a0a0;">Válido por tiempo limitado</p>
+
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Asociación Privada de Patronato. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- BOTÓN FLOTANTE MATRÍCULA -->
+    <a href="#contacto" class="btn-flotante">
+        <i class="bi bi-pencil-square"></i> Matrículate
+    </a>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/51987654321?text=Hola,%20quiero%20más%20información%20sobre%20los%20cursos"
+        class="whatsapp-float" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // AOS Animations
+        AOS.init({
+            once: true,
+            duration: 800,
+            easing: 'ease-out-cubic',
+            offset: 100
+        });
+
+        // Scroll header effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // JavaScript para el funcionamiento del menú móvil
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoIcon = document.querySelector('.logo i');
+            const logoText = document.querySelector('.logo');
+            const navMenu = document.getElementById('navMenu');
+            const menuOverlay = document.createElement('div');
+            menuOverlay.className = 'menu-overlay';
+            document.body.appendChild(menuOverlay);
+
+            let isMenuOpen = false;
+
+            // Función para abrir/cerrar el menú
+            function toggleMenu() {
+                isMenuOpen = !isMenuOpen;
+                navMenu.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+
+                // Animación del icono
+                if (isMenuOpen) {
+                    logoIcon.style.transform = 'rotate(90deg)';
+                    logoIcon.style.color = 'var(--celeste-suave)';
+                } else {
+                    logoIcon.style.transform = 'rotate(0deg)';
+                    logoIcon.style.color = 'var(--celeste)';
+                }
+            }
+
+            // Evento para el icono de tijeras (hamburguesa) - SOLO en móvil
+            function handleIconClick(e) {
+                // Verificar si estamos en modo móvil (ancho <= 992px)
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleMenu();
+                }
+            }
+
+            // Evento para el texto del logo - SIEMPRE redirige al index
+            function handleLogoClick(e) {
+                // Si estamos en móvil y el clic fue en el icono, no hacer nada
+                if (window.innerWidth <= 992 && e.target.tagName === 'I') {
+                    return;
+                }
+                // Redirigir al index
+                window.location.href = '/';
+            }
+
+            // Agregar event listeners
+            logoIcon.addEventListener('click', handleIconClick);
+            logoText.addEventListener('click', handleLogoClick);
+
+            // Cerrar menú al hacer clic en el overlay
+            menuOverlay.addEventListener('click', function () {
+                if (window.innerWidth <= 992 && isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+
+            // Cerrar menú al hacer clic en un enlace (solo en móvil)
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth <= 992 && isMenuOpen) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // Cerrar menú con la tecla ESC (solo en móvil)
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && window.innerWidth <= 992 && isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+
+            // Cerrar menú al redimensionar la ventana a desktop
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 992 && isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+
+            // Restaurar estado del icono al cargar la página
+            logoIcon.style.transform = 'rotate(0deg)';
+            logoIcon.style.color = 'var(--celeste)';
+        });
+    </script>
+</body>
+
+</html>
