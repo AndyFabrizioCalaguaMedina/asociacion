@@ -11,8 +11,6 @@
     --celeste: #8cc9e7;
     --celeste-suave: #89d6ff;
     --gris: #cccccc;
-    --gris-claro: #f8f9fa;
-    --gris-oscuro: #1a1a1a;
 }
 
 body {
@@ -91,7 +89,6 @@ header.scrolled {
 
 .logo-text{
   color: var(--celeste);
-  text-decoration: none;
 }
 
 .logo:hover i {
@@ -138,10 +135,6 @@ header.scrolled {
     transform: translateY(-2px);
 }
 
-.nav-link.active {
-    color: var(--celeste) !important;
-}
-
 /* ===================== NAVBAR RESPONSIVE ===================== */
 @media (max-width: 992px) {
     .navbar {
@@ -158,6 +151,7 @@ header.scrolled {
         padding: 0.5rem;
     }
 
+    /* Animación especial para el icono hamburguesa en móvil */
     .logo i {
         font-size: 1.8rem;
         margin-right: 12px;
@@ -165,6 +159,7 @@ header.scrolled {
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
+    /* Animación cuando el menú está activo */
     .nav-links.active ~ .navbar .logo i,
     body.menu-open .logo i {
         transform: rotate(90deg);
@@ -331,8 +326,8 @@ body.menu-open {
     }
 }
 
-/* ===================== HERO CURSOS ===================== */
-.hero-cursos {
+/* ===================== HERO MATRÍCULA - CORREGIDO ===================== */
+.hero-matricula {
   position: relative;
   min-height: 600px;
   padding-top: 120px;
@@ -340,17 +335,17 @@ body.menu-open {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: 
+   background: 
     linear-gradient(135deg, 
       rgba(0, 0, 0, 0.9) 10%,
       rgba(0, 0, 0, 0) 50%,
       rgba(0, 0, 0, 0) 100%),
-    url('/images/maquillaje-hero-cursos.webp') center/cover;
+    url('/images/cejas-hero.webp') center/cover;
   color: #ffffff;
   overflow: hidden;
 }
 
-.hero-cursos::before {
+.hero-matricula::before {
   content: '';
   position: absolute;
   top: 0;
@@ -364,12 +359,13 @@ body.menu-open {
   z-index: 1;
 }
 
-.hero-cursos .container {
+.hero-matricula .container {
   position: relative;
   z-index: 2;
+  
 }
 
-.hero-cursos h1 {
+.hero-matricula h1 {
   font-family: 'Impact', sans-serif;
   font-size: 4rem;
   font-weight: 400;
@@ -383,6 +379,54 @@ body.menu-open {
   font-size: 1.3rem;
   margin-bottom: 2.5rem;
   color: #e0e0e0;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 800px) {
+  .hero-matricula {
+    min-height: 60vh;
+    padding-top: 100px;
+  }
+  
+  .hero-matricula h1 {
+    font-size: 3.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .curso-info {
+    padding: 2rem 1.5rem;
+  }
+  
+  .curso-titulo {
+    font-size: 1.8rem;
+  }
+  
+  .curso-imagen {
+    min-height: 300px;
+    order: -1;
+  }
+  
+  .matricula-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-matricula h1 {
+    font-size: 3.5rem;
+  }
+  
+  .curso-info {
+    padding: 1.5rem 1rem;
+  }
+  
+  .matricula-card {
+    padding: 1rem 1rem;
+    margin: 0 10px;
+  }
 }
 
 /* ===================== BOTONES ===================== */
@@ -407,254 +451,195 @@ body.menu-open {
   transform: translateY(-2px);
 }
 
-.btn-outline-light {
-  border: 2px solid #ffffff;
-  background: transparent;
+
+/* ===================== SECCIÓN CURSOS - CON SEPARACIÓN Y ALTERNANCIA ===================== */
+.placeholder-imagen {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.cursos-section {
+  background: #f8f9fa;
+  padding: 80px 0;
+}
+
+.curso-item {
+  margin-bottom: 40px;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.curso-item:last-child {
+  margin-bottom: 0;
+}
+
+.curso-info {
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+}
+
+.curso-info > div {
+  width: 100%;
+}
+
+.curso-categoria {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666666;
+  margin-bottom: 1rem;
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bg-dark .curso-categoria {
+  color: #cccccc;
+}
+
+.curso-titulo {
+  font-family: 'Impact', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.curso-descripcion {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.curso-beneficios {
+  margin-top: 2rem;
+}
+
+.curso-beneficios li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: flex-start;
+}
+
+.curso-beneficios i {
+  margin-right: 10px;
+  margin-top: 2px;
+  font-size: 1.1rem;
+}
+
+.bg-white .curso-beneficios i {
+  color: #000000;
+}
+
+.bg-dark .curso-beneficios i {
+  color: #86CDEA;
+}
+
+.curso-imagen {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Colores de fondo */
+.bg-white {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa) !important;
+  color: #000000;
+}
+
+.bg-dark {
+  background: linear-gradient(135deg, #000000, #1a1a1a) !important;
   color: #ffffff;
 }
 
-.btn-outline-light:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--celeste);
-  color: var(--celeste);
+/* Efectos hover suaves */
+.curso-item:hover .curso-imagen .placeholder-imagen i {
+  opacity: 1;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
 }
 
-/* ===================== SECCIÓN CURSOS GRID ===================== */
-.cursos-grid-section {
-  background: var(--gris-claro);
-  padding: 80px 0;
+.curso-item:hover .curso-imagen .placeholder-imagen span {
+  opacity: 1;
+  transition: all 0.3s ease;
 }
 
-.cursos-grid-section h2 {
-  font-family: 'Impact', sans-serif;
-  font-weight: 400;
-  letter-spacing: 2px;
-  color: #000000;
-}
-
-.cursos-grid-section .lead {
-  font-size: 1.2rem;
-  color: #666666;
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* Tarjetas más grandes para el grid 2x2 */
-.curso-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px; /* Aumentado */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
-  background: white;
-}
-
-.curso-card:hover {
-  transform: translateY(-8px); /* Más elevación al hover */
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-}
-
-/* Video más grande */
-.curso-video-card {
-  position: relative;
-  height: 280px; /* Aumentado de 200px a 280px */
-  overflow: hidden;
-  border-radius: 16px 16px 0 0; /* Coincide con el border-radius de la tarjeta */
-}
-
-.curso-video-card video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Contenido más espacioso */
-.curso-content {
-  padding: 2rem; /* Aumentado de 1.5rem a 2rem */
-  background: white;
-}
-
-.curso-titulo-card {
-  font-family: 'Impact', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 1px;
-  color: #000000;
-  margin: 0;
-  line-height: 1.2;
-
-
-}
-
-
-
-/* Responsive para móviles */
+/* Responsive */
 @media (max-width: 768px) {
-  .curso-video-card {
-    height: 200px; /* Un poco más grande en móviles también */
+  .curso-item {
+    margin-bottom: 30px;
   }
   
-  .curso-content {
-    padding: 1.5rem;
+  .curso-info {
+    min-height: 400px;
+    padding: 2rem 1.5rem !important;
   }
   
-  .curso-titulo-card {
-    font-size: 1.3rem;
-  }
-}
-
-/* Para pantallas muy grandes */
-@media (min-width: 1200px) {
-  .curso-video-card {
-    height: 320px; /* Aún más grande en pantallas XL */
+  .curso-imagen {
+    min-height: 300px;
   }
   
-  .curso-titulo-card {
-    font-size: 1.6rem;
+  .curso-titulo {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .curso-item {
+    margin-bottom: 20px;
+  }
+  
+  .curso-info {
+    min-height: 350px;
+    padding: 1.5rem 1rem !important;
+  }
+  
+  .curso-titulo {
+    font-size: 1.8rem;
+  }
+  
+  .placeholder-imagen i {
+    font-size: 3rem;
   }
 }
 
 
-
-/* ===================== GALERÍA DE TRABAJOS ===================== */
-.galeria-trabajos {
-  background: var(--blanco);
-  padding: 80px 0;
-}
-
-.galeria-trabajos h2 {
-  font-family: 'Impact', sans-serif;
-  font-weight: 400;
-  letter-spacing: 2px;
-  color: #000000;
-}
-
-.galeria-trabajos .lead {
-  font-size: 1.2rem;
-  color: #666666;
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* Carrusel de galería */
-.galeria-track {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.galeria-item {
-  width: calc(25% - 12px);
-  flex: 0 0 auto;
-}
-
-#galeriaContainer {
-  width: 100%;
-}
-
-.galeria-item img {
-  height: 300px;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
-.galeria-item:hover img {
-  transform: scale(1.03);
-}
-
-/* Controles del carrusel */
-.carousel-control-prev,
-.carousel-control-next {
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  opacity: 0.8;
-}
-
-.carousel-control-prev:active,
-.carousel-control-next:active,
-.carousel-control-prev:focus,
-.carousel-control-next:focus {
-  transform: scale(0.9);
-  background-color: rgba(0, 0, 0, 0.7) !important;
-  border-color: var(--celeste);
-  box-shadow: 0 0 0 3px rgba(140, 201, 231, 0.3);
-  opacity: 1;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  transform: scale(1.05);
-  background-color: rgba(0, 0, 0, 0.6);
-  opacity: 1;
-}
-
-/* ===================== SECCIÓN INFORMACIÓN ===================== */
-.info-cursos {
-  background: var(--gris-claro);
-  padding: 80px 0;
-}
-
-.info-cursos h2 {
-  font-family: 'Impact', sans-serif;
-  font-weight: 400;
-  letter-spacing: 2px;
-  color: #000000;
-}
-
-.info-cursos .lead {
-  font-size: 1.2rem;
-  color: #666666;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.beneficio-curso {
-  transition: all 0.3s ease;
-  border: 1px solid #e0e0e0;
-  height: 100%;
-}
-
-.beneficio-curso:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.beneficio-curso h4 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  color: #000000;
-}
-
-.text-celeste {
-  color: var(--celeste) !important;
-}
-
-/* ===================== SECCIÓN MATRÍCULA ===================== */
-.matricula-cursos {
+/* ===================== SECCIÓN MATRICÚLATE AHORA ===================== */
+.matricula-ahora {
   background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
   position: relative;
   overflow: hidden;
 }
 
-.matricula-cursos::before {
+.matricula-ahora::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  background: 
+    radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
   z-index: 1;
 }
 
-.matricula-cursos-content {
+.matricula-ahora-content {
   position: relative;
   z-index: 2;
 }
 
-.matricula-cursos h2 {
+.matricula-ahora h2 {
   font-family: 'Impact', sans-serif;
   font-weight: 400;
   letter-spacing: 3px;
@@ -663,31 +648,200 @@ body.menu-open {
   color: #ffffff;
 }
 
-.matricula-cursos .lead {
+.matricula-ahora .lead {
   font-size: 1.3rem;
   line-height: 1.7;
   color: #e0e0e0;
   font-family: 'Montserrat', sans-serif;
 }
 
+/* Beneficios */
+.matricula-beneficios {
+  padding: 2rem 0;
+}
+
+.beneficio-item {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.beneficio-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+}
+
+.beneficio-item h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.beneficio-item p {
+  font-size: 0.9rem;
+  color: #cccccc;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+}
+
+.text-celeste {
+  color: #86CDEA !important;
+}
+
+/* Botones */
 .matricula-acciones {
   margin: 2rem 0;
 }
 
-.matricula-info {
+.btn-success {
+  background: linear-gradient(135deg, #25D366, #128C7E) !important;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #128C7E, #25D366) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.btn-outline-light {
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #ffffff;
+}
+
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #86CDEA;
+  color: #86CDEA;
+  transform: translateY(-2px);
+}
+
+/* Información adicional */
+.matricula-info-adicional {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 1.5rem;
 }
 
-.matricula-info p {
+.matricula-info-adicional p {
   margin-bottom: 0.5rem;
   font-family: 'Montserrat', sans-serif;
-  color: #cccccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .matricula-ahora h2 {
+    font-size: 2.5rem !important;
+    letter-spacing: 2px;
+  }
+  
+  .matricula-ahora .lead {
+    font-size: 1.1rem;
+  }
+  
+  .beneficio-item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .matricula-acciones {
+    text-align: center;
+  }
+  
+  .matricula-acciones .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+  
+  .btn-success,
+  .btn-outline-light {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .matricula-ahora h2 {
+    font-size: 2rem !important;
+    letter-spacing: 1px;
+  }
+  
+  .matricula-ahora .lead {
+    font-size: 1rem;
+  }
+  
+  .beneficio-item h5 {
+    font-size: 1rem;
+  }
+  
+  .beneficio-item p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===================== SECCIÓN WHATSAPP ===================== */
+.matricula-whatsapp {
+  background: #ffffff;
+  padding: 80px 0;
+}
+
+.matricula-card {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 3rem;
+  border: 1px solid #e0e0e0;
+}
+
+.matricula-card h2 {
+  font-family: 'Impact', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  color: #000000;
+}
+
+.matricula-card .lead {
+  font-size: 1.2rem;
+  color: #666666;
+  margin-bottom: 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-success {
+  background: #25D366 !important;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-success:hover {
+  background: #128C7E !important;
+  transform: translateY(-2px);
 }
 
 /* ===== FOOTER ===== */
 .footer {
-    background: var(--gris-oscuro);
+    background: #1a1a1a;
     padding: 60px 0 20px;
 }
 
@@ -869,8 +1023,8 @@ body.menu-open {
     font-family: 'Poppins', sans-serif;
 }
 
-/* ===================== RESPONSIVE ===================== */
-@media (max-width: 992px) {
+/* Responsive */
+@media (max-width: 768px) {
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -903,82 +1057,4 @@ body.menu-open {
     .social-links {
         justify-content: center;
     }
-
-    .galeria-item {
-        width: calc(33.333% - 12px);
-    }
-}
-
-@media (max-width: 800px) {
-  .hero-cursos {
-    min-height: 60vh;
-    padding-top: 100px;
-  }
-  
-  .hero-cursos h1 {
-    font-size: 3.5rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  
-  .galeria-item {
-    width: calc(50% - 12px);
-  }
-  
-  .curso-titulo-card {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 576px) {
-
-  
-  .hero-cursos h1 {
-    font-size: 3.5rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  
-  .galeria-item {
-    width: calc(100% - 12px);
-  }
-  
-  .curso-titulo-card {
-    font-size: 1.2rem;
-  }
-  
-  .matricula-acciones .btn {
-    display: block;
-    width: 100%;
-    margin: 0.5rem 0;
-  }
-}
-
-/* Responsive para el carrusel */
-@media (max-width: 1200px) {
-  .galeria-item {
-      width: calc(25% - 12px);
-  }
-}
-
-@media (max-width: 992px) {
-  .galeria-item {
-      width: calc(33.333% - 12px);
-  }
-}
-
-@media (max-width: 768px) {
-  .galeria-item {
-      width: calc(50% - 12px);
-  }
-}
-
-@media (max-width: 576px) {
-  .galeria-item {
-      width: calc(100% - 12px);
-  }
 }

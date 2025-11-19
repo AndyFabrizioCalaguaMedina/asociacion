@@ -1,153 +1,466 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Academia de Belleza — GEM Style</title>
-  <link rel="stylesheet" href="/styles/stylesservicio.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos | Asociación Privada de Patronato</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS local -->
+  <link rel="stylesheet" href="/styles/stylesservicio.css">
 </head>
+
 <body>
-<div data-scroll-container>
 
-  <!-- HERO -->
-  <section class="hero" data-scroll-section>
-    <video autoplay muted loop playsinline class="hero-video">
-      <source src="videos/Video Portada.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1 data-scroll data-scroll-speed="2">Transforma tu Futuro con Estilo</h1>
-      <p data-scroll data-scroll-speed="1.5">Cursos gratuitos, certificaciones y una comunidad apasionada por la belleza.</p>
-      <a href="#servicios" class="btn" data-scroll data-scroll-speed="1">Comienza tu viaje</a>
-    </div>
-  </section>
-
-  <!-- CURSOS ACTIVOS -->
-  <section class="section servicios" id="servicios" data-scroll-section>
-    <canvas id="particles"></canvas>
-    <div class="container">
-      <h2 class="titulo" data-scroll data-scroll-speed="2">Cursos Activos</h2>
-      <div class="busqueda">
-        <input type="text" id="buscador" placeholder="Buscar curso..." />
+  <!-- 🔹 NAVBAR -->
+  <header id="mainHeader">
+    <nav class="navbar">
+      <div class="logo" id="logoToggle">
+        <i class="fa-solid fa-scissors"></i>
+        <a href="/" class="logo-text">PATRONATO</a>
       </div>
-      <div class="grid" id="lista-cursos">
-        <!-- Los cursos activos se mostrarían dinámicamente aquí si se pasa un array desde el backend -->
-        <div class="card" data-scroll data-scroll-speed="1.5">
-          <img src="images/Barberia.jpg" alt="">
-          <div class="info">
-            <h3>Barbería Profesional</h3>
-            <p>Aprende técnicas modernas y clásicas con los mejores instructores.</p>
-            <button class="btn-card">Ver más</button>
-          </div>
-        </div>
-        <div class="card" data-scroll data-scroll-speed="1.5">
-          <img src="images/Maquillaje.jpg" alt="">
-          <div class="info">
-            <h3>Maquillaje</h3>
-            <p>Perfecciona el arte del maquillaje profesional con prácticas reales.</p>
-            <button class="btn-card">Ver más</button>
-          </div>
-        </div>
-        <div class="card" data-scroll data-scroll-speed="1.5">
-          <img src="images/Diseño de Uñas.jpg" alt="">
-          <div class="info">
-            <h3>Diseño de Uñas</h3>
-            <p>Domina las técnicas de decoración y diseño con certificación gratuita.</p>
-            <button class="btn-card">Ver más</button>
-          </div>
-        </div>
-        <div class="card" data-scroll data-scroll-speed="1.5">
-          <img src="images/Diseño de Cejas.webp" alt="">
-          <div class="info">
-            <h3>Cejas y Pestañas</h3>
-            <p>Aprende lifting, perfilado y extensiones con resultados profesionales.</p>
-            <button class="btn-card">Ver más</button>
-          </div>
+
+      <div class="nav-links" id="navMenu">
+        <li class="nav-item"><a class="nav-link" href="nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link active" href="servicios">Cursos</a></li>
+        <li class="nav-item"><a class="nav-link" href="matricula">Matrícula</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto">Contacto</a></li>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO CURSOS -->
+  <section class="hero-cursos">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-12 col-lg-8">
+          <h1 class="fw-bold mb-4">CURSOS</h1>
+          <p class="hero-subtitle lead">
+            Descubre nuestra oferta educativa especializada en belleza y estética. 
+            Formación profesional con los mejores instructores y equipos de última generación.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MOTIVACIONAL -->
-  <section class="motivacion" id="motivacion" data-scroll-section>
-    <img src="images/Cortes.jpg" class="img-left" alt="Belleza">
-    <div class="texto-motivacional" data-scroll data-scroll-speed="2">
-      <h2>“Cree en ti. Cada corte, cada trazo, cada mirada cuenta.”</h2>
-      <p>En nuestra academia formamos más que profesionales, formamos artistas de la belleza que transforman el mundo con pasión, técnica y confianza.</p>
+<!-- SECCIÓN DE CURSOS - GRID CARDS -->
+<section id="cursos" class="cursos-grid-section py-5 py-lg-6 bg-light">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-12 col-lg-8">
+        <h2 class="fw-bold display-5 mb-4">NUESTROS PROGRAMAS</h2>
+        <p class="lead">
+          Elige el curso que mejor se adapte a tus intereses y comienza tu camino en el mundo de la belleza
+        </p>
+      </div>
     </div>
-    <img src="images/Chica.jpg" class="img-right" alt="Arte">
+
+    <div class="row g-4">
+      <!-- Cambia de col-md-6 col-lg-3 a col-md-6 para 2x2 -->
+      
+      <!-- Barbería Avanzada -->
+      <div class="col-md-6"> <!-- Cambiado aquí -->
+        <div class="curso-card">
+          <div class="curso-video-card">
+            <video autoplay muted loop playsinline>
+              <source src="videos/Barberia.mp4" type="video/mp4">
+              Tu navegador no soporta el elemento video.
+            </video>
+          </div>
+          <div class="curso-content">
+            <h3 class="curso-titulo-card">Barbería Avanzada</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maquillaje Profesional -->
+      <div class="col-md-6"> <!-- Cambiado aquí -->
+        <div class="curso-card">
+          <div class="curso-video-card">
+            <video autoplay muted loop playsinline>
+              <source src="videos/Maquillaje.mp4" type="video/mp4">
+              Tu navegador no soporta el elemento video.
+            </video>
+          </div>
+          <div class="curso-content">
+            <h3 class="curso-titulo-card">Maquillaje Profesional</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diseño de Cejas -->
+      <div class="col-md-6"> <!-- Cambiado aquí -->
+        <div class="curso-card">
+          <div class="curso-video-card">
+            <video autoplay muted loop playsinline>
+              <source src="videos/Diseño de cejas y pestañas.mp4" type="video/mp4">
+              Tu navegador no soporta el elemento video.
+            </video>
+          </div>
+          <div class="curso-content">
+            <h3 class="curso-titulo-card">Diseño de Cejas</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diseño de Uñas -->
+      <div class="col-md-6"> <!-- Cambiado aquí -->
+        <div class="curso-card">
+          <div class="curso-video-card">
+            <video autoplay muted loop playsinline>
+              <source src="videos/Diseño de uñas.mp4" type="video/mp4">
+              Tu navegador no soporta el elemento video.
+            </video>
+          </div>
+          <div class="curso-content">
+            <h3 class="curso-titulo-card">Diseño de Uñas</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- CARRUSEL GALERÍA DE TRABAJOS -->
+  <section class="galeria-trabajos py-5 py-lg-6">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-12 col-lg-8">
+          <h2 class="fw-bold display-5 mb-4">GALERÍA DE TRABAJOS</h2>
+          <p class="lead">
+            Mira algunos de los increíbles trabajos realizados por nuestros estudiantes y egresados
+          </p>
+        </div>
+      </div>
+
+      <!-- Carrusel -->
+      <div class="position-relative">
+        <div id="galeriaContainer" class="overflow-hidden">
+          <div class="d-flex galeria-track" style="transition: transform 0.5s ease;">
+            <!-- Imágenes del carrusel -->
+            <div class="galeria-item flex-shrink-0 me-3">
+              <img src="images/Trabajo 1.webp" class="d-block w-100 rounded-3" alt="Trabajo 1" loading="lazy">
+            </div>
+            <!--<div class="galeria-item flex-shrink-0 me-3">
+              <img src="images/Trabajo 2.webp" class="d-block w-100 rounded-3" alt="Trabajo 2" loading="lazy">
+            </div>-->
+            <div class="galeria-item flex-shrink-0 me-3">
+              <img src="images/Trabajo 3.webp" class="d-block w-100 rounded-3" alt="Trabajo 3" loading="lazy">
+            </div>
+            <div class="galeria-item flex-shrink-0 me-3">
+              <img src="images/Trabajo 4.webp" class="d-block w-100 rounded-3" alt="Trabajo 4" loading="lazy">
+            </div>
+            <div class="galeria-item flex-shrink-0 me-3">
+              <img src="images/Trabajo 5.webp" class="d-block w-100 rounded-3" alt="Trabajo 5" loading="lazy">
+            </div>
+            <div class="galeria-item flex-shrink-0 me-3">
+              <img src="images/Trabajo 6.webp" class="d-block w-100 rounded-3" alt="Trabajo 6" loading="lazy">
+            </div>
+            <div class="galeria-item flex-shrink-0 me-3">
+              <img src="images/Trabajo 7.webp" class="d-block w-100 rounded-3" alt="Trabajo 6" loading="lazy">
+            </div>
+            <div class="galeria-item flex-shrink-0 me-3">
+              <img src="images/Trabajo 8.webp" class="d-block w-100 rounded-3" alt="Trabajo 6" loading="lazy">
+            </div>
+            <div class="galeria-item flex-shrink-0 me-3">
+              <img src="images/Trabajo 9.webp" class="d-block w-100 rounded-3" alt="Trabajo 6" loading="lazy">
+            </div>
+            <div class="galeria-item flex-shrink-0 me-3">
+              <img src="images/Trabajo 10.webp" class="d-block w-100 rounded-3" alt="Trabajo 6" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles del carrusel -->
+        <button class="carousel-control-prev position-absolute top-50 start-0 translate-middle-y" type="button" id="prevBtn">
+          <span class="carousel-control-prev-icon bg-dark rounded-circle p-2"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next position-absolute top-50 end-0 translate-middle-y" type="button" id="nextBtn">
+          <span class="carousel-control-next-icon bg-dark rounded-circle p-2"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </div>
   </section>
 
-  <!-- TESTIMONIOS -->
-  <section class="section testimonios" data-scroll-section>
+  <!-- SECCIÓN INFORMACIÓN ADICIONAL -->
+  <section class="info-cursos py-5 py-lg-6">
     <div class="container">
-      <h2 data-scroll data-scroll-speed="2">Experiencia de Nuestros Alumnos</h2>
-      <div class="testimonios-grid">
-        <div class="testimonio" data-scroll data-scroll-speed="1">
-          <p>“Gracias a las clases gratuitas y certificación, abrí mi propio negocio.”</p>
-          <h4>— Laura G.</h4>
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-12 col-lg-8">
+          <h2 class="fw-bold display-5 mb-4">¿POR QUÉ ELEGIRNOS?</h2>
+          <p class="lead">
+            Ofrecemos la mejor formación en belleza y estética con beneficios exclusivos para nuestros estudiantes
+          </p>
         </div>
-        <div class="testimonio" data-scroll data-scroll-speed="1">
-          <p>“El curso de barbería cambió mi vida. Hoy tengo mi propia barbería.”</p>
-          <h4>— José M.</h4>
+      </div>
+
+      <div class="row g-4">
+        <!-- Instructores -->
+        <div class="col-md-4">
+          <div class="beneficio-curso bg-white text-center p-4 rounded">
+            <i class="bi bi-people-fill text-celeste fs-1 mb-3"></i>
+            <h4 class="fw-bold mb-3">Instructores Expertos</h4>
+            <p class="text-muted">Aprende con profesionales activos en la industria con años de experiencia.</p>
+          </div>
         </div>
-        <div class="testimonio" data-scroll data-scroll-speed="1">
-          <p>“Aprendí maquillaje profesional y ahora trabajo en eventos de moda.”</p>
-          <h4>— Camila P.</h4>
+
+        <!-- Equipos -->
+        <div class="col-md-4">
+          <div class="beneficio-curso bg-white text-center p-4 rounded">
+            <i class="bi bi-tools text-celeste fs-1 mb-3"></i>
+            <h4 class="fw-bold mb-3">Equipos Modernos</h4>
+            <p class="text-muted">Trabaja con equipos de última generación y productos de alta calidad.</p>
+          </div>
+        </div>
+
+        <!-- Certificación -->
+        <div class="col-md-4">
+          <div class="beneficio-curso bg-white text-center p-4 rounded">
+            <i class="bi bi-award-fill text-celeste fs-1 mb-3"></i>
+            <h4 class="fw-bold mb-3">Certificación Oficial</h4>
+            <p class="text-muted">Obtén un diploma reconocido que avala tus conocimientos y habilidades.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALERÍA PROFESIONAL -->
-  <section class="section gallery" data-scroll-section>
+  <!-- SECCIÓN MATRÍCULA -->
+  <section class="matricula-cursos py-5 py-lg-6 bg-dark text-white">
     <div class="container">
-      <h2 data-scroll data-scroll-speed="2">Galería de Trabajos</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item"><img src="images/Trabajo 1.webp" alt="Trabajo 1"></div>
-        <div class="gallery-item"><img src="images/Trabaja 2.jpg" alt="Trabajo 2"></div>
-        <div class="gallery-item"><img src="images/Trabajo 3.jpeg" alt="Trabajo 3"></div>
-        <div class="gallery-item"><img src="images/Trabajo 4.jpg" alt="Trabajo 4"></div>
-        <div class="gallery-item"><img src="images/Trabajo 5.jpg" alt="Trabajo 5"></div>
-        <div class="gallery-item"><img src="images/Trabajo 6.jpg" alt="Trabajo 6"></div>
-        <div class="gallery-item"><img src="images/Trabajo 7.jpg" alt="Trabajo 7"></div>
-        <div class="gallery-item"><img src="images/Trabajo 8.webp" alt="Trabajo 8"></div>
+      <div class="row justify-content-center text-center">
+        <div class="col-12 col-lg-8">
+          <div class="matricula-cursos-content">
+            <h2 class="fw-bold display-5 mb-4">¿LISTO PARA COMENZAR?</h2>
+            <p class="lead mb-5">
+              No esperes más para transformar tu pasión en profesión. 
+              Contáctanos para recibir información detallada sobre horarios, costos y proceso de matrícula.
+            </p>
+            
+            <div class="matricula-acciones">
+              <a href="matricula" class="btn btn-primary btn-lg px-5 py-3 fw-bold me-3 mb-3">
+                <i class="bi bi-pencil-fill me-2"></i>Ver Matrícula
+              </a>
+              <a href="contacto" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold mb-3">
+                <i class="bi bi-chat-left-text me-2"></i>Contactar
+              </a>
+            </div>
+            
+            <div class="matricula-info mt-4">
+              <p class="small">
+                <i class="bi bi-info-circle me-2"></i>
+                Todos nuestros cursos incluyen materiales de trabajo y certificación al finalizar
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FORMULARIO -->
-  <section class="section reserva" data-scroll-section>
-    <div class="container">
-      <h2 data-scroll data-scroll-speed="2">Reserva tu Cupo</h2>
-      <form class="formulario" data-scroll data-scroll-speed="1">
-        <input type="text" placeholder="Nombre completo" required>
-        <input type="email" placeholder="Correo electrónico" required>
-        <select required>
-          <option value="">Selecciona un curso</option>
-          <option>Barbería</option>
-          <option>Maquillaje</option>
-          <option>Uñas</option>
-          <option>Cejas</option>
-        </select>
-        <button class="btn" type="submit">Reservar</button>
-      </form>
-    </div>
-  </section>
+<br>
 
   <!-- FOOTER -->
-  <footer data-scroll-section>
-    <p>© 2025 Academia de Belleza — Todos los derechos reservados.</p>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Contacto -->
+        <div class="footer-section">
+          <h3>Contacto</h3>
+          <ul class="contact-info">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Av. Alejandro Bertello, Callao</span>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <span>+51 987 654 321</span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span>info@patronato.com</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Horarios -->
+        <div class="footer-section">
+          <h3>Horarios</h3>
+          <ul class="hours-list">
+            <li>Lunes a Viernes</li>
+            <li>8:00 - 16:00</li>
+            <li style="margin-top: 12px;">Sábados</li>
+            <li>8:00 - 14:00</li>
+          </ul>
+        </div>
+
+        <!-- Cursos -->
+        <div class="footer-section">
+          <h3>Cursos</h3>
+          <ul>
+            <li><a href="servicios">Barbería Avanzada</a></li>
+            <li><a href="servicios">Maquillaje Profesional</a></li>
+            <li><a href="servicios">Diseño de Cejas</a></li>
+            <li><a href="servicios">Diseño de Uñas</a></li>
+          </ul>
+        </div>
+
+        <!-- Promoción -->
+        <div class="footer-section">
+          <h3>Promoción Especial</h3>
+          <div class="promo-box">
+            <p>Inscríbete ahora y obtén un descuento exclusivo en todos nuestros cursos.</p>
+          </div>
+          <p style="font-size: 0.9rem; color: #a0a0a0;">Válido por tiempo limitado</p>
+
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Asociación Privada de Patronato. Todos los derechos reservados.</p>
+      </div>
+    </div>
   </footer>
 
-</div>
-<script src="/js/script.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // JavaScript para el funcionamiento del menú móvil
+    document.addEventListener('DOMContentLoaded', function () {
+      const logoIcon = document.querySelector('.logo i');
+      const logoText = document.querySelector('.logo');
+      const navMenu = document.getElementById('navMenu');
+      const menuOverlay = document.createElement('div');
+      menuOverlay.className = 'menu-overlay';
+      document.body.appendChild(menuOverlay);
+
+      let isMenuOpen = false;
+
+      // Función para abrir/cerrar el menú
+      function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        navMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+
+        // Animación del icono
+        if (isMenuOpen) {
+          logoIcon.style.transform = 'rotate(90deg)';
+          logoIcon.style.color = 'var(--celeste-suave)';
+        } else {
+          logoIcon.style.transform = 'rotate(0deg)';
+          logoIcon.style.color = 'var(--celeste)';
+        }
+      }
+
+      // Evento para el icono de tijeras (hamburguesa) - SOLO en móvil
+      function handleIconClick(e) {
+        if (window.innerWidth <= 992) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleMenu();
+        }
+      }
+
+      // Evento para el texto del logo - SIEMPRE redirige al index
+      function handleLogoClick(e) {
+        if (window.innerWidth <= 992 && e.target.tagName === 'I') {
+          return;
+        }
+        window.location.href = '/';
+      }
+
+      // Agregar event listeners
+      logoIcon.addEventListener('click', handleIconClick);
+      logoText.addEventListener('click', handleLogoClick);
+
+      // Cerrar menú al hacer clic en el overlay
+      menuOverlay.addEventListener('click', function () {
+        if (window.innerWidth <= 992 && isMenuOpen) {
+          toggleMenu();
+        }
+      });
+
+      // Cerrar menú al hacer clic en un enlace (solo en móvil)
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+          if (window.innerWidth <= 992 && isMenuOpen) {
+            toggleMenu();
+          }
+        });
+      });
+
+      // Cerrar menú con la tecla ESC (solo en móvil)
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && window.innerWidth <= 992 && isMenuOpen) {
+          toggleMenu();
+        }
+      });
+
+      // Cerrar menú al redimensionar la ventana a desktop
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 992 && isMenuOpen) {
+          toggleMenu();
+        }
+      });
+
+      // Restaurar estado del icono al cargar la página
+      logoIcon.style.transform = 'rotate(0deg)';
+      logoIcon.style.color = 'var(--celeste)';
+
+      // Scroll header effect
+      window.addEventListener('scroll', () => {
+        const header = document.getElementById('mainHeader');
+        header.classList.toggle('scrolled', window.scrollY > 50);
+      });
+
+      // JavaScript para el carrusel de galería
+      const track = document.querySelector('.galeria-track');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const items = document.querySelectorAll('.galeria-item');
+      const itemWidth = items[0].offsetWidth + 12; // width + margin
+      let currentPosition = 0;
+
+      function updateCarousel() {
+        track.style.transform = `translateX(${currentPosition}px)`;
+      }
+
+      nextBtn.addEventListener('click', () => {
+        const maxPosition = -((items.length - 4) * itemWidth);
+        currentPosition = Math.max(currentPosition - itemWidth, maxPosition);
+        updateCarousel();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        currentPosition = Math.min(currentPosition + itemWidth, 0);
+        updateCarousel();
+      });
+
+      // Ajustar en resize
+      window.addEventListener('resize', () => {
+        const newItemWidth = items[0].offsetWidth + 12;
+        currentPosition = 0;
+        updateCarousel();
+      });
+    });
+  </script>
 </body>
 </html>
-
-

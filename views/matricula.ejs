@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Asociación Privada de Patronato</title>
+
+  <!-- Preconexiones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Fuentes optimizadas con preload -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Impact&display=swap" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Fallback para JavaScript deshabilitado -->
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Impact&display=swap" rel="stylesheet">
+  </noscript>
+
+  <!-- CSS local con preload -->
+  <link rel="preload" href="/styles/matricula.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="/styles/matricula.css">
+  </noscript>
+</head>
+
+<body>
+
+  <!-- 🔹 NAVBAR -->
+  <header id="mainHeader">
+    <nav class="navbar">
+      <div class="logo" id="logoToggle">
+        <i class="fa-solid fa-scissors"></i>
+        <a href="/" class="logo-text">PATRONATO</a>
+      </div>
+
+      <div class="nav-links" id="navMenu">
+        <li class="nav-item"><a class="nav-link" href="nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="servicios">Cursos</a></li>
+        <li class="nav-item"><a class="nav-link" href="matricula">Matricula</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto">Contacto</a></li>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SIMPLIFICADO -->
+  <section class="hero-matricula">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+          <h1 class="fw-bold mb-4">MATRICÚLATE</h1>
+          <p class="hero-subtitle lead mb-5">
+            Transforma tu pasión en profesión. Inicia tu carrera en belleza y estética
+          </p>
+          <a href="#matricula-wsp" class="btn btn-primary btn-responsive px-5 py-3">
+            <i class="bi bi-arrow-down-circle me-2"></i>Más Información
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE CURSOS -->
+  <section id="cursos" class="cursos-section">
+    <div class="container">
+
+      <!-- Barbería Avanzada - Imagen DERECHA -->
+      <div class="curso-item">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-md-6 curso-info bg-white">
+            <div class="p-4 p-lg-5">
+              <span class="curso-categoria">BELLEZA Y ESTILO</span>
+              <h3 class="curso-titulo">Barbería Avanzada</h3>
+              <p class="curso-descripcion">
+                Domina cortes modernos, degradados y perfilados con técnicas de alto nivel.
+                Aprende las últimas tendencias en barbería clásica y contemporánea.
+              </p>
+              <ul class="curso-beneficios">
+                <li><i class="bi bi-check-circle-fill"></i>Técnicas de degradado profesional</li>
+                <li><i class="bi bi-check-circle-fill"></i>Manejo de herramientas especializadas</li>
+                <li><i class="bi bi-check-circle-fill"></i>Atención al cliente y consultoría de estilo</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 curso-imagen bg-dark">
+            <div class="placeholder-imagen">
+              <img src="images/background-barba.webp" class="placeholder-imagen d-block w-100" alt="Slide 1">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maquillaje Profesional - Imagen IZQUIERDA -->
+      <div class="curso-item">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-md-6 curso-imagen bg-dark">
+            <div class="placeholder-imagen">
+              <img src="images/Chica-ojos.webp" class="placeholder-imagen d-block w-100" alt="Slide 1">
+            </div>
+          </div>
+          <div class="col-md-6 curso-info bg-dark text-white">
+            <div class="p-4 p-lg-5">
+              <span class="curso-categoria">MAQUILLAJE ARTÍSTICO</span>
+              <h3 class="curso-titulo">Maquillaje Profesional</h3>
+              <p class="curso-descripcion">
+                Aprende maquillaje artístico, social y editorial con expertos en moda.
+                Desarrolla tu creatividad y técnica para diferentes ocasiones y estilos.
+              </p>
+              <ul class="curso-beneficios">
+                <li><i class="bi bi-check-circle-fill"></i>Maquillaje social y de novias</li>
+                <li><i class="bi bi-check-circle-fill"></i>Técnicas editoriales y artísticas</li>
+                <li><i class="bi bi-check-circle-fill"></i>Colorimetría y corrección de tonos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diseño de Cejas - Imagen DERECHA -->
+      <div class="curso-item">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-md-6 curso-info bg-white">
+            <div class="p-4 p-lg-5">
+              <span class="curso-categoria">DISEÑO FACIAL</span>
+              <h3 class="curso-titulo">Diseño de Cejas</h3>
+              <p class="curso-descripcion">
+                Descubre técnicas modernas de perfilado, diseño y embellecimiento facial.
+                Aprende a realzar la mirada con métodos profesionales y duraderos.
+              </p>
+              <ul class="curso-beneficios">
+                <li><i class="bi bi-check-circle-fill"></i>Análisis de rostro y diseño personalizado</li>
+                <li><i class="bi bi-check-circle-fill"></i>Técnicas de henna y tintado</li>
+                <li><i class="bi bi-check-circle-fill"></i>Laminado y fijación profesional</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 curso-imagen bg-dark">
+            <div class="placeholder-imagen">
+              <img src="images/diseño-cejas-2.webp" class="placeholder-imagen d-block w-100" alt="Slide 1">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diseño de Uñas - Imagen IZQUIERDA -->
+      <div class="curso-item">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-md-6 curso-imagen bg-dark">
+            <div class="placeholder-imagen">
+              <img src="images/fondounas3.webp" class="placeholder-imagen d-block w-100" alt="Slide 1">
+            </div>
+          </div>
+          <div class="col-md-6 curso-info bg-dark text-white">
+            <div class="p-4 p-lg-5">
+              <span class="curso-categoria">MANICURE PROFESIONAL</span>
+              <h3 class="curso-titulo">Diseño de Uñas</h3>
+              <p class="curso-descripcion">
+                Domina decoraciones artísticas y técnicas de manicure profesional.
+                Desde lo básico hasta las técnicas más avanzadas de esculpido y diseño.
+              </p>
+              <ul class="curso-beneficios">
+                <li><i class="bi bi-check-circle-fill"></i>Uñas esculpidas y acrílicas</li>
+                <li><i class="bi bi-check-circle-fill"></i>Técnicas de gel y polygel</li>
+                <li><i class="bi bi-check-circle-fill"></i>Diseño artístico y nail art</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN MATRICÚLATE AHORA -->
+  <section id="matricula-wsp" class="matricula-ahora py-5 py-lg-6 bg-dark text-white">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-12 col-lg-8" data-aos="fade-up">
+          <div class="matricula-ahora-content">
+            <h2 class="fw-bold display-5 mb-4">MATRICÚLATE AHORA</h2>
+            <p class="lead mb-5">
+              Matricúlate ahora o solicita información adicional sobre nuestros cursos.
+              Nuestro equipo está listo para guiarte en tu camino hacia el éxito profesional.
+            </p>
+
+            <div class="matricula-beneficios mb-5">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="beneficio-item">
+                    <i class="bi bi-clock-fill text-celeste fs-2 mb-3"></i>
+                    <h5 class="fw-bold">Inscripción Inmediata</h5>
+                    <p class="small">Proceso de matrícula rápido y sencillo</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="beneficio-item">
+                    <i class="bi bi-chat-dots-fill text-celeste fs-2 mb-3"></i>
+                    <h5 class="fw-bold">Asesoría Personalizada</h5>
+                    <p class="small">Te guiamos en la elección de tu curso ideal</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="beneficio-item">
+                    <i class="bi bi-percent text-celeste fs-2 mb-3"></i>
+                    <h5 class="fw-bold">Promociones Especiales</h5>
+                    <p class="small">Descuentos por inscripción anticipada</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="matricula-acciones">
+              <a href="https://wa.me/51987654321?text=Hola,%20estoy%20interesado%20en%20matricularme%20en%20los%20cursos%20de%20belleza%20y%20estética.%20¿Podrían%20brindarme%20más%20información?"
+                class="btn btn-success btn-lg px-5 py-3 fw-bold me-3 mb-3" target="_blank" rel="noopener">
+                <i class="bi bi-whatsapp me-2"></i>Matricularme Ahora
+              </a>
+
+
+            </div>
+
+            <div class="matricula-info-adicional mt-4">
+              <p class="small text-light">
+                <i class="bi bi-shield-check me-2"></i>
+                Tu información está protegida y solo será usada para brindarte el mejor servicio
+              </p>
+              <p class="small-text-muted">
+                Horario de atención: Lunes a Sábado 8:00 AM - 6:00 PM
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <br>
+
+   <!-- FOOTER  -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Contacto -->
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Alejandro Bertello, Callao</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+51 987 654 321</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@patronato.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Horarios -->
+                <div class="footer-section">
+                    <h3>Horarios</h3>
+                    <ul class="hours-list">
+                        <li>Lunes a Viernes</li>
+                        <li>8:00 - 16:00</li>
+                        <li style="margin-top: 12px;">Sábados</li>
+                        <li>8:00 - 14:00</li>
+                    </ul>
+                </div>
+
+                <!-- Cursos -->
+                <div class="footer-section">
+                    <h3>Cursos</h3>
+                    <ul>
+                        <li><a href="#">Estilismo Profesional</a></li>
+                        <li><a href="#">Cosmetología Avanzada</a></li>
+                        <li><a href="#">Manicura y Pedicura</a></li>
+                    </ul>
+                </div>
+
+                <!-- Promoción -->
+                <div class="footer-section">
+                    <h3>Promoción Especial</h3>
+                    <div class="promo-box">
+                        <p>Inscríbete ahora y obtén un descuento exclusivo en todos nuestros cursos.</p>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #a0a0a0;">Válido por tiempo limitado</p>
+
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Asociación Privada de Patronato. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // AOS Animations
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: 'ease-out-cubic',
+      offset: 100
+    });
+
+    // Scroll header effect
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.navbar');
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // JavaScript para el funcionamiento del menú móvil
+    document.addEventListener('DOMContentLoaded', function () {
+      const logoIcon = document.querySelector('.logo i');
+      const logoText = document.querySelector('.logo');
+      const navMenu = document.getElementById('navMenu');
+      const menuOverlay = document.createElement('div');
+      menuOverlay.className = 'menu-overlay';
+      document.body.appendChild(menuOverlay);
+
+      let isMenuOpen = false;
+
+      // Función para abrir/cerrar el menú
+      function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        navMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+
+        // Animación del icono
+        if (isMenuOpen) {
+          logoIcon.style.transform = 'rotate(90deg)';
+          logoIcon.style.color = 'var(--celeste-suave)';
+        } else {
+          logoIcon.style.transform = 'rotate(0deg)';
+          logoIcon.style.color = 'var(--celeste)';
+        }
+      }
+
+      // Evento para el icono de tijeras (hamburguesa) - SOLO en móvil
+      function handleIconClick(e) {
+        // Verificar si estamos en modo móvil (ancho <= 992px)
+        if (window.innerWidth <= 992) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleMenu();
+        }
+      }
+
+      // Evento para el texto del logo - SIEMPRE redirige al index
+      function handleLogoClick(e) {
+        // Si estamos en móvil y el clic fue en el icono, no hacer nada
+        if (window.innerWidth <= 992 && e.target.tagName === 'I') {
+          return;
+        }
+        // Redirigir al index
+        window.location.href = '/';
+      }
+
+      // Agregar event listeners
+      logoIcon.addEventListener('click', handleIconClick);
+      logoText.addEventListener('click', handleLogoClick);
+
+      // Cerrar menú al hacer clic en el overlay
+      menuOverlay.addEventListener('click', function () {
+        if (window.innerWidth <= 992 && isMenuOpen) {
+          toggleMenu();
+        }
+      });
+
+      // Cerrar menú al hacer clic en un enlace (solo en móvil)
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+          if (window.innerWidth <= 992 && isMenuOpen) {
+            toggleMenu();
+          }
+        });
+      });
+
+      // Cerrar menú con la tecla ESC (solo en móvil)
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && window.innerWidth <= 992 && isMenuOpen) {
+          toggleMenu();
+        }
+      });
+
+      // Cerrar menú al redimensionar la ventana a desktop
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 992 && isMenuOpen) {
+          toggleMenu();
+        }
+      });
+
+      // Restaurar estado del icono al cargar la página
+      logoIcon.style.transform = 'rotate(0deg)';
+      logoIcon.style.color = 'var(--celeste)';
+    });
+  </script>
+</body>
+
+</html>
