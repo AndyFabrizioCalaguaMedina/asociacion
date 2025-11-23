@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Poppins:wght@300;400;600;800&display=swap"
         rel="stylesheet">
     <!-- AOS Animations -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -40,22 +40,32 @@
             </div>
         </nav>
     </header>
-    <!--HERO CARRUSEL-->
+
+    <!-- HERO CARRUSEL -->
     <section class="hero">
-        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img loading="lazy" src="images/BannerPrincipal.jpg" class="d-block w-100" alt="Slide 1">
+                    <img loading="lazy" src="images/BannerPrincipal.jpg" class="d-block w-100 hero-img"
+                        alt="Descripción Slide 1">
                 </div>
                 <div class="carousel-item">
-                    <img loading="lazy" src="images/BannerPrincipal2.jpg" class="d-block w-100" alt="Slide 2">
+                    <img loading="lazy" src="images/BannerPrincipal2.jpg" class="d-block w-100 hero-img"
+                        alt="Descripción Slide 2">
                 </div>
                 <div class="carousel-item">
-                    <img loading="lazy" src="images/BannerPrincipal3.jpg" class="d-block w-100" alt="Slide 3">
+                    <img loading="lazy" src="images/BannerPrincipal3.jpg" class="d-block w-100 hero-img"
+                        alt="Descripción Slide 3">
                 </div>
             </div>
 
-            <!-- Controles del carrusel (opcional) -->
             <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Anterior</span>
@@ -64,66 +74,57 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Siguiente</span>
             </button>
-
-            <!-- Indicadores (opcional) -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
         </div>
     </section>
-    <!-- Sección Context Patro -->
-    <section id="patronato-formacion" class="py-5">
-        <div class="container py-lg-5">
-            <div class="row align-items-center">
 
-                <div class="col-lg-6 px-4 mb-4 mb-lg-0">
+    <section id="carrusel-alumnos-section" class="py-5">
+        <div class="container-fluid">
 
-                    <p class="text-accent-color">
-                        CERTIFICACIÓN PROFESIONAL
-                    </p>
+            <div class="text-center mb-5">
+                <p class="text-accent-color">NUESTRO TALENTO</p>
+                <h2 class="titulo-alumnos">TRABAJOS DE NUESTROS ALUMNOS</h2>
+            </div>
 
-                    <h2 class="mb-4">
-                        Patronato Formación Técnica
-                    </h2>
+            <div class="alumnos-slider">
+                <div class="alumnos-track">
 
-                    <p class="lead text-secondary-custom">
-                        Impulsamos la excelencia en el sector de la belleza peruana. Nuestro centro ofrece una formación
-                        práctica y vanguardista para todas las disciplinas clave: desde corte y estilismo hasta técnicas
-                        avanzadas para uñas.
-                    </p>
-
-                    <p class="text-secondary-custom mb-4">
-                        Nuestros programas están diseñados por expertos del Patronato para garantizar que cada egresado
-                        adquiera el conocimiento y la certificación necesaria para destacar inmediatamente en el mercado
-                        laboral.
-                    </p>
-
-                    <p class="list-title mb-2">Nuestros cursos incluyen:</p>
-
-                    <ul class="list-check">
-                        <li>Cursos de corte y peinado avanzado.</li>
-                        <li>Barbería clásica y moderna profesional.</li>
-                        <li>Manicura, pedicura y uñas acrílicas.</li>
-                        <li>Caritas pintadas.</li>
-                        <li>¡Y mucho más para tu certificación!</li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-6 d-flex justify-content-center justify-content-lg-start">
-                    <div class="image-stack">
-                        <img src="images/aprobado1.webp" alt="Estudiante en curso de barbería"
-                            class="img-fluid custom-shadow-1">
-                        <img src="images/aprobado2.webp" alt="Clase práctica de estilismo"
-                            class="img-fluid custom-shadow-2">
+                    <div class="alumno-slide">
+                        <img src="https://i.ibb.co/LXGx79TG/1.jpg" alt="Trabajo Alumno 1">
                     </div>
-                </div>
+                    <div class="alumno-slide">
+                        <img src="https://i.ibb.co/m55fGGs9/2.jpg" alt="Trabajo Alumno 2">
+                    </div>
+                    <div class="alumno-slide">
+                        <img src="https://i.ibb.co/JW6XKVM9/3.jpg" alt="Trabajo Alumno 3">
+                    </div>
+                    <div class="alumno-slide">
+                        <img src="https://i.ibb.co/sJJF9MP2/4.jpg" alt="Trabajo Alumno 4">
+                    </div>
+                    <div class="alumno-slide">
+                        <img src="https://i.ibb.co/mV0t0CNQ/5.jpg" alt="Trabajo Alumno 5">
+                    </div>
 
+                    <div class="alumno-slide">
+                        <img src="https://i.ibb.co/LXGx79TG/1.jpg" alt="Trabajo Alumno 1">
+                    </div>
+                    <div class="alumno-slide">
+                        <img src="https://i.ibb.co/m55fGGs9/2.jpg" alt="Trabajo Alumno 2">
+                    </div>
+                    <div class="alumno-slide">
+                        <img src="https://i.ibb.co/JW6XKVM9/3.jpg" alt="Trabajo Alumno 3">
+                    </div>
+                    <div class="alumno-slide">
+                        <img src="https://i.ibb.co/sJJF9MP2/4.jpg" alt="Trabajo Alumno 4">
+                    </div>
+                    <div class="alumno-slide">
+                        <img src="https://i.ibb.co/mV0t0CNQ/5.jpg" alt="Trabajo Alumno 5">
+                    </div>
+
+                </div>
             </div>
         </div>
     </section>
+
     <!-- VIDEO -->
     <section class="video-section">
         <video autoplay muted loop playsinline preload="none" class="video-full">
@@ -138,7 +139,6 @@
     <!-- SECCIÓN INSTITUCION -->
     <section class="valores-section">
         <h2>Nuestros <span class="resaltado">Valores</span></h2>
-
         <div class="valores">
             <!-- EMPATÍA -->
             <div class="valor">
@@ -181,30 +181,29 @@
             </div>
         </div>
     </section>
+
     <!-- CURSOS -->
     <section id="cursos" class="services-section text-center py-5" style="background-color: #f4f4f4;">
         <div class="container">
             <h2 data-aos="fade-down">Nuestros Cursos con Descuento</h2>
-            <p data-aos="fade-down" data-aos-delay="100">Formamos expertos en belleza, barbería y estilo moderno</p>
+            <p data-aos="fade-down" data-aos-delay="100" class="lead text-dark mb-4" style="color: #000000 !important;">
+                Formamos expertos en belleza, barbería y estilo moderno
+            </p>
 
             <div class="row mt-4 justify-content-center">
-
                 <!-- Curso 1 -->
                 <div class="col-md-4 mb-4" data-aos="zoom-in">
                     <div class="course-card" tabindex="0">
                         <img src="/images/fondobarber1.webp" alt="Curso de Corte Profesional">
                         <div class="card-overlay"></div>
-
                         <div class="card-content">
                             <i class="fa-solid fa-scissors card-icon"></i>
                             <h3>Corte Profesional</h3>
-
                             <div class="card-content-hover">
-                                <p>De <del>$79.99</del> a <strong>$49.99</strong></p>
+                                <p>De <del>S/ 99.90</del> a <strong>S/ 49.99</strong></p>
                                 <span class="badge bg-warning text-dark">OFERTA</span>
-                                <a href="#" class="btn-ver-mas">Reservar Cita</a>
+                                <a href="#" class="btn-ver-mas">Matricúlate ya</a>
                             </div>
-
                             <div class="highlight-wrap">
                                 <span class="highlight-line"></span>
                             </div>
@@ -217,17 +216,14 @@
                     <div class="course-card" tabindex="0">
                         <img src="/images/fondoestilista2.webp" alt="Curso de Estilismo Moderno">
                         <div class="card-overlay"></div>
-
                         <div class="card-content">
                             <i class="fa-solid fa-wand-magic-sparkles card-icon"></i>
                             <h3>Estilismo Moderno</h3>
-
                             <div class="card-content-hover">
-                                <p>De <del>$69.99</del> a <strong>$49.99</strong></p>
+                                <p>De <del>S/ 99.90</del> a <strong>S/ 49.99</strong></p>
                                 <span class="badge bg-warning text-dark">OFERTA</span>
-                                <a href="#" class="btn-ver-mas">Reservar Cita</a>
+                                <a href="#" class="btn-ver-mas">Matricúlate ya</a>
                             </div>
-
                             <div class="highlight-wrap">
                                 <span class="highlight-line"></span>
                             </div>
@@ -240,28 +236,25 @@
                     <div class="course-card" tabindex="0">
                         <img src="/images/fondounas3.webp" alt="Curso de Manicure & Nails">
                         <div class="card-overlay"></div>
-
                         <div class="card-content">
                             <i class="fa-solid fa-hand-sparkles card-icon"></i>
                             <h3>Manicure & Nails</h3>
-
                             <div class="card-content-hover">
-                                <p>De <del>$59.99</del> a <strong>$49.99</strong></p>
+                                <p>De <del>S/ 99.90</del> a <strong>S/ 49.99</strong></p>
                                 <span class="badge bg-warning text-dark">OFERTA</span>
-                                <a href="#" class="btn-ver-mas">Reservar Cita</a>
+                                <a href="#" class="btn-ver-mas">Matricúlate ya</a>
                             </div>
-
                             <div class="highlight-wrap">
                                 <span class="highlight-line"></span>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-    <!-- FOOTER  -->
+
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
@@ -284,27 +277,25 @@
                     </ul>
                 </div>
 
-                   <!-- Horarios -->
-        <div class="footer-section">
-          <h3>Horarios</h3>
-          <ul class="hours-list">
-            <li><strong>Lunes a Viernes</strong></li>
-            <li>8:00am - 13:00pm</li>
+                <!-- Horarios -->
+                <div class="footer-section">
+                    <h3>Horarios</h3>
+                    <ul class="hours-list">
+                        <li><strong>Lunes a Viernes</strong></li>
+                        <li>8:00am - 13:00pm</li>
 
-          </ul>
-        </div>
-
-                 <!--Enlaces -->
-      <div class="footer-section">
-        <h3>Enlaces</h3>
-        <ul>
-          <li><a href="/matricula">Matricula</a></li>
-          <li><a href="/servicios">Servicio</a></li>
-          <li><a href="/nosotros">Nosotros</a></li>
-          <li><a href="/contacto">Contacto</a></li>
-        </ul>
-      </div>
-
+                    </ul>
+                </div>
+                <!-- Cursos -->
+                <div class="footer-section">
+                    <h3>Cursos</h3>
+                    <ul>
+                        <li><a href="servicios">Barbería Avanzada</a></li>
+                        <li><a href="servicios">Maquillaje Profesional</a></li>
+                        <li><a href="servicios">Diseño de Cejas</a></li>
+                        <li><a href="servicios">Diseño de Uñas</a></li>
+                    </ul>
+                </div>
                 <!-- Promoción -->
                 <div class="footer-section">
                     <h3>Promoción Especial</h3>
@@ -327,6 +318,7 @@
             </div>
         </div>
     </footer>
+
     <!-- BOTÓN FLOTANTE MATRÍCULA -->
     <a href="#contacto" class="btn-flotante">
         <i class="bi bi-pencil-square"></i> Matrículate
@@ -337,8 +329,130 @@
         class="whatsapp-float" target="_blank">
         <i class="bi bi-whatsapp"></i>
     </a>
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        // AOS Animations
+        AOS.init({
+            once: true,
+            duration: 800,
+            easing: 'ease-out-cubic',
+            offset: 100
+        });
+
+        // Scroll header effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // JavaScript para el funcionamiento del menú móvil
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoIcon = document.querySelector('.logo i');
+            const logoText = document.querySelector('.logo');
+            const navMenu = document.getElementById('navMenu');
+            const menuOverlay = document.createElement('div');
+            menuOverlay.className = 'menu-overlay';
+            document.body.appendChild(menuOverlay);
+
+            let isMenuOpen = false;
+
+            // Función para abrir/cerrar el menú
+            function toggleMenu() {
+                isMenuOpen = !isMenuOpen;
+                navMenu.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+
+                // Animación del icono
+                if (isMenuOpen) {
+                    logoIcon.style.transform = 'rotate(90deg)';
+                    logoIcon.style.color = 'var(--celeste-suave)';
+                } else {
+                    logoIcon.style.transform = 'rotate(0deg)';
+                    logoIcon.style.color = 'var(--celeste)';
+                }
+            }
+
+            // Evento para el icono de tijeras (hamburguesa) - SOLO en móvil
+            function handleIconClick(e) {
+                // Verificar si estamos en modo móvil (ancho <= 992px)
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleMenu();
+                }
+            }
+
+            // Evento para el texto del logo - SIEMPRE redirige al index
+            function handleLogoClick(e) {
+                // Si estamos en móvil y el clic fue en el icono, no hacer nada
+                if (window.innerWidth <= 992 && e.target.tagName === 'I') {
+                    return;
+                }
+                // Redirigir al index
+                window.location.href = '/';
+            }
+
+            // Agregar event listeners
+            logoIcon.addEventListener('click', handleIconClick);
+            logoText.addEventListener('click', handleLogoClick);
+
+            // Cerrar menú al hacer clic en el overlay
+            menuOverlay.addEventListener('click', function () {
+                if (window.innerWidth <= 992 && isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+
+            // Cerrar menú al hacer clic en un enlace (solo en móvil)
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth <= 992 && isMenuOpen) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // Cerrar menú con la tecla ESC (solo en móvil)
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && window.innerWidth <= 992 && isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+
+            // Cerrar menú al redimensionar la ventana a desktop
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 992 && isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+
+            // Restaurar estado del icono al cargar la página
+            logoIcon.style.transform = 'rotate(0deg)';
+            logoIcon.style.color = 'var(--celeste)';
+        });
+
+        // Inicialización mejorada del carrusel
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.getElementById('heroCarousel');
+
+            if (carousel) {
+                // Inicializar carrusel de Bootstrap
+                const bsCarousel = new bootstrap.Carousel(carousel, {
+                    interval: 3000,
+                    wrap: true,
+                    touch: true
+                });
+
+                console.log('Carrusel inicializado correctamente');
+            }
+        });
+    </script>
 </body>
+
 </html>

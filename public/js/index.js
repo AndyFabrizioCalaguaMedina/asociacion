@@ -1,4 +1,112 @@
- // AOS Animations
+app.use(express.static('public'));
+        // ===================== LOCOMOTIVE SCROLL =====================
+const scrollContainer = document.querySelector('[data-scroll-container]');
+
+const locoScroll = new LocomotiveScroll({
+  el: scrollContainer,
+  smooth: true,
+  lerp: 0.08,
+  getDirection: true
+});
+
+// Vincular Locomotive Scroll con ScrollTrigger
+locoScroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy(scrollContainer, {
+  scrollTop(value) {
+    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+  },
+  getBoundingClientRect() {
+    return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+  },
+  pinType: scrollContainer.style.transform ? "transform" : "fixed"
+});
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+ScrollTrigger.refresh();
+
+// ===================== HERO ANIMATION =====================
+gsap.from(".hero-content h1", {
+  y: 50, opacity: 0, duration: 1.5, ease: "power3.out", delay: 0.3
+});
+gsap.from(".hero-content p", {
+  y: 30, opacity: 0, duration: 1.2, ease: "power3.out", delay: 0.6
+});
+gsap.from(".hero-content .btn", {
+  scale: 0, opacity: 0, duration: 1, ease: "back.out(1.7)", delay: 0.9
+});
+
+// ===================== CURSOS ANIMACIÓN =====================
+gsap.from(".card", {
+  scrollTrigger: {
+    trigger: ".grid",
+    scroller: scrollContainer,
+    start: "top 90%",
+  },
+  y: 50, opacity: 0, duration: 1, stagger: 0.2, ease: "power3.out"
+});
+
+// Hover animado en tarjetas
+document.querySelectorAll(".card").forEach(card => {
+  card.addEventListener("mouseenter", () => gsap.to(card, { scale: 1.05, duration: 0.3 }));
+  card.addEventListener("mouseleave", () => gsap.to(card, { scale: 1, duration: 0.3 }));
+});
+
+// ===================== MOTIVACIONAL =====================
+gsap.from(".motivacion img", {
+  scrollTrigger: { trigger: ".motivacion", scroller: scrollContainer, start: "top 80%" },
+  x: -100, opacity: 0, duration: 1, stagger: 0.2
+});
+gsap.from(".texto-motivacional", {
+  scrollTrigger: { trigger: ".motivacion", scroller: scrollContainer, start: "top 80%" },
+  y: 50, opacity: 0, duration: 1
+});
+
+// ===================== TESTIMONIOS =====================
+gsap.from(".testimonio", {
+  scrollTrigger: {
+    trigger: ".testimonios-grid",
+    scroller: scrollContainer,
+    start: "top 90%"
+  },
+  y: 50, opacity: 0, duration: 1, stagger: 0.3
+});
+
+// ===================== FORMULARIO =====================
+gsap.from(".formulario input, .formulario select, .formulario button", {
+  scrollTrigger: {
+    trigger: ".reserva",
+    scroller: scrollContainer,
+    start: "top 90%"
+  },
+  y: 30, opacity: 0, duration: 1, stagger: 0.2
+});
+
+// Inicialización mejorada del carrusel
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.getElementById('heroCarousel');
+
+            if (carousel) {
+                // Ocultar temporalmente el carrusel durante la inicialización
+                carousel.style.opacity = '0';
+
+                // Inicializar carrusel de Bootstrap
+                const bsCarousel = new bootstrap.Carousel(carousel, {
+                    interval: 3000,
+                    wrap: true,
+                    touch: true
+                });
+
+                // Mostrar el carrusel después de la inicialización
+                setTimeout(() => {
+                    carousel.style.opacity = '1';
+                    carousel.style.transition = 'opacity 0.3s ease';
+                }, 100);
+
+                console.log('Carrusel inicializado correctamente');
+            }
+        });
+        // AOS Animations
         AOS.init({
             once: true,
             duration: 800,
