@@ -987,7 +987,11 @@ body.menu-open {
   transition: all 0.3s ease;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   background: #000000; /* Fondo negro */
+<<<<<<< HEAD
   border: 2px solid #000000;
+=======
+  /*border: 2px solid #000000;*/
+>>>>>>> 4c3b4a2a28df5bce3577e099c0ddd235b4ddc81e
   position: relative;
   height: 200px; /* Altura fija para rectángulos verticales */
 }
@@ -1044,7 +1048,11 @@ body.menu-open {
   overflow: hidden;
   transition: all 0.4s ease;
   background: #000000;
+<<<<<<< HEAD
   border: 3px solid #000000;
+=======
+  /*border: 3px solid #000000;*/
+>>>>>>> 4c3b4a2a28df5bce3577e099c0ddd235b4ddc81e
 }
 
 .galeria-labor .galeria-item:hover {
